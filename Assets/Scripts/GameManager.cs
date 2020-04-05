@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Image lifeFill;
     void Start()
     {
-        
+        StartCoroutine(Life());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator Life()
     {
-        
+        yield return new WaitForSeconds(1f);
+        lifeFill.fillAmount -= 0.05f;
+
+        StartCoroutine(Life());
     }
 }
