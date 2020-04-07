@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class Life : MonoBehaviour
 {
-    public int nbIconMax = 20;
-    public int nbIconCurrent = 20;
+    public int nbIconMax = 10;
+    public int nbIconCurrent = 10;
 
     public float nb;
 

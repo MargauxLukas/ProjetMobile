@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class ButtonsManager : MonoBehaviour
 {
     public Text text;
+    public ThumnailManager tm;
+
     public void Cut()
     {
         Debug.Log("Cut");
@@ -14,6 +16,7 @@ public class ButtonsManager : MonoBehaviour
         text.text += "THUD\n" ;
 
         //Proto 2
+        tm.CheckAction(3);
 
     }
 
@@ -25,7 +28,7 @@ public class ButtonsManager : MonoBehaviour
         text.text += "SQUIRT\n";
 
         //Proto 2
-
+        tm.CheckAction(2);
     }
 
     public void Whip()
@@ -36,6 +39,7 @@ public class ButtonsManager : MonoBehaviour
         text.text += "SWOOSH\n";
 
         //Proto 2
+        tm.CheckAction(1);
 
     }
 
