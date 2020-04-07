@@ -6,45 +6,49 @@ using UnityEngine.UI;
 public class ButtonsManager : MonoBehaviour
 {
     public Text text;
+    public ThumnailManager tm;
+
     public void Cut()
     {
-        Debug.Log("Cut");
+        /*Debug.Log("Cut");
 
         //Proto 1
-        text.text += "THUD\n" ;
+        text.text += "THUD\n" ;*/
 
         //Proto 2
+        tm.CheckAction(3);
 
     }
 
     public void Knead()
     {
-        Debug.Log("Knead");
+        /*Debug.Log("Knead");
 
         //Proto 1
-        text.text += "SQUIRT\n";
+        text.text += "SQUIRT\n";*/
 
         //Proto 2
-
+        tm.CheckAction(2);
     }
 
     public void Whip()
     {
-        Debug.Log("Whip");
+       /* Debug.Log("Whip");
 
         //Proto 1
-        text.text += "SWOOSH\n";
+        text.text += "SWOOSH\n";*/
 
         //Proto 2
+        tm.CheckAction(1);
 
     }
 
     public void Eat()
     {
-        Debug.Log("Eat");
+        /*Debug.Log("Eat");
 
         //Proto 1
-        text.text += "NOM\n";
+        text.text += "NOM\n";*/
 
         //Proto 2
 
