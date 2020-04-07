@@ -82,7 +82,7 @@ public class ThumnailManager : MonoBehaviour
 
     public void WrongAction()
     {
-
+        Damage();
     }
 
     public void NewWave()
@@ -112,6 +112,11 @@ public class ThumnailManager : MonoBehaviour
 
     public void Heal()
     {
-        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount * 1.02f;
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.02f);
+    }
+
+    public void Damage()
+    {
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
     }
 }
