@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ButtonsManager : MonoBehaviour
 {
     public Text text;
-    public ThumnailManager tm;
+    public ThumbnailManager tm;
 
     public void Cut()
     {

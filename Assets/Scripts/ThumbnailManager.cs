@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThumnailManager : MonoBehaviour
+public class ThumbnailManager : MonoBehaviour
 {
     public Life monsterLife;
     public GameManager gm;
@@ -73,7 +73,7 @@ public class ThumnailManager : MonoBehaviour
     public void ValideAction()
     {
         thumbnailsList.RemoveAt(0);
-        Destroy(transform.GetChild(0).GetChild(0).gameObject);
+        transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
 
         HitMonster();
         Heal();
@@ -89,14 +89,16 @@ public class ThumnailManager : MonoBehaviour
     {
         if (thumbnailsList.Count != 0)
         {
-            transform.GetChild(1).GetChild(0).position = transform.GetChild(0).transform.position;
-            transform.GetChild(1).GetChild(0).transform.parent = transform.GetChild(0);
+            transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(0).transform.position);
+            //StartCoroutine(MoveTo(transform.GetChild(1).GetChild(0).gameObject, transform.GetChild(0).transform.position));
+            transform.GetChild(1).GetChild(0).transform.SetParent(transform.GetChild(0));
         }
 
         if (thumbnailsList.Count > 1)
         {
-            transform.GetChild(2).GetChild(0).position = transform.GetChild(1).transform.position;
-            transform.GetChild(2).GetChild(0).transform.parent = transform.GetChild(1);
+            transform.GetChild(2).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(1).transform.position);
+            //StartCoroutine(MoveTo(transform.GetChild(2).GetChild(0).gameObject, transform.GetChild(1).transform.position));
+            transform.GetChild(2).GetChild(0).transform.SetParent(transform.GetChild(1));
         }
 
         if (thumbnailsList.Count > 2)
@@ -119,4 +121,20 @@ public class ThumnailManager : MonoBehaviour
     {
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
     }
+
+    /*public IEnumerator MoveTo(GameObject go, Vector3 targetPos)
+    {
+        go.transform.position = Vector3.MoveTowards(go.transform.position, targetPos, 0.5f);
+
+        if(Vector3.Distance(go.transform.position, targetPos) > 0.5f)
+        {
+            StartCoroutine(MoveTo(go, targetPos));
+        }
+        else
+        {
+            //End
+        }
+
+        yield return new WaitForSeconds(0.1f);
+    }*/
 }
