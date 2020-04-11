@@ -7,6 +7,7 @@ public class Thumbnail : MonoBehaviour
     public Vector3 target;
     public bool move = false;
     public bool validate = false;
+    public bool needToMaintain = false;
 
     public void Update()
     {

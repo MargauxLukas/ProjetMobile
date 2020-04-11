@@ -20,11 +20,31 @@ public class ThumbnailManager : MonoBehaviour
         ChooseThumbnail();
     }
 
+    public void Update()
+    {
+        if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0))
+        {
+            transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+        }
+        else if(thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
+        {
+            if(transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
+            {
+                ValideAction();
+            }
+            else
+            {
+                transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
+                                                                                                     transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
+            }
+        }
+    }
+
     public void ChooseThumbnail()
     {
         for(int i = 0; i < 10; i++)
         {
-            random = Random.Range(0, 4);
+            random = Random.Range(0, 5);
             thumbnailsList.Add(thumbnailsPrefab[random]);      
         }
 
@@ -50,7 +70,14 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                 if (thumbnailsList[0].gameObject.name.Contains("Knead"))
                 {
-                    ValideAction();
+                    if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain"))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        ValideAction();
+                    }
                 }
                 else
                 {
