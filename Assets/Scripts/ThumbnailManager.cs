@@ -24,7 +24,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         for(int i = 0; i < 10; i++)
         {
-            random = Random.Range(0, 3);
+            random = Random.Range(0, 4);
             thumbnailsList.Add(thumbnailsPrefab[random]);      
         }
 
@@ -60,7 +60,17 @@ public class ThumbnailManager : MonoBehaviour
             case 3:
                 if (thumbnailsList[0].gameObject.name.Contains("Cut"))
                 {
-                    ValideAction();
+                    if (transform.GetChild(0).GetChild(0).transform.childCount > 1)
+                    {
+                        Debug.Log("Il a des enfants");
+                        ValidateTemporary();
+                    }
+                    else
+                    {
+                        Debug.Log("Stop Coroutine Validation");
+                        StopAllCoroutines();
+                        ValideAction();
+                    }
                 }
                 else
                 {
@@ -78,6 +88,23 @@ public class ThumbnailManager : MonoBehaviour
         HitMonster();
         Heal();
         NewWave();
+    }
+
+    public void ValidateTemporary()
+    {
+        transform.GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
+
+        StartCoroutine("Compteur");
+    }
+
+    public IEnumerator Compteur()
+    {
+        Debug.Log("Rentré");
+        yield return new WaitForSeconds(2f);
+        //Temps écoulé 
+        Debug.Log("Temps écoulé");
+        Destroy(transform.GetChild(0).GetChild(0).gameObject);
+        Instantiate(thumbnailsList[0], transform.GetChild(0).transform.position, Quaternion.identity, transform.GetChild(0));
     }
 
     public void WrongAction()

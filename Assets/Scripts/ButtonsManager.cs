@@ -10,37 +10,17 @@ public class ButtonsManager : MonoBehaviour
 
     public void Cut()
     {
-        /*Debug.Log("Cut");
-
-        //Proto 1
-        text.text += "THUD\n" ;*/
-
-        //Proto 2
         tm.CheckAction(3);
-
     }
 
     public void Knead()
     {
-        /*Debug.Log("Knead");
-
-        //Proto 1
-        text.text += "SQUIRT\n";*/
-
-        //Proto 2
         tm.CheckAction(2);
     }
 
     public void Whip()
     {
-       /* Debug.Log("Whip");
-
-        //Proto 1
-        text.text += "SWOOSH\n";*/
-
-        //Proto 2
         tm.CheckAction(1);
-
     }
 
     public void Eat()
