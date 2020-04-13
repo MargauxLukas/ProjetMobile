@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ThumbnailManager : MonoBehaviour
 {
+    public static ThumbnailManager instance;
+
     public Life monsterLife;
     public GameManager gm;
 
@@ -12,7 +14,10 @@ public class ThumbnailManager : MonoBehaviour
 
     private int random;
 
-
+    private void Awake()
+    {
+        instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
