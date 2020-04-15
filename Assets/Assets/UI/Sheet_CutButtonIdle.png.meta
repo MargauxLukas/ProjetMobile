@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: 177ebd1f67a3e9b45a016b6173713101
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1445793934871036501
+    second: Bouton Couper Idle 42x71 35 Frames_0
+  - first:
+      213: 4391505464100641526
+    second: Bouton Couper Idle 42x71 35 Frames_1
+  - first:
+      213: 3485940626595583164
+    second: Bouton Couper Idle 42x71 35 Frames_2
+  - first:
+      213: 8661189540825937363
+    second: Bouton Couper Idle 42x71 35 Frames_3
+  - first:
+      213: 3122179070641442072
+    second: Bouton Couper Idle 42x71 35 Frames_4
+  - first:
+      213: -6607762287666272257
+    second: Bouton Couper Idle 42x71 35 Frames_5
+  - first:
+      213: -6952984488757629004
+    second: Bouton Couper Idle 42x71 35 Frames_6
+  - first:
+      213: 9198241176290854181
+    second: Bouton Couper Idle 42x71 35 Frames_7
+  - first:
+      213: 2449151194078350190
+    second: Bouton Couper Idle 42x71 35 Frames_8
+  - first:
+      213: -1147343524048497081
+    second: Bouton Couper Idle 42x71 35 Frames_9
+  - first:
+      213: -3352715240783658456
+    second: Bouton Couper Idle 42x71 35 Frames_10
+  - first:
+      213: -6041615357761208527
+    second: Bouton Couper Idle 42x71 35 Frames_11
+  - first:
+      213: -9011501497480429289
+    second: Bouton Couper Idle 42x71 35 Frames_12
+  - first:
+      213: -5461530183268605243
+    second: Bouton Couper Idle 42x71 35 Frames_13
+  - first:
+      213: -1493147404269783455
+    second: Bouton Couper Idle 42x71 35 Frames_14
+  - first:
+      213: 7650892633278574107
+    second: Bouton Couper Idle 42x71 35 Frames_15
+  - first:
+      213: 5902492385145752595
+    second: Bouton Couper Idle 42x71 35 Frames_16
+  - first:
+      213: -2963295526460011330
+    second: Bouton Couper Idle 42x71 35 Frames_17
+  - first:
+      213: 2219354176356829750
+    second: Bouton Couper Idle 42x71 35 Frames_18
+  - first:
+      213: -2193282138434294605
+    second: Bouton Couper Idle 42x71 35 Frames_19
+  - first:
+      213: -2726895003180933900
+    second: Bouton Couper Idle 42x71 35 Frames_20
+  - first:
+      213: 3353816600874964256
+    second: Bouton Couper Idle 42x71 35 Frames_21
+  - first:
+      213: -8701318979875741838
+    second: Bouton Couper Idle 42x71 35 Frames_22
+  - first:
+      213: 6769662681867236492
+    second: Bouton Couper Idle 42x71 35 Frames_23
+  - first:
+      213: 6375225930826633045
+    second: Bouton Couper Idle 42x71 35 Frames_24
+  - first:
+      213: -2887117987771163431
+    second: Bouton Couper Idle 42x71 35 Frames_25
+  - first:
+      213: 5390916764869459930
+    second: Bouton Couper Idle 42x71 35 Frames_26
+  - first:
+      213: -7488676916800553525
+    second: Bouton Couper Idle 42x71 35 Frames_27
+  - first:
+      213: 3154433342852473848
+    second: Bouton Couper Idle 42x71 35 Frames_28
+  - first:
+      213: -5479066077188976099
+    second: Bouton Couper Idle 42x71 35 Frames_29
+  - first:
+      213: 6808508009384305361
+    second: Bouton Couper Idle 42x71 35 Frames_30
+  - first:
+      213: 3199652964465364977
+    second: Bouton Couper Idle 42x71 35 Frames_31
+  - first:
+      213: 8702997476728554178
+    second: Bouton Couper Idle 42x71 35 Frames_32
+  - first:
+      213: -1426674909400709596
+    second: Bouton Couper Idle 42x71 35 Frames_33
+  - first:
+      213: -7315297019107917777
+    second: Bouton Couper Idle 42x71 35 Frames_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: badf89d83128febe0800000000000000
+      internalID: -1445793934871036501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fad7e0d3f2c1fc30800000000000000
+      internalID: 4391505464100641526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb41554d78c806030800000000000000
+      internalID: 3485940626595583164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d532499ff9b23870800000000000000
+      internalID: 8661189540825937363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d0ebe9255345b20800000000000000
+      internalID: 3122179070641442072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7ed6375338c44a0800000000000000
+      internalID: -6607762287666272257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bfecca2279028f90800000000000000
+      internalID: -6952984488757629004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 525003f8d97b6af70800000000000000
+      internalID: 9198241176290854181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_8
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6b834ce8022df120800000000000000
+      internalID: 2449151194078350190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7469ebdc421d310f0800000000000000
+      internalID: -1147343524048497081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_10
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8224d008043c871d0800000000000000
+      internalID: -3352715240783658456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_11
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13f391b87ded72ca0800000000000000
+      internalID: -6041615357761208527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_12
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71147cd0227b0f280800000000000000
+      internalID: -9011501497480429289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c263381c3fb434b0800000000000000
+      internalID: -5461530183268605243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_14
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166f33bc856474be0800000000000000
+      internalID: -1493147404269783455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_15
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1ee835505e6d2a60800000000000000
+      internalID: 7650892633278574107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_16
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31c8f023d8dd9e150800000000000000
+      internalID: 5902492385145752595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_17
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebcc8dc3b6240e6d0800000000000000
+      internalID: -2963295526460011330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_18
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63a47806ddabcce10800000000000000
+      internalID: 2219354176356829750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_19
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc2a6ef385ef81e0800000000000000
+      internalID: -2193282138434294605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_20
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcdc9b317f182ad0800000000000000
+      internalID: -2726895003180933900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_21
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025d5f0ed662b8e20800000000000000
+      internalID: 3353816600874964256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_22
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27f54274d74be3780800000000000000
+      internalID: -8701318979875741838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_23
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c843ae9875ca2fd50800000000000000
+      internalID: 6769662681867236492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_24
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55fc7c9e43a597850800000000000000
+      internalID: 6375225930826633045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_25
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc524a9c75eee7d0800000000000000
+      internalID: -2887117987771163431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_26
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adffdbf3c3260da40800000000000000
+      internalID: 5390916764869459930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_27
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcd7f685500e21890800000000000000
+      internalID: -7488676916800553525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_28
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3ae54996cc6cb20800000000000000
+      internalID: 3154433342852473848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_29
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d121240ae6276f3b0800000000000000
+      internalID: -5479066077188976099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_30
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d2e0c526fdac7e50800000000000000
+      internalID: 6808508009384305361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_31
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ffcb7f2b63776c20800000000000000
+      internalID: 3199652964465364977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_32
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c2c689381247c870800000000000000
+      internalID: 8702997476728554178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_33
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426453f8abe633ce0800000000000000
+      internalID: -1426674909400709596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Couper Idle 42x71 35 Frames_34
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2049958e18da7a90800000000000000
+      internalID: -7315297019107917777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

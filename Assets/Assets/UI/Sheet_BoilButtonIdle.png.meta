@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: 82eb30fb1cdcc154cb44c049746413fc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4208415006317032495
+    second: Bouton Bouillir Idle 42x71 35 Frames_0
+  - first:
+      213: -831982512485786039
+    second: Bouton Bouillir Idle 42x71 35 Frames_1
+  - first:
+      213: -971200027847405106
+    second: Bouton Bouillir Idle 42x71 35 Frames_2
+  - first:
+      213: -3822245759767961952
+    second: Bouton Bouillir Idle 42x71 35 Frames_3
+  - first:
+      213: 2157561722030464288
+    second: Bouton Bouillir Idle 42x71 35 Frames_4
+  - first:
+      213: -1695764249385546409
+    second: Bouton Bouillir Idle 42x71 35 Frames_5
+  - first:
+      213: -6716206485014099737
+    second: Bouton Bouillir Idle 42x71 35 Frames_6
+  - first:
+      213: -2281526156313248423
+    second: Bouton Bouillir Idle 42x71 35 Frames_7
+  - first:
+      213: 26049865201687599
+    second: Bouton Bouillir Idle 42x71 35 Frames_8
+  - first:
+      213: 8350838392387240198
+    second: Bouton Bouillir Idle 42x71 35 Frames_9
+  - first:
+      213: -8974212293984310054
+    second: Bouton Bouillir Idle 42x71 35 Frames_10
+  - first:
+      213: 2041584722005762614
+    second: Bouton Bouillir Idle 42x71 35 Frames_11
+  - first:
+      213: 1119498397380128913
+    second: Bouton Bouillir Idle 42x71 35 Frames_12
+  - first:
+      213: -3156437882215470827
+    second: Bouton Bouillir Idle 42x71 35 Frames_13
+  - first:
+      213: -3541114435942340417
+    second: Bouton Bouillir Idle 42x71 35 Frames_14
+  - first:
+      213: -6452810326942938936
+    second: Bouton Bouillir Idle 42x71 35 Frames_15
+  - first:
+      213: -3070349060832897776
+    second: Bouton Bouillir Idle 42x71 35 Frames_16
+  - first:
+      213: 8550314675871435658
+    second: Bouton Bouillir Idle 42x71 35 Frames_17
+  - first:
+      213: 8720163559128627079
+    second: Bouton Bouillir Idle 42x71 35 Frames_18
+  - first:
+      213: 1603612458246213193
+    second: Bouton Bouillir Idle 42x71 35 Frames_19
+  - first:
+      213: -1383437652143429999
+    second: Bouton Bouillir Idle 42x71 35 Frames_20
+  - first:
+      213: -5356714940474969267
+    second: Bouton Bouillir Idle 42x71 35 Frames_21
+  - first:
+      213: -8451779398599958442
+    second: Bouton Bouillir Idle 42x71 35 Frames_22
+  - first:
+      213: 6934841799506417846
+    second: Bouton Bouillir Idle 42x71 35 Frames_23
+  - first:
+      213: -6492133007295057583
+    second: Bouton Bouillir Idle 42x71 35 Frames_24
+  - first:
+      213: -8699969072133774586
+    second: Bouton Bouillir Idle 42x71 35 Frames_25
+  - first:
+      213: -3210872609928213587
+    second: Bouton Bouillir Idle 42x71 35 Frames_26
+  - first:
+      213: -3806591567072609285
+    second: Bouton Bouillir Idle 42x71 35 Frames_27
+  - first:
+      213: -4926360497904491125
+    second: Bouton Bouillir Idle 42x71 35 Frames_28
+  - first:
+      213: 8687143508213214482
+    second: Bouton Bouillir Idle 42x71 35 Frames_29
+  - first:
+      213: -3517485769292631804
+    second: Bouton Bouillir Idle 42x71 35 Frames_30
+  - first:
+      213: -1841238697425631434
+    second: Bouton Bouillir Idle 42x71 35 Frames_31
+  - first:
+      213: 7453093273950934892
+    second: Bouton Bouillir Idle 42x71 35 Frames_32
+  - first:
+      213: -5185064946321792780
+    second: Bouton Bouillir Idle 42x71 35 Frames_33
+  - first:
+      213: 1351180540547424147
+    second: Bouton Bouillir Idle 42x71 35 Frames_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dbcc0159d4b895c0800000000000000
+      internalID: -4208415006317032495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e92fb10543474f0800000000000000
+      internalID: -831982512485786039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec15e4668ba9582f0800000000000000
+      internalID: -971200027847405106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ae99cc8bb7a4fac0800000000000000
+      internalID: -3822245759767961952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d1b9674f231fd10800000000000000
+      internalID: 2157561722030464288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75d4194566f6778e0800000000000000
+      internalID: -1695764249385546409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e84f8e29cd3bc2a0800000000000000
+      internalID: -6716206485014099737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95dbf238c046650e0800000000000000
+      internalID: -2281526156313248423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_8
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2c1bc1e63c8c5000800000000000000
+      internalID: 26049865201687599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6018fe2f54324e370800000000000000
+      internalID: 8350838392387240198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_10
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc2f1e4771357380800000000000000
+      internalID: -8974212293984310054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_11
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632a406ec7a255c10800000000000000
+      internalID: 2041584722005762614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_12
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 190367e6cd1498f00800000000000000
+      internalID: 1119498397380128913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 519e5fa38741234d0800000000000000
+      internalID: -3156437882215470827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_14
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb826a0ae2f6bdec0800000000000000
+      internalID: -3541114435942340417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_15
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c8089332330376a0800000000000000
+      internalID: -6452810326942938936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_16
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 015d99cebcde365d0800000000000000
+      internalID: -3070349060832897776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_17
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8b402d65e1d8a670800000000000000
+      internalID: 8550314675871435658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_18
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 787fa2d3e8e340970800000000000000
+      internalID: 8720163559128627079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_19
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e0823d80d214610800000000000000
+      internalID: 1603612458246213193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_20
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 196271ff8ca0dcce0800000000000000
+      internalID: -1383437652143429999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_21
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4336f9842029a5b0800000000000000
+      internalID: -5356714940474969267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_22
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6502c7a9a6f35ba80800000000000000
+      internalID: -8451779398599958442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_23
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b85c11dfd18d3060800000000000000
+      internalID: 6934841799506417846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_24
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 151f6993d6f47e5a0800000000000000
+      internalID: -6492133007295057583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_25
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603e49a2930834780800000000000000
+      internalID: -8699969072133774586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_26
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab823a8f50b073d0800000000000000
+      internalID: -3210872609928213587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_27
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfbb3af43254c2bc0800000000000000
+      internalID: -3806591567072609285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_28
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85e2e66a3d02abb0800000000000000
+      internalID: -4926360497904491125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_29
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21da3e78efeee8870800000000000000
+      internalID: 8687143508213214482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_30
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40132da44516f2fc0800000000000000
+      internalID: -3517485769292631804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_31
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6370e35f82b9276e0800000000000000
+      internalID: -1841238697425631434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_32
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67d2bf28d4be6760800000000000000
+      internalID: 7453093273950934892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_33
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f0e82927e2fa08b0800000000000000
+      internalID: -5185064946321792780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Bouillir Idle 42x71 35 Frames_34
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39fdfb2fa8b50c210800000000000000
+      internalID: 1351180540547424147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
