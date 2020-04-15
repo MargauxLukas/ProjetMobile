@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public int chosenLevel;
+
     public void SelectLevel(int levelNum)
     {
+        chosenLevel = levelNum;
+    }
+
+    public void Play()
+    {
         SceneManager.LoadScene(1);
-        //affecter levelNum à qqch pour qu'il load le bon level
+        //affect chosenLevel à qqch pour qu'il load le bon level
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
