@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        ChooseLevel(UIManager.level);
+        ChooseLevel(UIManager.chosenLevel);
     }
 
     public void ChooseLevel(int i)
@@ -55,9 +56,16 @@ public class LevelManager : MonoBehaviour
 
     public void BeginGame()
     {
-        GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
-        monster.transform.parent = topScreen.transform;
-        gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(3).GetComponent<ThumbnailManager>();
+        if (currentLevel.Count != 0)
+        {
+            GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
+            monster.transform.parent = topScreen.transform;
+            gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(3).GetComponent<ThumbnailManager>();
+        }
+        else
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public void NextMonster()

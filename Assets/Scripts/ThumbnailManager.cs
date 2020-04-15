@@ -45,6 +45,8 @@ public class ThumbnailManager : MonoBehaviour
                     transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
                                                                                                          transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
                 }
+
+                //INPUT TOUCH
             }
         }
     }
@@ -71,7 +73,14 @@ public class ThumbnailManager : MonoBehaviour
             case 1:
                 if (thumbnailsList[0].gameObject.name.Contains("Whip") && transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked == false)
                 {
-                    ValideAction();
+                    if (thumbnailsList[0].gameObject.name.Contains("WhipMix"))
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        ValideAction();
+                    }
                 }
                 else
                 {
@@ -137,13 +146,14 @@ public class ThumbnailManager : MonoBehaviour
     public void Unlock()
     {
         transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
+        Destroy(transform.GetChild(0).GetChild(0).Find("Lock").gameObject);
 
         if (thumbnailsList[0].gameObject.name.Contains("Cut"))
         {
             if (thumbnailsList[0].gameObject.name.Contains("x2"))
             {
-                thumbnailsList[0].gameObject.transform.GetChild(0).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
-                thumbnailsList[0].gameObject.transform.GetChild(1).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
+                transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
+                transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
             }
             else
             {
@@ -152,7 +162,7 @@ public class ThumbnailManager : MonoBehaviour
         }
         else if(thumbnailsList[0].gameObject.name.Contains("Whip"))
         {
-            thumbnailsList[0].gameObject.GetComponent<Image>().color = new Color32(172, 251, 228, 255);
+            transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().color = new Color32(172, 251, 228, 255);
         }
         else
         {

@@ -10,6 +10,8 @@ public class Thumbnail : MonoBehaviour
     public bool needToMaintain = false;
     public bool isLocked = false;
 
+    public GameObject Lock;
+
     public void Update()
     {
         if(move)
