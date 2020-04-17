@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
 
     public void ChooseLevel(int i)
     {
+        Debug.Log(i);
         switch (i)
         {
             case 1:
@@ -39,6 +40,24 @@ public class LevelManager : MonoBehaviour
                 break;
             case 2:
                 foreach (GameObject go in level2)
+                {
+                    currentLevel.Add(go);
+                }
+                break;
+            case 3:
+                foreach (GameObject go in level3)
+                {
+                    currentLevel.Add(go);
+                }
+                break;
+            case 4:
+                foreach (GameObject go in level4)
+                {
+                    currentLevel.Add(go);
+                }
+                break;
+            case 5:
+                foreach (GameObject go in level5)
                 {
                     currentLevel.Add(go);
                 }

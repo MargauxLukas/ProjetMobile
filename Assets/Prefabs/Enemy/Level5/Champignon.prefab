@@ -163,8 +163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5480935d977c6b243957be397850aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nbIconMax: 2
-  nbIconCurrent: 2
+  nbIconMax: 4
+  nbIconCurrent: 4
   nb: 0
 --- !u!1 &8356807622261119516
 GameObject:
@@ -312,7 +312,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Saladique
+  m_Text: Champi'gnon
 --- !u!1 &8356807622573218293
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a8da0b1502b4c514789c8dd93c9a032f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f87150859ac2a943842d5637f49a3fd, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -661,8 +661,10 @@ MonoBehaviour:
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
-  - {fileID: 2717968371175590322, guid: e2ca24e18c2cfa84991bf58b8be9fe71, type: 3}
-  - {fileID: 2717968371175590322, guid: 9c0a7e5404530d64b927c1cfcbbf9b61, type: 3}
+  - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
+  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
+  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
+  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
 --- !u!1 &8356807623944433587
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,7 +675,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8356807623944433584}
   m_Layer: 5
-  m_Name: Laitue
+  m_Name: Champignon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

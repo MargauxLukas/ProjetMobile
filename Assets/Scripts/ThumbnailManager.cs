@@ -13,6 +13,11 @@ public class ThumbnailManager : MonoBehaviour
     public List<GameObject> thumbnailsList;
 
     private int random;
+    private float posStart;
+    private float posEnd;
+    private float swipeDifference;
+
+    private int vignetteNb;
 
     private void Awake()
     {
@@ -45,8 +50,36 @@ public class ThumbnailManager : MonoBehaviour
                     transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
                                                                                                          transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
                 }
+            }
 
-                //INPUT TOUCH
+            //TOUCH
+            if(thumbnailsList[0].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
+            {
+                Touch touch = Input.GetTouch(0);
+
+                if(touch.phase == TouchPhase.Began)
+                {
+                    posStart = touch.position.y;
+                }
+                if(touch.phase == TouchPhase.Ended)
+                {
+                    posEnd = touch.position.y;
+                }
+                else
+                {
+                    return;
+                }
+
+                swipeDifference = Mathf.Abs(posStart - posEnd);
+
+                if(posEnd < posStart && swipeDifference > 200f)
+                {
+                    ValideAction();
+                }
+                else
+                {
+                    return;
+                }
             }
         }
     }
@@ -68,12 +101,20 @@ public class ThumbnailManager : MonoBehaviour
 
     public void CheckAction(int nbAction)
     {
+        for (vignetteNb = 0; vignetteNb < 3; vignetteNb++)
+        {
+            if (!thumbnailsList[vignetteNb].gameObject.name.Contains("Lock") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked)
+            {
+                break;
+            }
+        }
+
         switch(nbAction)
         {
             case 1:
-                if (thumbnailsList[0].gameObject.name.Contains("Whip") && transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked == false)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip"))
                 {
-                    if (thumbnailsList[0].gameObject.name.Contains("WhipMix"))
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
                     {
                         return;
                     }
@@ -94,9 +135,9 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 else
                 {
-                    if (thumbnailsList[0].gameObject.name.Contains("Knead") && thumbnailsList[0].gameObject.GetComponent<Thumbnail>().isLocked == false)
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead"))
                     {
-                        if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain"))
+                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain"))
                         {
                             return;
                         }
@@ -112,9 +153,9 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 3:
-                if (thumbnailsList[0].gameObject.name.Contains("Cut") && transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked == false)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut"))
                 {
-                    if (transform.GetChild(0).GetChild(0).transform.childCount > 1)
+                    if (transform.GetChild(vignetteNb).GetChild(0).transform.childCount > 1)
                     {
                         Debug.Log("Il a des enfants");
                         ValidateTemporary();
@@ -137,7 +178,13 @@ public class ThumbnailManager : MonoBehaviour
     public void ValideAction()
     {
         thumbnailsList.RemoveAt(0);
-        transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
+        transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
+
+        if(vignetteNb != 0)
+        {
+            transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
+            Destroy(transform.GetChild(0).GetChild(0).transform.GetChild(transform.GetChild(0).GetChild(0).transform.childCount).gameObject);
+        }
 
         HitMonster();
         Heal();
@@ -172,7 +219,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void ValidateTemporary()
     {
-        transform.GetChild(0).GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
+        transform.GetChild(vignetteNb).GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
 
         StartCoroutine("Compteur");
     }
