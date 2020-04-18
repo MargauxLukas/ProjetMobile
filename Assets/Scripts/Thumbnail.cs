@@ -8,6 +8,9 @@ public class Thumbnail : MonoBehaviour
     public bool move = false;
     public bool validate = false;
     public bool needToMaintain = false;
+    public bool isLocked = false;
+
+    public GameObject Lock;
 
     public void Update()
     {

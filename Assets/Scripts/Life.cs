@@ -14,16 +14,5 @@ public class Life : MonoBehaviour
     {
         nb = 1 / (float)nbIconMax;
         GetComponent<Image>().fillAmount = nb * nbIconCurrent; 
-
-        if(GetComponent<Image>().fillAmount == 0)
-        {
-            Restart();
-        }
-    }
-
-    public void Restart()
-    {
-        nbIconCurrent = 10;
-        ThumbnailManager.instance.ChooseThumbnail();
     }
 }

@@ -5,7 +5,15 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
     public Image lifeFill;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     void Start()
     {
         StartCoroutine(Life());
