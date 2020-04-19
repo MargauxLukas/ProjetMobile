@@ -3085,6 +3085,7 @@ GameObject:
   m_Component:
   - component: {fileID: 650299200}
   - component: {fileID: 650299201}
+  - component: {fileID: 650299202}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3118,6 +3119,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddde739637df5f4b8444a36a3bcb88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &650299202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650299199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a57079a15cca79439f2e8e3cd0df0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tokens: 0
 --- !u!1 &697561814
 GameObject:
   m_ObjectHideFlags: 0
@@ -8454,7 +8468,7 @@ GameObject:
   - component: {fileID: 1716182429}
   m_Layer: 5
   m_Name: Text
-  m_TagString: Untagged
+  m_TagString: Tokens
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8509,7 +8523,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 260
+  m_Text: 
 --- !u!222 &1716182430
 CanvasRenderer:
   m_ObjectHideFlags: 0
