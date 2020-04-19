@@ -9,6 +9,11 @@ public class LevelManager : MonoBehaviour
 
     public GameObject topScreen;
 
+    public GameObject kneadB;
+    public GameObject cutB;
+    public GameObject whipB;
+    public GameObject cookB;
+
     public List<GameObject> level1;
     public List<GameObject> level2;
     public List<GameObject> level3;
@@ -59,6 +64,8 @@ public class LevelManager : MonoBehaviour
             case 5:
                 foreach (GameObject go in level5)
                 {
+                    cookB.transform.position = kneadB.transform.position;
+                    kneadB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;

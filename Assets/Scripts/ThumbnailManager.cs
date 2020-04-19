@@ -20,6 +20,7 @@ public class ThumbnailManager : MonoBehaviour
     private int vignetteNb;
 
     public bool knead = false;
+    public bool cook = false;
 
     private void Awake()
     {
@@ -47,6 +48,16 @@ public class ThumbnailManager : MonoBehaviour
                 }
             }
 
+            if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
+            {
+                transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+
+                if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                {
+                    ValideAction();
+                }
+            }
+
             /*else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
             {
                 if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
@@ -61,7 +72,7 @@ public class ThumbnailManager : MonoBehaviour
             }*/
 
             //TOUCH
-            if(thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
+            if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
 
@@ -166,6 +177,23 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
+                        ValideAction();
+                    }
+                }
+                else
+                {
+                    WrongAction();
+                }
+                break;
+            case 4:
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cook"))
+                {
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain"))
+                    {
+                        return;
+                    }
+                    else
+                    {
                         ValideAction();
                     }
                 }

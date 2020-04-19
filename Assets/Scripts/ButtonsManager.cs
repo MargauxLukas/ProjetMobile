@@ -30,6 +30,17 @@ public class ButtonsManager : MonoBehaviour
         ThumbnailManager.instance.knead = false;
     }
 
+    public void CookDown()
+    {
+        tm.CheckAction(4);
+        ThumbnailManager.instance.cook = true;
+    }
+
+    public void CookUp()
+    {
+        ThumbnailManager.instance.cook = false;
+    }
+
     public void Whip()
     {
         tm.CheckAction(1);
