@@ -15,7 +15,19 @@ public class ButtonsManager : MonoBehaviour
 
     public void Knead()
     {
+       /* Debug.Log("Click");
+        tm.CheckAction(2);*/
+    }
+
+    public void KneadDown()
+    {
         tm.CheckAction(2);
+        ThumbnailManager.instance.knead = true;
+    }
+
+    public void KneadUp()
+    {
+        ThumbnailManager.instance.knead = false;
     }
 
     public void Whip()

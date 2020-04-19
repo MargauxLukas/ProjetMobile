@@ -19,6 +19,8 @@ public class ThumbnailManager : MonoBehaviour
 
     private int vignetteNb;
 
+    public bool knead = false;
+
     private void Awake()
     {
         instance = this;
@@ -35,11 +37,17 @@ public class ThumbnailManager : MonoBehaviour
     {
         if (thumbnailsList.Count != 0)
         {
-            if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0))
+            if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
             {
                 transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+
+                if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                {
+                    ValideAction();
+                }
             }
-            else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
+
+            /*else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
             {
                 if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
                 {
@@ -50,7 +58,7 @@ public class ThumbnailManager : MonoBehaviour
                     transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
                                                                                                          transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
                 }
-            }
+            }*/
 
             //TOUCH
             if(thumbnailsList[0].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
@@ -177,7 +185,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void ValideAction()
     {
-        thumbnailsList.RemoveAt(0);
+        thumbnailsList.RemoveAt(vignetteNb);
         transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToDestroy();
 
         if(vignetteNb != 0)
