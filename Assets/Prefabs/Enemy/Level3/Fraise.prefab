@@ -661,8 +661,9 @@ MonoBehaviour:
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
   - {fileID: 2717968371175590322, guid: 32fff81f4105e7043a75561a9a100469, type: 3}
+  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  knead: 0
 --- !u!1 &8356807623944433587
 GameObject:
   m_ObjectHideFlags: 0

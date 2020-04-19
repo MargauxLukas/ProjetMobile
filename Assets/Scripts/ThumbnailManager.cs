@@ -37,7 +37,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         if (thumbnailsList.Count != 0)
         {
-            if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
+            if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
             {
                 transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
 
@@ -61,7 +61,7 @@ public class ThumbnailManager : MonoBehaviour
             }*/
 
             //TOUCH
-            if(thumbnailsList[0].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
+            if(thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
             {
                 Touch touch = Input.GetTouch(0);
 
@@ -111,7 +111,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         for (vignetteNb = 0; vignetteNb < 3; vignetteNb++)
         {
-            if (!thumbnailsList[vignetteNb].gameObject.name.Contains("Lock") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked)
+            if (!thumbnailsList[vignetteNb].gameObject.name.Contains("Lock") || !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked)
             {
                 break;
             }
@@ -137,12 +137,6 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 2:
-                if (transform.GetChild(0).GetChild(0).gameObject.name.Contains("Locked"))
-                {
-                    Unlock();
-                }
-                else
-                {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead"))
                     {
                         if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain"))
@@ -158,7 +152,7 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         WrongAction();
                     }
-                }
+                
                 break;
             case 3:
                 if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut"))
@@ -190,8 +184,7 @@ public class ThumbnailManager : MonoBehaviour
 
         if(vignetteNb != 0)
         {
-            transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
-            Destroy(transform.GetChild(0).GetChild(0).transform.GetChild(transform.GetChild(0).GetChild(0).transform.childCount).gameObject);
+            Unlock();
         }
 
         HitMonster();
@@ -202,27 +195,6 @@ public class ThumbnailManager : MonoBehaviour
     {
         transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
         Destroy(transform.GetChild(0).GetChild(0).Find("Lock").gameObject);
-
-        if (thumbnailsList[0].gameObject.name.Contains("Cut"))
-        {
-            if (thumbnailsList[0].gameObject.name.Contains("x2"))
-            {
-                transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
-                transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<Image>().color = new Color32(235, 194, 116, 255);
-            }
-            else
-            {
-                transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().color = new Color32(235, 194, 116, 255);
-            }
-        }
-        else if(thumbnailsList[0].gameObject.name.Contains("Whip"))
-        {
-            transform.GetChild(0).GetChild(0).gameObject.GetComponent<Image>().color = new Color32(172, 251, 228, 255);
-        }
-        else
-        {
-            Debug.Log("Unlock impossible");
-        }
     }
 
     public void ValidateTemporary()
@@ -238,8 +210,8 @@ public class ThumbnailManager : MonoBehaviour
         yield return new WaitForSeconds(2f);
         //Temps écoulé 
         Debug.Log("Temps écoulé");
-        Destroy(transform.GetChild(0).GetChild(0).gameObject);
-        Instantiate(thumbnailsList[0], transform.GetChild(0).transform.position, Quaternion.identity, transform.GetChild(0));
+        Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
+        Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
     }
 
     public void WrongAction()

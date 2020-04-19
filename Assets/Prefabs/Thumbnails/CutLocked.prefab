@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 6989345544760931130}
   - component: {fileID: 4511100849478109586}
   m_Layer: 5
-  m_Name: CutLocked
+  m_Name: Lock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,7 +198,7 @@ PrefabInstance:
     - target: {fileID: 397942419160786122, guid: 992d607b0728c0a4baaa25286e58617b,
         type: 3}
       propertyPath: m_Name
-      value: Lock
+      value: Verrou
       objectReference: {fileID: 0}
     - target: {fileID: 397942419160786122, guid: 992d607b0728c0a4baaa25286e58617b,
         type: 3}
