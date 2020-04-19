@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public Transform bin;
 
     public GameObject topScreen;
 
@@ -99,5 +100,10 @@ public class LevelManager : MonoBehaviour
         currentLevel.RemoveAt(0);
         Destroy(topScreen.transform.GetChild(0).gameObject);
         BeginGame();
+    }
+
+    public void GoToBin(GameObject go)
+    {
+        go.transform.SetParent(bin.transform);
     }
 }
