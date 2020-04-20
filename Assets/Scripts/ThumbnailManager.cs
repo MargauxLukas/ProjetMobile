@@ -36,25 +36,32 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Update()
     {
-        if (thumbnailsList.Count != 0)
+        if (thumbnailsList.Count != 0 && vignetteNb < thumbnailsList.Count)
         {
-            if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
+            if (thumbnailsList[vignetteNb].gameObject != null)
             {
-                transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
-
-                if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
                 {
-                    ValideAction();
+                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+
+                    if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                    {
+                        ValideAction();
+                    }
                 }
-            }
-
-            if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
-            {
-                transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
-
-                if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                else if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && !knead && transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -50f)
                 {
-                    ValideAction();
+                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
+                }
+
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
+                {
+                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+
+                    if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                    {
+                        ValideAction();
+                    }
                 }
             }
 
@@ -219,10 +226,18 @@ public class ThumbnailManager : MonoBehaviour
         Heal();
     }
 
-    public void Unlock()
+    public void Unlock(GameObject go = null)
     {
-        transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
-        Destroy(transform.GetChild(0).GetChild(0).Find("Lock").gameObject);
+        if (go != null)
+        {
+            go.GetComponent<Thumbnail>().isLocked = false;
+            Destroy(go.transform.Find("Lock").gameObject);
+        }
+        else
+        {
+            transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
+            Destroy(transform.GetChild(0).GetChild(0).Find("Lock").gameObject);
+        }
     }
 
     public void ValidateTemporary()
@@ -235,11 +250,15 @@ public class ThumbnailManager : MonoBehaviour
     public IEnumerator Compteur()
     {
         Debug.Log("Rentré");
-        yield return new WaitForSeconds(2f);
-        //Temps écoulé 
+        yield return new WaitForSeconds(0.5f);
         Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
-        Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
+        GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
+
+        if(thumbnailsList.Count < 2 )
+        {
+            Unlock(inst);
+        }
     }
 
     public void WrongAction()
