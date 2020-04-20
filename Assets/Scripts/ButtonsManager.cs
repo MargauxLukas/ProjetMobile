@@ -48,12 +48,16 @@ public class ButtonsManager : MonoBehaviour
 
     public void Eat()
     {
-        /*Debug.Log("Eat");
+        
+    }
 
-        //Proto 1
-        text.text += "NOM\n";*/
+    public void Attack()
+    {
 
-        //Proto 2
+    }
+
+    public void Defend()
+    {
 
     }
 
