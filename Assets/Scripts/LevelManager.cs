@@ -23,6 +23,9 @@ public class LevelManager : MonoBehaviour
 
     public List<GameObject> currentLevel;
 
+    public GameObject phase1Buttons;
+    public GameObject phase2Buttons;
+
     public void Awake()
     {
         instance = this;
@@ -100,6 +103,19 @@ public class LevelManager : MonoBehaviour
         currentLevel.RemoveAt(0);
         Destroy(topScreen.transform.GetChild(0).gameObject);
         BeginGame();
+        ActivatePhase1();
+    }
+
+    public void ActivatePhase1()
+    {
+        phase1Buttons.SetActive(true);
+        phase2Buttons.SetActive(false);
+    }
+
+    public void ActivatePhase2()
+    {
+        phase1Buttons.SetActive(false);
+        phase2Buttons.SetActive(true);
     }
 
     public void GoToBin(GameObject go)

@@ -48,17 +48,17 @@ public class ButtonsManager : MonoBehaviour
 
     public void Eat()
     {
-        
+        FightManager.instance.Eat();
     }
 
     public void Attack()
     {
-
+        FightManager.instance.Attack();
     }
 
     public void Defend()
     {
-
+        FightManager.instance.Defend();
     }
 
     public void Pause()

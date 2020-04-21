@@ -22,6 +22,8 @@ public class ThumbnailManager : MonoBehaviour
     public bool knead = false;
     public bool cook = false;
 
+    public bool phase1 = true;
+
     private void Awake()
     {
         instance = this;
@@ -31,80 +33,83 @@ public class ThumbnailManager : MonoBehaviour
     void Start()
     {
         gm = GameManager.instance;
-        ChooseThumbnail();
+        //ChooseThumbnail();
     }
 
     public void Update()
     {
-        if (thumbnailsList.Count != 0 && vignetteNb < thumbnailsList.Count)
+        if(!phase1)
         {
-            if (thumbnailsList[vignetteNb].gameObject != null)
+            if (thumbnailsList.Count != 0 && vignetteNb < thumbnailsList.Count)
             {
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
+                if (thumbnailsList[vignetteNb].gameObject != null)
                 {
-                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
+                    {
+                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
 
-                    if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                        if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                        {
+                            ValideAction();
+                        }
+                    }
+                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && !knead && transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -50f)
+                    {
+                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
+                    }
+
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
+                    {
+                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+
+                        if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                        {
+                            ValideAction();
+                        }
+                    }
+                }
+
+                /*else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
+                {
+                    if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
                     {
                         ValideAction();
                     }
-                }
-                else if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && !knead && transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -50f)
-                {
-                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
-                }
+                    else
+                    {
+                        transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
+                                                                                                             transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
+                    }
+                }*/
 
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
+                //TOUCH
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
                 {
-                    transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+                    Touch touch = Input.GetTouch(0);
 
-                    if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        posStart = touch.position.y;
+                    }
+                    if (touch.phase == TouchPhase.Ended)
+                    {
+                        posEnd = touch.position.y;
+                    }
+                    else
+                    {
+                        return;
+                    }
+
+                    swipeDifference = Mathf.Abs(posStart - posEnd);
+
+                    if (posEnd < posStart && swipeDifference > 200f)
                     {
                         ValideAction();
                     }
-                }
-            }
-
-            /*else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
-            {
-                if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
-                {
-                    ValideAction();
-                }
-                else
-                {
-                    transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
-                                                                                                         transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
-                }
-            }*/
-
-            //TOUCH
-            if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
-            {
-                Touch touch = Input.GetTouch(0);
-
-                if(touch.phase == TouchPhase.Began)
-                {
-                    posStart = touch.position.y;
-                }
-                if(touch.phase == TouchPhase.Ended)
-                {
-                    posEnd = touch.position.y;
-                }
-                else
-                {
-                    return;
-                }
-
-                swipeDifference = Mathf.Abs(posStart - posEnd);
-
-                if(posEnd < posStart && swipeDifference > 200f)
-                {
-                    ValideAction();
-                }
-                else
-                {
-                    return;
+                    else
+                    {
+                        return;
+                    }
                 }
             }
         }
@@ -290,9 +295,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void HitMonster()
     {
-        monsterLife.nbIconCurrent--;
-
-        if(monsterLife.nbIconCurrent == 0)
+        if(thumbnailsList.Count == 0)
         {
             LevelManager.instance.NextMonster();
         }
@@ -311,20 +314,4 @@ public class ThumbnailManager : MonoBehaviour
     {
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
     }
-
-    /*public IEnumerator MoveTo(GameObject go, Vector3 targetPos)
-    {
-        go.transform.position = Vector3.MoveTowards(go.transform.position, targetPos, 0.5f);
-
-        if(Vector3.Distance(go.transform.position, targetPos) > 0.5f)
-        {
-            StartCoroutine(MoveTo(go, targetPos));
-        }
-        else
-        {
-            //End
-        }
-
-        yield return new WaitForSeconds(0.1f);
-    }*/
 }
