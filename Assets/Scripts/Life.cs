@@ -7,6 +7,8 @@ public class Life : MonoBehaviour
 {
     public int lifeMax = 10;
     public int currentLife = 10;
+    public int countShield = 10;
+    public int currentShield = 0;
 
     public float nb;
     public bool stuned = false;
@@ -22,6 +24,8 @@ public class Life : MonoBehaviour
             {
                 stuned = true;
                 ThumbnailManager.instance.phase1 = false;
+                FightManager.instance.attackText.SetActive(false);
+                FightManager.instance.defendText.SetActive(false);
                 LevelManager.instance.ActivatePhase2();
                 ThumbnailManager.instance.ChooseThumbnail();
             }

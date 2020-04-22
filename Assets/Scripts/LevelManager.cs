@@ -89,6 +89,8 @@ public class LevelManager : MonoBehaviour
         if (currentLevel.Count != 0)
         {
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
+            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
+            FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(3).GetComponent<ThumbnailManager>();
         }
