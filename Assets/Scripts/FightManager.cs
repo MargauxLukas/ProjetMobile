@@ -57,6 +57,8 @@ public class FightManager : MonoBehaviour
             }
             else if (ThumbnailManager.instance.monsterLife.currentLife <= lifeGoal || timeCooldown <= 0)
             {
+                Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
+                Debug.Log(timeCooldown);
                 Action();
             }
             else
@@ -149,8 +151,8 @@ public class FightManager : MonoBehaviour
     public void Rand(int chance, int surCombien)
     {
         rand = UnityEngine.Random.Range(1, surCombien+1);
-        Debug.Log(rand + " = " + chance + " chance sur " + surCombien);
-        if(rand <= chance)
+        //Debug.Log(rand + " = " + chance + " chance sur " + surCombien);
+        if(rand <= chance || ThumbnailManager.instance.monsterLife.currentShield > 0)
         {
             MonsterAttack();
         }
@@ -170,7 +172,8 @@ public class FightManager : MonoBehaviour
     public void MonsterDefend()
     {
         SetTimeAction();
-        ThumbnailManager.instance.monsterLife.currentShield += ThumbnailManager.instance.monsterLife.countShield;
+        SetLifeGoal();
+        ThumbnailManager.instance.monsterLife.currentShield = ThumbnailManager.instance.monsterLife.countShield;
         defendText.SetActive(true);
         defendText.transform.GetChild(0).GetComponent<Text>().text = ThumbnailManager.instance.monsterLife.currentShield.ToString();
         isMonsterAttacking = false;
