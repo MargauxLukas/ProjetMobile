@@ -291,6 +291,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d98f13a6d8c0e8846a67a7eed54d2369, type: 3}
+--- !u!4 &1607433720 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1975433654461260217, guid: dcf4b3c09dcdd474c8332041d79a5c96,
+    type: 3}
+  m_PrefabInstance: {fileID: 4927537693703046500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630524903
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,6 +876,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Combat_Milk_PREF
       objectReference: {fileID: 0}
+    - target: {fileID: 4709113794299874513, guid: dcf4b3c09dcdd474c8332041d79a5c96,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcf4b3c09dcdd474c8332041d79a5c96, type: 3}
 --- !u!1001 &4943123506851273250
@@ -1079,6 +1090,105 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1257d6dfae40ae4b8bbcc6e2a7c1775, type: 3}
+--- !u!1001 &5732743344385302047
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1607433720}
+    m_Modifications:
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1943448982084504531, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2897666327134403093, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_Name
+      value: SHEET_Combat_Milk_Attac_VFX_PREF
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410090828772367837, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410090828772367837, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7688679
+      objectReference: {fileID: 0}
+    - target: {fileID: 8410090828772367837, guid: 8d270a09836a41344af088cd57a2cb03,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7688679
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8d270a09836a41344af088cd57a2cb03, type: 3}
 --- !u!1001 &7576358204608664167
 PrefabInstance:
   m_ObjectHideFlags: 0
