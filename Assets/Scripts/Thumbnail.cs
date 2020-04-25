@@ -16,7 +16,7 @@ public class Thumbnail : MonoBehaviour
     {
         if(move)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, 5f);
+            transform.position = Vector3.MoveTowards(transform.position, target, 20f);
 
             if(Vector3.Distance(transform.position, target) < 0.5f)
             {
