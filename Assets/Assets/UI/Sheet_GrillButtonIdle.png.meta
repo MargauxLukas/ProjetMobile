@@ -1,0 +1,955 @@
+fileFormatVersion: 2
+guid: e565eb2efebaf564d87ea249284ea3c9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1042693001265637268
+    second: Bouton Cuisson Idle 42x71 35 Frames_0
+  - first:
+      213: -8560383054477241970
+    second: Bouton Cuisson Idle 42x71 35 Frames_1
+  - first:
+      213: -711592479280504195
+    second: Bouton Cuisson Idle 42x71 35 Frames_2
+  - first:
+      213: -3369830580498343294
+    second: Bouton Cuisson Idle 42x71 35 Frames_3
+  - first:
+      213: 7844523356560080848
+    second: Bouton Cuisson Idle 42x71 35 Frames_4
+  - first:
+      213: 6490984092513813069
+    second: Bouton Cuisson Idle 42x71 35 Frames_5
+  - first:
+      213: 3550738198285305702
+    second: Bouton Cuisson Idle 42x71 35 Frames_6
+  - first:
+      213: -5157874944708261269
+    second: Bouton Cuisson Idle 42x71 35 Frames_7
+  - first:
+      213: 630169836215038764
+    second: Bouton Cuisson Idle 42x71 35 Frames_8
+  - first:
+      213: -6031604076309116703
+    second: Bouton Cuisson Idle 42x71 35 Frames_9
+  - first:
+      213: -1905157589199701369
+    second: Bouton Cuisson Idle 42x71 35 Frames_10
+  - first:
+      213: -5127212545386042612
+    second: Bouton Cuisson Idle 42x71 35 Frames_11
+  - first:
+      213: -300185729741838358
+    second: Bouton Cuisson Idle 42x71 35 Frames_12
+  - first:
+      213: 1951050817122723194
+    second: Bouton Cuisson Idle 42x71 35 Frames_13
+  - first:
+      213: 4316620100214979414
+    second: Bouton Cuisson Idle 42x71 35 Frames_14
+  - first:
+      213: -2113932818005484449
+    second: Bouton Cuisson Idle 42x71 35 Frames_15
+  - first:
+      213: 9127042463607469072
+    second: Bouton Cuisson Idle 42x71 35 Frames_16
+  - first:
+      213: 7493387572262959911
+    second: Bouton Cuisson Idle 42x71 35 Frames_17
+  - first:
+      213: 7690514737509677123
+    second: Bouton Cuisson Idle 42x71 35 Frames_18
+  - first:
+      213: 8891808604266475961
+    second: Bouton Cuisson Idle 42x71 35 Frames_19
+  - first:
+      213: -3392805390975010816
+    second: Bouton Cuisson Idle 42x71 35 Frames_20
+  - first:
+      213: 1659328500879739319
+    second: Bouton Cuisson Idle 42x71 35 Frames_21
+  - first:
+      213: -1524646211390092200
+    second: Bouton Cuisson Idle 42x71 35 Frames_22
+  - first:
+      213: -4659496562002217191
+    second: Bouton Cuisson Idle 42x71 35 Frames_23
+  - first:
+      213: -1718316857682490191
+    second: Bouton Cuisson Idle 42x71 35 Frames_24
+  - first:
+      213: -2623932282267777899
+    second: Bouton Cuisson Idle 42x71 35 Frames_25
+  - first:
+      213: 2715463409540671026
+    second: Bouton Cuisson Idle 42x71 35 Frames_26
+  - first:
+      213: 1101485819022655072
+    second: Bouton Cuisson Idle 42x71 35 Frames_27
+  - first:
+      213: 7770016922677326023
+    second: Bouton Cuisson Idle 42x71 35 Frames_28
+  - first:
+      213: -6140112619944629667
+    second: Bouton Cuisson Idle 42x71 35 Frames_29
+  - first:
+      213: 7235804790051355606
+    second: Bouton Cuisson Idle 42x71 35 Frames_30
+  - first:
+      213: 2513181639235581814
+    second: Bouton Cuisson Idle 42x71 35 Frames_31
+  - first:
+      213: 8904790228633628978
+    second: Bouton Cuisson Idle 42x71 35 Frames_32
+  - first:
+      213: -9142625737228196362
+    second: Bouton Cuisson Idle 42x71 35 Frames_33
+  - first:
+      213: -876389237204253254
+    second: Bouton Cuisson Idle 42x71 35 Frames_34
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6896c16d3c9781f0800000000000000
+      internalID: -1042693001265637268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e815c9087f8633980800000000000000
+      internalID: -8560383054477241970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_2
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7265a7096aef16f0800000000000000
+      internalID: -711592479280504195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28ad520f0f4fb31d0800000000000000
+      internalID: -3369830580498343294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_4
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dfb4044e685ddc60800000000000000
+      internalID: 7844523356560080848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_5
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d424ff434ab941a50800000000000000
+      internalID: 6490984092513813069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_6
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 667c4372491c64130800000000000000
+      internalID: 3550738198285305702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_7
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6ac6ccb01c8b68b0800000000000000
+      internalID: -5157874944708261269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_8
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2373c39020deb800800000000000000
+      internalID: 630169836215038764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_9
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e80cc5ac007b4ca0800000000000000
+      internalID: -6031604076309116703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_10
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78abc9e34458f85e0800000000000000
+      internalID: -1905157589199701369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_11
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ba658ea5b78d8b0800000000000000
+      internalID: -5127212545386042612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_12
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae7a8145ba685dbf0800000000000000
+      internalID: -300185729741838358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_13
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a75e55d8166831b10800000000000000
+      internalID: 1951050817122723194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_14
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65bff975c17b7eb30800000000000000
+      internalID: 4316620100214979414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_15
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c1eb75d4dc9a2e0800000000000000
+      internalID: -2113932818005484449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_16
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014ba3573c4c9ae70800000000000000
+      internalID: 9127042463607469072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_17
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b7f099b4cddf760800000000000000
+      internalID: 7493387572262959911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_18
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 348bb2d58623aba60800000000000000
+      internalID: 7690514737509677123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_19
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1b01490dc066b70800000000000000
+      internalID: 8891808604266475961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_20
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00877e609755ae0d0800000000000000
+      internalID: -3392805390975010816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_21
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b94e94ea7e170710800000000000000
+      internalID: 1659328500879739319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_22
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85cc2f1495e57dae0800000000000000
+      internalID: -1524646211390092200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_23
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91734bd5094265fb0800000000000000
+      internalID: -4659496562002217191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_24
+      rect:
+        serializedVersion: 2
+        x: 1009
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc05460cef4728e0800000000000000
+      internalID: -1718316857682490191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_25
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 594cfb0dd7be59bd0800000000000000
+      internalID: -2623932282267777899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_26
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2362e3675934fa520800000000000000
+      internalID: 2715463409540671026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_27
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06eb9f73483494f00800000000000000
+      internalID: 1101485819022655072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_28
+      rect:
+        serializedVersion: 2
+        x: 1177
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0b4fe4935a4db60800000000000000
+      internalID: 7770016922677326023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_29
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5aae479a10f9caa0800000000000000
+      internalID: -6140112619944629667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_30
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbb41f9e1eba6460800000000000000
+      internalID: 7235804790051355606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_31
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 677bbaea26d90e220800000000000000
+      internalID: 2513181639235581814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_32
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 231b319888b249b70800000000000000
+      internalID: 8904790228633628978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_33
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f56b2ae45ede1180800000000000000
+      internalID: -9142625737228196362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bouton Cuisson Idle 42x71 35 Frames_34
+      rect:
+        serializedVersion: 2
+        x: 1429
+        y: 1
+        width: 40
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab5077fc1a076d3f0800000000000000
+      internalID: -876389237204253254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
