@@ -183,7 +183,7 @@ public class FightManager : MonoBehaviour
     {
         isPlayerDefending = false;
 
-        if (ThumbnailManager.instance.monsterLife.currentShield == 0)
+        if (ThumbnailManager.instance.monsterLife.currentShield <= 0)
         {
             ThumbnailManager.instance.monsterLife.currentLife--;
         }
