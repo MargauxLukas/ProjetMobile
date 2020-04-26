@@ -21,6 +21,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public bool knead = false;
     public bool cook = false;
+    public bool whip = false;
 
     public bool phase1 = true;
 
@@ -46,7 +47,7 @@ public class ThumbnailManager : MonoBehaviour
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
                     {
-                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += new Vector3(2f,0,0);
 
                         if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
                         {
@@ -83,8 +84,9 @@ public class ThumbnailManager : MonoBehaviour
                 }*/
 
                 //TOUCH
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0 && whip)
                 {
+                    Debug.Log("Touch");
                     Touch touch = Input.GetTouch(0);
 
                     if (touch.phase == TouchPhase.Began)
@@ -104,10 +106,13 @@ public class ThumbnailManager : MonoBehaviour
 
                     if (posEnd < posStart && swipeDifference > 200f)
                     {
+                        Debug.Log(swipeDifference);
+                        whip = false;
                         ValideAction();
                     }
                     else
                     {
+                        whip = false;
                         return;
                     }
                 }
@@ -189,6 +194,7 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
+                        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", true);
                         ValideAction();
                     }
                 }
@@ -206,6 +212,7 @@ public class ThumbnailManager : MonoBehaviour
                     }
                     else
                     {
+                        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
                         ValideAction();
                     }
                 }
@@ -273,7 +280,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void NewWave()
     {
-        if (thumbnailsList.Count != 0)
+        if (thumbnailsList.Count != 0 && transform.GetChild(1).childCount > 0)
         {
             transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(0).transform.position);
             //StartCoroutine(MoveTo(transform.GetChild(1).GetChild(0).gameObject, transform.GetChild(0).transform.position));
@@ -295,7 +302,11 @@ public class ThumbnailManager : MonoBehaviour
 
     public void HitMonster()
     {
-        if(thumbnailsList.Count == 0)
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", false);
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isBoil", false);
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", false);
+
+        if (thumbnailsList.Count == 0)
         {
             LevelManager.instance.NextMonster();
         }

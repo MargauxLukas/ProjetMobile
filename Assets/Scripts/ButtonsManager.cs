@@ -41,10 +41,17 @@ public class ButtonsManager : MonoBehaviour
         ThumbnailManager.instance.cook = false;
     }
 
-    public void Whip()
+    public void WhipDown()
     {
+        Debug.Log("WhipDown");
         tm.CheckAction(1);
+        ThumbnailManager.instance.whip = true;
     }
+    public void WhipUp()
+    {
+        Debug.Log("WhipUP");
+    }
+
 
     public void Eat()
     {
