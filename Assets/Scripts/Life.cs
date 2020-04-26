@@ -23,6 +23,7 @@ public class Life : MonoBehaviour
             if (currentLife == 0)
             {
                 stuned = true;
+                LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
                 ThumbnailManager.instance.phase1 = false;
                 FightManager.instance.attackText.SetActive(false);
                 FightManager.instance.defendText.SetActive(false);
