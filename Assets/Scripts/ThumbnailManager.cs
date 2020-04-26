@@ -318,7 +318,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Heal()
     {
-        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.02f);
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.05f);
     }
 
     public void Damage()

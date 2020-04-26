@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Life()
     {
         yield return new WaitForSeconds(1f);
-        lifeFill.fillAmount -= 0.05f;
+        lifeFill.fillAmount -= 0.02f;
 
         StartCoroutine(Life());
     }
