@@ -30,7 +30,7 @@ public class FightManager : MonoBehaviour
 
     private bool isAttacked = false;
 
-    private float timerAttack = 1.5f;
+    public float timerAttack = 1.5f;
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 5f;
@@ -79,6 +79,7 @@ public class FightManager : MonoBehaviour
 
         if (!isPlayerDefending)
         {
+            Debug.Log("Degat ! ");
             GameManager.instance.lifeFill.fillAmount -= 0.33f;
         }
     }
@@ -194,6 +195,11 @@ public class FightManager : MonoBehaviour
     public void Defend()
     {
         isPlayerDefending = true;
+    }
+
+    public void DontDefend()
+    {
+        isPlayerDefending = false;
     }
 
     public void Eat()

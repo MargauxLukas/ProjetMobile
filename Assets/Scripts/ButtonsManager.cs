@@ -63,9 +63,14 @@ public class ButtonsManager : MonoBehaviour
         FightManager.instance.Attack();
     }
 
-    public void Defend()
+    public void DefendDown()
     {
         FightManager.instance.Defend();
+    }
+
+    public void DefendUp()
+    {
+        FightManager.instance.DontDefend();
     }
 
     public void Pause()
