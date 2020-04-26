@@ -6,8 +6,14 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public Transform bin;
 
     public GameObject topScreen;
+
+    public GameObject kneadB;
+    public GameObject cutB;
+    public GameObject whipB;
+    public GameObject cookB;
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -59,6 +65,8 @@ public class LevelManager : MonoBehaviour
             case 5:
                 foreach (GameObject go in level5)
                 {
+                    cookB.transform.position = kneadB.transform.position;
+                    kneadB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;
@@ -92,5 +100,10 @@ public class LevelManager : MonoBehaviour
         currentLevel.RemoveAt(0);
         Destroy(topScreen.transform.GetChild(0).gameObject);
         BeginGame();
+    }
+
+    public void GoToBin(GameObject go)
+    {
+        go.transform.SetParent(bin.transform);
     }
 }

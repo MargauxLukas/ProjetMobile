@@ -44,6 +44,7 @@ public class Thumbnail : MonoBehaviour
 
     public void NeedToDestroy()
     {
+        LevelManager.instance.GoToBin(this.gameObject);
         target.x = -382f;
         target.y = 2000f;
         move = false;
