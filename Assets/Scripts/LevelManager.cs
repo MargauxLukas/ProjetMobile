@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     public Transform bin;
+    public Transform monsterParent;
 
     public GameObject topScreen;
 
@@ -22,6 +23,9 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> level5;
 
     public List<GameObject> currentLevel;
+
+    public GameObject phase1Buttons;
+    public GameObject phase2Buttons;
 
     public void Awake()
     {
@@ -86,8 +90,13 @@ public class LevelManager : MonoBehaviour
         if (currentLevel.Count != 0)
         {
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
+            monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.4f, -2f);
+            monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
+            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
+            FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
-            gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(3).GetComponent<ThumbnailManager>();
+            gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
         }
         else
         {
@@ -99,7 +108,21 @@ public class LevelManager : MonoBehaviour
     {
         currentLevel.RemoveAt(0);
         Destroy(topScreen.transform.GetChild(0).gameObject);
+        Destroy(monsterParent.transform.GetChild(1).gameObject);
         BeginGame();
+        ActivatePhase1();
+    }
+
+    public void ActivatePhase1()
+    {
+        phase1Buttons.SetActive(true);
+        phase2Buttons.SetActive(false);
+    }
+
+    public void ActivatePhase2()
+    {
+        phase1Buttons.SetActive(false);
+        phase2Buttons.SetActive(true);
     }
 
     public void GoToBin(GameObject go)

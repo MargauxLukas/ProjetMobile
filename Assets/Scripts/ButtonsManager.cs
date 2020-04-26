@@ -48,13 +48,17 @@ public class ButtonsManager : MonoBehaviour
 
     public void Eat()
     {
-        /*Debug.Log("Eat");
+        FightManager.instance.Eat();
+    }
 
-        //Proto 1
-        text.text += "NOM\n";*/
+    public void Attack()
+    {
+        FightManager.instance.Attack();
+    }
 
-        //Proto 2
-
+    public void Defend()
+    {
+        FightManager.instance.Defend();
     }
 
     public void Pause()
