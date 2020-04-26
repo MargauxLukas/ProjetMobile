@@ -30,7 +30,7 @@ public class FightManager : MonoBehaviour
 
     private bool isAttacked = false;
 
-    private float timerAttack = 3f;
+    private float timerAttack = 1.5f;
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 5f;
@@ -75,7 +75,7 @@ public class FightManager : MonoBehaviour
         attackText.SetActive(false);
         SetTimeAction();
         SetLifeGoal();
-        timerAttack = 3f;
+        timerAttack = 1.5f;
 
         if (!isPlayerDefending)
         {
