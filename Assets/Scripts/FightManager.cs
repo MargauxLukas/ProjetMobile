@@ -70,6 +70,7 @@ public class FightManager : MonoBehaviour
 
     public void CheckDamage()
     {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
         isMonsterAttacking = false;
         attackText.SetActive(false);
         SetTimeAction();
@@ -164,6 +165,7 @@ public class FightManager : MonoBehaviour
 
     public void MonsterAttack()
     {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", true);
         timeCooldown = timerAttack;
         attackText.SetActive(true);
         isMonsterAttacking = true;
