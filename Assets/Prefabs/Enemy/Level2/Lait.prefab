@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5480935d977c6b243957be397850aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeMax: 10
-  currentLife: 10
-  countShield: 10
+  lifeMax: 15
+  currentLife: 15
+  countShield: 7
   currentShield: 0
   nb: 0
   stuned: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Fraizinzin
+  m_Text: Laitripeur
 --- !u!1 &8356807622573218293
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,9 +469,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1478095911549805737}
-  - component: {fileID: 3251668228059364482}
-  - component: {fileID: 8000625847691224761}
+  - component: {fileID: 1078669978858855724}
+  - component: {fileID: 7308596276651425594}
+  - component: {fileID: 2764368620167059471}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -479,7 +479,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1478095911549805737
+--- !u!4 &1078669978858855724
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   m_Father: {fileID: 8356807623944433584}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3251668228059364482
+--- !u!212 &7308596276651425594
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,7 +532,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3157476647485521131, guid: 093de8173640e5947b5eb5965bec01f7,
+  m_Sprite: {fileID: -3266396229315652050, guid: e49f855702c580b4290b9c51bd55ff31,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -544,7 +544,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8000625847691224761
+--- !u!95 &2764368620167059471
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ Animator:
   m_GameObject: {fileID: 8356807623129781606}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8ae2adb8be347147bbd8b8167a329e7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5e658c7f62936c0488ef95f68c46ee02, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -690,13 +690,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pattern: 3
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
-  - {fileID: 2717968371175590322, guid: 32fff81f4105e7043a75561a9a100469, type: 3}
+  - {fileID: 452751715470780242, guid: f8dcc3d50d7d54440851e68868d5b1ac, type: 3}
   - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
+  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
   knead: 0
   cook: 0
+  whip: 0
   phase1: 1
 --- !u!1 &8356807623944433587
 GameObject:
@@ -708,7 +712,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8356807623944433584}
   m_Layer: 5
-  m_Name: Fraise
+  m_Name: Lait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -727,7 +731,7 @@ RectTransform:
   m_Children:
   - {fileID: 8356807623460987100}
   - {fileID: 8356807621908223681}
-  - {fileID: 1478095911549805737}
+  - {fileID: 1078669978858855724}
   - {fileID: 8356807623774083205}
   m_Father: {fileID: 0}
   m_RootOrder: 0

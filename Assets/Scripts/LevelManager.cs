@@ -15,6 +15,7 @@ public class LevelManager : MonoBehaviour
     public GameObject cutB;
     public GameObject whipB;
     public GameObject cookB;
+    public GameObject boilB;
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -57,20 +58,22 @@ public class LevelManager : MonoBehaviour
             case 3:
                 foreach (GameObject go in level3)
                 {
+                    boilB.transform.position = whipB.transform.position;
+                    whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;
             case 4:
                 foreach (GameObject go in level4)
                 {
+                    cookB.transform.position = cutB.transform.position;
+                    cutB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;
             case 5:
                 foreach (GameObject go in level5)
                 {
-                    cookB.transform.position = kneadB.transform.position;
-                    kneadB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;
@@ -95,7 +98,7 @@ public class LevelManager : MonoBehaviour
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
             FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
-            FightManager.instance.ChoosePatterns();
+            //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
             

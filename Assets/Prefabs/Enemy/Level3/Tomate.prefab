@@ -163,9 +163,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5480935d977c6b243957be397850aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeMax: 10
-  currentLife: 10
-  countShield: 10
+  lifeMax: 18
+  currentLife: 18
+  countShield: 5
   currentShield: 0
   nb: 0
   stuned: 0
@@ -315,7 +315,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Poivronchon
+  m_Text: "Tomatron\xE7onneuse"
 --- !u!1 &8356807622573218293
 GameObject:
   m_ObjectHideFlags: 0
@@ -469,9 +469,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8293687101725400551}
-  - component: {fileID: 1577953877438982472}
-  - component: {fileID: 7431937150003279394}
+  - component: {fileID: 1235408952828917447}
+  - component: {fileID: 3517522972771530014}
+  - component: {fileID: 2067289417020383460}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -479,7 +479,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8293687101725400551
+--- !u!4 &1235408952828917447
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -493,7 +493,7 @@ Transform:
   m_Father: {fileID: 8356807623944433584}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1577953877438982472
+--- !u!212 &3517522972771530014
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -532,7 +532,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2844954407484932233, guid: 4d93c5a34a440d1408d8ea96fb46cd05,
+  m_Sprite: {fileID: -5401740056791816936, guid: 464f7de21bf1ef345b4817b629b55b20,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -544,7 +544,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &7431937150003279394
+--- !u!95 &2067289417020383460
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ Animator:
   m_GameObject: {fileID: 8356807623129781606}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 20a36343a6feee546a7669c892e8230e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 5c66efa123ae6024bbd7d53b4c9e24f1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -690,15 +690,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pattern: 4
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
-  - {fileID: 2717968371175590322, guid: 21e1fc5cc378a404b81a17bfb7c4c17e, type: 3}
-  - {fileID: 452751715470780242, guid: 55b0a3e185072664994b61cc114651f3, type: 3}
-  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
-  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
+  - {fileID: 2717968371175590322, guid: 32fff81f4105e7043a75561a9a100469, type: 3}
+  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
+  - {fileID: 2717968371175590322, guid: f14c591396393c6408d07749631abc4c, type: 3}
+  - {fileID: 2717968371175590322, guid: ccf9b9b5787948248b8f7d532af37fa1, type: 3}
   knead: 0
   cook: 0
+  whip: 0
   phase1: 1
 --- !u!1 &8356807623944433587
 GameObject:
@@ -710,7 +713,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8356807623944433584}
   m_Layer: 5
-  m_Name: Poivron
+  m_Name: Tomate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,7 +732,7 @@ RectTransform:
   m_Children:
   - {fileID: 8356807623460987100}
   - {fileID: 8356807621908223681}
-  - {fileID: 8293687101725400551}
+  - {fileID: 1235408952828917447}
   - {fileID: 8356807623774083205}
   m_Father: {fileID: 0}
   m_RootOrder: 0
