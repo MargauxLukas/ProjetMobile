@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -16,6 +17,8 @@ public class LevelManager : MonoBehaviour
     public GameObject whipB;
     public GameObject cookB;
     public GameObject boilB;
+
+    public GameObject obstacle;
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -133,5 +136,19 @@ public class LevelManager : MonoBehaviour
     public void GoToBin(GameObject go)
     {
         go.transform.SetParent(bin.transform);
+    }
+
+    public int GetPotato()
+    {
+        for(int i = 0; i < 4; i++)
+        {
+            if (ThumbnailManager.instance.transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isPotato)
+            {
+                return i;
+                break;
+            }
+        }
+
+        return -1;
     }
 }

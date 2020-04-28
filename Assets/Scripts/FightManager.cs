@@ -31,6 +31,7 @@ public class FightManager : MonoBehaviour
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 4f;
+    private int potatoLife = 5;
 
     public void Awake()
     {
@@ -201,12 +202,38 @@ public class FightManager : MonoBehaviour
 
     public void Eat()
     {
-        ThumbnailManager.instance.monsterLife.currentShield--;
-        defendText.transform.GetChild(0).GetComponent<Text>().text = ThumbnailManager.instance.monsterLife.currentShield.ToString();
-
-        if(ThumbnailManager.instance.monsterLife.currentShield == 0)
+        if (ThumbnailManager.instance.phase1)
         {
-            defendText.SetActive(false);
+            ThumbnailManager.instance.monsterLife.currentShield--;
+            defendText.transform.GetChild(0).GetComponent<Text>().text = ThumbnailManager.instance.monsterLife.currentShield.ToString();
+
+            if (ThumbnailManager.instance.monsterLife.currentShield == 0)
+            {
+                defendText.SetActive(false);
+            }
+        }
+        else
+        {
+            int potato = LevelManager.instance.GetPotato();
+
+            if (potato != -1)
+            {
+                potatoLife--;
+
+                if (potatoLife == 0)
+                {
+                    for(int i = 0; i < ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).childCount; i++)
+                    {
+                        if(ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetChild(i).name.Contains("Potato"))
+                        {
+                            Destroy(ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetChild(i).gameObject);
+                        }
+                    }
+
+                    ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetComponent<Thumbnail>().isPotato = false;
+                    potatoLife = 5;
+                }
+            }
         }
     }
 

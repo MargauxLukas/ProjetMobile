@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class ThumbnailManager : MonoBehaviour
@@ -205,15 +207,24 @@ public class ThumbnailManager : MonoBehaviour
     public void ChooseThumbnail()
     {
         Instantiate(thumbnailsList[0], transform.GetChild(0).transform.position, Quaternion.identity, transform.GetChild(0));
+        SpawnObstacle(0);
 
         if (thumbnailsList.Count > 1)
         {
             Instantiate(thumbnailsList[1], transform.GetChild(1).transform.position, Quaternion.identity, transform.GetChild(1));
+            SpawnObstacle(1);
         }
 
         if (thumbnailsList.Count > 2)
         {
             Instantiate(thumbnailsList[2], transform.GetChild(2).transform.position, Quaternion.identity, transform.GetChild(2));
+            SpawnObstacle(2);
+        }
+
+        if (thumbnailsList.Count > 3)
+        {
+            Instantiate(thumbnailsList[3], transform.GetChild(3).transform.position, Quaternion.identity, transform.GetChild(3));
+            SpawnObstacle(3);
         }
     }
 
@@ -230,7 +241,7 @@ public class ThumbnailManager : MonoBehaviour
         switch(nbAction)
         {
             case 1:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip"))
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
                     {
@@ -247,7 +258,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 2:
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead"))
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                     {
                         if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
                         {
@@ -265,7 +276,7 @@ public class ThumbnailManager : MonoBehaviour
                 
                 break;
             case 3:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut"))
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                 {
                     if (transform.GetChild(vignetteNb).GetChild(0).transform.childCount > 1)
                     {
@@ -286,7 +297,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 4:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cook"))
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cook") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain"))
                     {
@@ -304,7 +315,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 5:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil"))
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch"))
                     {
@@ -393,7 +404,15 @@ public class ThumbnailManager : MonoBehaviour
 
         if (thumbnailsList.Count > 2)
         {
-            Instantiate(thumbnailsList[2], transform.GetChild(2).transform.position, Quaternion.identity, transform.GetChild(2));
+            transform.GetChild(3).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(2).transform.position);
+            transform.GetChild(3).GetChild(0).transform.SetParent(transform.GetChild(2));
+            //Instantiate(thumbnailsList[2], transform.GetChild(2).transform.position, Quaternion.identity, transform.GetChild(2));
+        }
+
+        if (thumbnailsList.Count > 3)
+        {
+            Instantiate(thumbnailsList[3], transform.GetChild(3).transform.position, Quaternion.identity, transform.GetChild(3));
+            SpawnObstacle(3);
         }
     }
 
@@ -435,5 +454,16 @@ public class ThumbnailManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
         transform.GetChild(2).gameObject.SetActive(true);
+    }
+
+    public void SpawnObstacle(int i)
+    {
+        int random = Random.Range(1, 11);
+
+        if(random == 1)
+        {
+            transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isPotato = true;
+            Instantiate(LevelManager.instance.obstacle, transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
+        }
     }
 }

@@ -9,13 +9,14 @@ public class Thumbnail : MonoBehaviour
     public bool validate = false;
     public bool needToMaintain = false;
     public bool isLocked = false;
+    public bool isPotato = false;
 
     public GameObject Lock;
 
     public void Update()
     {
         if(move)
-        {
+        {        
             transform.position = Vector3.MoveTowards(transform.position, target, 20f);
 
             if(Vector3.Distance(transform.position, target) < 0.5f)
