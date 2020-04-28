@@ -9,6 +9,11 @@ public class GameManager : MonoBehaviour
 
     public Image lifeFill;
 
+    public Text t1;
+    public Text t2;
+    public Text d1;
+    public Text d2;
+
     private void Awake()
     {
         instance = this;
@@ -22,7 +27,7 @@ public class GameManager : MonoBehaviour
     IEnumerator Life()
     {
         yield return new WaitForSeconds(1f);
-        lifeFill.fillAmount -= 0.05f;
+        lifeFill.fillAmount -= 0.02f;
 
         StartCoroutine(Life());
     }

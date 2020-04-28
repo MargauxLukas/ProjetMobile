@@ -7,6 +7,9 @@ public class ThumbnailManager : MonoBehaviour
 {
     public static ThumbnailManager instance;
 
+    public enum patterns { Neutral, Agressive, Scared, Anxious, Bipolar };
+    public patterns pattern = patterns.Neutral;
+
     public Life monsterLife;
     public GameManager gm;
 
@@ -22,8 +25,13 @@ public class ThumbnailManager : MonoBehaviour
     public bool knead = false;
     public bool cook = false;
     public bool whip = false;
+    public bool boil = false;
 
     public bool phase1 = true;
+    public float distance1 = 0f;
+    public float distance2 = 0f;
+    public Vector2 touchun;
+    public Vector2 touchdeux;
 
     private void Awake()
     {
@@ -61,9 +69,9 @@ public class ThumbnailManager : MonoBehaviour
 
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
                     {
-                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+                        transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
 
-                        if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                        if (transform.GetChild(vignetteNb).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
                         {
                             ValideAction();
                         }
@@ -82,38 +90,116 @@ public class ThumbnailManager : MonoBehaviour
                                                                                                              transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
                     }
                 }*/
-
-                //TOUCH
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && Input.touchCount > 0 && whip)
+                if (Input.touchCount > 0)
                 {
-                    Debug.Log("Touch");
-                    Touch touch = Input.GetTouch(0);
+                    //TOUCH
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && whip)
+                    {
+                        Debug.Log("Touch");
+                        Touch touch = Input.GetTouch(0);
 
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        posStart = touch.position.y;
-                    }
-                    if (touch.phase == TouchPhase.Ended)
-                    {
-                        posEnd = touch.position.y;
-                    }
-                    else
-                    {
-                        return;
-                    }
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            posStart = touch.position.y;
+                        }
+                        if (touch.phase == TouchPhase.Ended)
+                        {
+                            posEnd = touch.position.y;
+                        }
+                        else
+                        {
+                            return;
+                        }
 
-                    swipeDifference = Mathf.Abs(posStart - posEnd);
+                        swipeDifference = Mathf.Abs(posStart - posEnd);
 
-                    if (posEnd < posStart && swipeDifference > 200f)
+                        if (posEnd < posStart && swipeDifference > 200f)
+                        {
+                            Debug.Log(swipeDifference);
+                            whip = false;
+                            ValideAction();
+                        }
+                        else
+                        {
+                            whip = false;
+                            return;
+                        }
+                    }
+                    else if(thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch") && boil)
                     {
+                        Debug.Log("Touch");
+                        Touch touch = Input.GetTouch(0);
+
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            posStart = touch.position.y;
+                        }
+                        if (touch.phase == TouchPhase.Ended)
+                        {
+                            posEnd = touch.position.y;
+                        }
+                        else
+                        {
+                            return;
+                        }
+
+                        swipeDifference = Mathf.Abs(posStart - posEnd);
                         Debug.Log(swipeDifference);
-                        whip = false;
-                        ValideAction();
+
+                        if (posEnd > posStart && swipeDifference > 200f)
+                        {
+                            Debug.Log(swipeDifference);
+                            boil = false;
+                            ValideAction();
+                        }
+                        else
+                        {
+                            boil = false;
+                            return;
+                        }
                     }
-                    else
+
+                    if (Input.touchCount >= 2)
                     {
-                        whip = false;
-                        return;
+                        Touch touch1 = Input.GetTouch(0);
+                        Touch touch2 = Input.GetTouch(1);
+
+                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch") && knead)
+                        {
+                            if (touch1.phase == TouchPhase.Moved)
+                            {
+                                touchun = Input.GetTouch(0).position;
+                                GameManager.instance.t1.text = "t1 : " + touchun.y;
+
+                            }
+                            if (touch2.phase == TouchPhase.Moved)
+                            {
+                                touchdeux = Input.GetTouch(1).position;
+                                GameManager.instance.t2.text = "t2 : " + touchdeux.y;
+                            }
+
+                            if (distance1 == 0f)
+                            {
+                                distance1 = Vector2.Distance(touchun, touchdeux); 
+                                GameManager.instance.d1.text = "d1 : " + distance1;
+                            }
+
+                            distance2 = Vector2.Distance(touchun, touchdeux); 
+                            GameManager.instance.d2.text = "d2 : " + distance2 + " et " + distance1 * 0.20f;
+
+                            if (distance2 < distance1 && distance2 <= distance1 * 0.20f)                                 // % voulue lors du Pinch, on veut que Distance 2 soit inférieure à 80% de distance1
+                            {
+                                distance1 = 0f;
+                                distance2 = 0f;
+                                knead = false;
+                                ValideAction();
+                            }
+                            else
+                            {
+                                return;
+                            }
+
+                        }
                     }
                 }
             }
@@ -167,7 +253,7 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead"))
                     {
-                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain"))
+                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
                         {
                             return;
                         }
@@ -213,6 +299,23 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
+                        ValideAction();
+                    }
+                }
+                else
+                {
+                    WrongAction();
+                }
+                break;
+            case 5:
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil"))
+                {
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch"))
+                    {
+                        return;
+                    }
+                    else
+                    {
                         ValideAction();
                     }
                 }
@@ -280,17 +383,15 @@ public class ThumbnailManager : MonoBehaviour
 
     public void NewWave()
     {
-        if (thumbnailsList.Count != 0 && transform.GetChild(1).childCount > 0)
+        if (thumbnailsList.Count != 0 && transform.GetChild(1).childCount > 0 && transform.GetChild(0).childCount == 0)
         {
             transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(0).transform.position);
-            //StartCoroutine(MoveTo(transform.GetChild(1).GetChild(0).gameObject, transform.GetChild(0).transform.position));
             transform.GetChild(1).GetChild(0).transform.SetParent(transform.GetChild(0));
         }
 
-        if (thumbnailsList.Count > 1)
+        if (thumbnailsList.Count > 1 && transform.GetChild(1).childCount == 0)
         {
             transform.GetChild(2).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(1).transform.position);
-            //StartCoroutine(MoveTo(transform.GetChild(2).GetChild(0).gameObject, transform.GetChild(1).transform.position));
             transform.GetChild(2).GetChild(0).transform.SetParent(transform.GetChild(1));
         }
 
@@ -318,7 +419,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Heal()
     {
-        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.02f);
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.05f);
     }
 
     public void Damage()

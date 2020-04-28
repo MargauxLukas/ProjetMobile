@@ -13,12 +13,6 @@ public class ButtonsManager : MonoBehaviour
         tm.CheckAction(3);
     }
 
-    public void Knead()
-    {
-       /* Debug.Log("Click");
-        tm.CheckAction(2);*/
-    }
-
     public void KneadDown()
     {
         tm.CheckAction(2);
@@ -39,6 +33,17 @@ public class ButtonsManager : MonoBehaviour
     public void CookUp()
     {
         ThumbnailManager.instance.cook = false;
+    }
+
+    public void BoilDown()
+    {
+        tm.CheckAction(5);
+        ThumbnailManager.instance.boil = true;
+    }
+
+    public void BoilUp()
+    {
+
     }
 
     public void WhipDown()
@@ -63,9 +68,14 @@ public class ButtonsManager : MonoBehaviour
         FightManager.instance.Attack();
     }
 
-    public void Defend()
+    public void DefendDown()
     {
         FightManager.instance.Defend();
+    }
+
+    public void DefendUp()
+    {
+        FightManager.instance.DontDefend();
     }
 
     public void Pause()

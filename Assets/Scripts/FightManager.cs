@@ -9,9 +9,6 @@ public class FightManager : MonoBehaviour
 {
     public static FightManager instance;
 
-    public enum patterns {Neutral, Agressive, Scared, Anxious, Bipolar };
-    public patterns pattern = patterns.Neutral;
-
     public GameObject attackText;
     public GameObject defendText;
 
@@ -30,7 +27,7 @@ public class FightManager : MonoBehaviour
 
     private bool isAttacked = false;
 
-    private float timerAttack = 3f;
+    public float timerAttack = 1.5f;
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 5f;
@@ -75,10 +72,11 @@ public class FightManager : MonoBehaviour
         attackText.SetActive(false);
         SetTimeAction();
         SetLifeGoal();
-        timerAttack = 3f;
+        timerAttack = 1.5f;
 
         if (!isPlayerDefending)
         {
+            Debug.Log("Degat ! ");
             GameManager.instance.lifeFill.fillAmount -= 0.33f;
         }
     }
@@ -91,37 +89,37 @@ public class FightManager : MonoBehaviour
         switch(rand)
         {
             case 1:
-                pattern = patterns.Neutral;
+                ThumbnailManager.instance.pattern = ThumbnailManager.patterns.Neutral;
                 break;
             case 2:
-                pattern = patterns.Agressive;
+                ThumbnailManager.instance.pattern = ThumbnailManager.patterns.Agressive;
                 break;
             case 3:
-                pattern = patterns.Scared;
+                ThumbnailManager.instance.pattern = ThumbnailManager.patterns.Scared;
                 break;
             case 4:
-                pattern = patterns.Anxious;
+                ThumbnailManager.instance.pattern = ThumbnailManager.patterns.Anxious;
                 break;
             case 5:
-                pattern = patterns.Bipolar;
+                ThumbnailManager.instance.pattern = ThumbnailManager.patterns.Bipolar;
                 break;
         }
     }
 
     public void Action()
     {
-        switch(pattern)
+        switch(ThumbnailManager.instance.pattern)
         {
-            case patterns.Neutral:
+            case ThumbnailManager.patterns.Neutral:
                 Rand(1, 2);                                                                                     //1 chance(Att) sur 2
                 break;
-            case patterns.Agressive:                                                                            // 3 chance(Att) sur 4
+            case ThumbnailManager.patterns.Agressive:                                                                            // 3 chance(Att) sur 4
                 Rand(3, 4);
                 break;
-            case patterns.Scared:                                                                               // 1 chance(Att) sur 4
+            case ThumbnailManager.patterns.Scared:                                                                               // 1 chance(Att) sur 4
                 Rand(1, 4);
                 break;
-            case patterns.Anxious:                                                                              // 4 chance(Att) sur 5 PUIS 1 chance(Att) sur 5
+            case ThumbnailManager.patterns.Anxious:                                                                              // 4 chance(Att) sur 5 PUIS 1 chance(Att) sur 5
                 if (ThumbnailManager.instance.monsterLife.currentLife > ThumbnailManager.instance.monsterLife.lifeMax / 2)
                 {
                     Rand(4, 5);
@@ -131,7 +129,7 @@ public class FightManager : MonoBehaviour
                     Rand(1, 5);
                 }
                 break;
-            case patterns.Bipolar:                                                                              // 1 chance(Att) sur 10 PUIS 9 chance(Att) sur 10
+            case ThumbnailManager.patterns.Bipolar:                                                                              // 1 chance(Att) sur 10 PUIS 9 chance(Att) sur 10
                 if (isAttacked)
                 {
                     Rand(1, 10);
@@ -194,6 +192,11 @@ public class FightManager : MonoBehaviour
     public void Defend()
     {
         isPlayerDefending = true;
+    }
+
+    public void DontDefend()
+    {
+        isPlayerDefending = false;
     }
 
     public void Eat()
