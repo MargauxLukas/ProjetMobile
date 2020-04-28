@@ -8,12 +8,6 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public Image lifeFill;
-
-    public Text t1;
-    public Text t2;
-    public Text d1;
-    public Text d2;
-
     private void Awake()
     {
         instance = this;

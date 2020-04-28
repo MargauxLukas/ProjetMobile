@@ -28,12 +28,30 @@ public class Life : MonoBehaviour
                 FightManager.instance.attackText.SetActive(false);
                 FightManager.instance.defendText.SetActive(false);
                 LevelManager.instance.ActivatePhase2();
-                ThumbnailManager.instance.ChooseThumbnail();
+
+                if (ThumbnailManager.instance.transform.GetChild(0).transform.childCount > 0)
+                {
+                    ThumbnailManager.instance.ShowThumbnail();
+                }
+                else
+                {
+                    ThumbnailManager.instance.ChooseThumbnail();
+                }
             }
         }
         else
         {
             GetComponent<Image>().fillAmount += 0.005f;
+
+            if(GetComponent<Image>().fillAmount == 1f)
+            {
+                ThumbnailManager.instance.HideThumbnail();
+                currentLife = lifeMax;
+                currentShield = 0;
+                ThumbnailManager.instance.phase1 = true;
+                LevelManager.instance.ActivatePhase1();
+                stuned = false;
+            }
         }
     }
 }

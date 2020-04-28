@@ -30,7 +30,7 @@ public class FightManager : MonoBehaviour
     public float timerAttack = 1.5f;
     private float timeCooldown = 5f;
 
-    public float timeBetweenAction = 5f;
+    public float timeBetweenAction = 4f;
 
     public void Awake()
     {
@@ -212,7 +212,7 @@ public class FightManager : MonoBehaviour
 
     public void SetTimeAction()
     {
-        timeBetweenAction = UnityEngine.Random.Range(1f, 4f);
+        timeBetweenAction = UnityEngine.Random.Range(2f, 5f);
         timeCooldown = timeBetweenAction;
     }
 }

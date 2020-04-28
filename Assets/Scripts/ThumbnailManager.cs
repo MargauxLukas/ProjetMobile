@@ -169,23 +169,19 @@ public class ThumbnailManager : MonoBehaviour
                             if (touch1.phase == TouchPhase.Moved)
                             {
                                 touchun = Input.GetTouch(0).position;
-                                GameManager.instance.t1.text = "t1 : " + touchun.y;
 
                             }
                             if (touch2.phase == TouchPhase.Moved)
                             {
                                 touchdeux = Input.GetTouch(1).position;
-                                GameManager.instance.t2.text = "t2 : " + touchdeux.y;
                             }
 
                             if (distance1 == 0f)
                             {
                                 distance1 = Vector2.Distance(touchun, touchdeux); 
-                                GameManager.instance.d1.text = "d1 : " + distance1;
                             }
 
                             distance2 = Vector2.Distance(touchun, touchdeux); 
-                            GameManager.instance.d2.text = "d2 : " + distance2 + " et " + distance1 * 0.20f;
 
                             if (distance2 < distance1 && distance2 <= distance1 * 0.20f)                                 // % voulue lors du Pinch, on veut que Distance 2 soit inférieure à 80% de distance1
                             {
@@ -425,5 +421,19 @@ public class ThumbnailManager : MonoBehaviour
     public void Damage()
     {
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
+    }
+
+    public void HideThumbnail()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(1).gameObject.SetActive(false);
+        transform.GetChild(2).gameObject.SetActive(false);
+    }
+
+    public void ShowThumbnail()
+    {
+        transform.GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(1).gameObject.SetActive(true);
+        transform.GetChild(2).gameObject.SetActive(true);
     }
 }
