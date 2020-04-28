@@ -1063,6 +1063,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4943123507485220896, guid: da4581f6b27e80c438399f4a7c2e4656,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4943123507485220897, guid: da4581f6b27e80c438399f4a7c2e4656,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1126,7 +1131,7 @@ PrefabInstance:
     - target: {fileID: 4943123507485220898, guid: da4581f6b27e80c438399f4a7c2e4656,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: da4581f6b27e80c438399f4a7c2e4656, type: 3}
@@ -1215,6 +1220,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Combat_Lettuce_PREF
+      objectReference: {fileID: 0}
+    - target: {fileID: 5534199494937301531, guid: d1257d6dfae40ae4b8bbcc6e2a7c1775,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5534199494937301532, guid: d1257d6dfae40ae4b8bbcc6e2a7c1775,
         type: 3}
