@@ -38,7 +38,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -240}
-  m_SizeDelta: {x: 120, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2717968371175590327
 CanvasRenderer:
@@ -94,6 +94,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
+  isPotato: 0
   Lock: {fileID: 6657713799387211245}
 --- !u!1 &6657713799387211245
 GameObject:
@@ -188,6 +189,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
+  isPotato: 0
   Lock: {fileID: 0}
 --- !u!1 &8902062491018265038
 GameObject:
