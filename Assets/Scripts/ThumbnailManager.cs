@@ -22,7 +22,7 @@ public class ThumbnailManager : MonoBehaviour
     private float posEnd;
     private float swipeDifference;
 
-    private int vignetteNb;
+    public int vignetteNb;
 
     public bool knead = false;
     public bool cook = false;
@@ -161,7 +161,7 @@ public class ThumbnailManager : MonoBehaviour
                         }
                     }
 
-                    if (Input.touchCount >= 2)
+                    /*if (Input.touchCount >= 2)
                     {
                         Touch touch1 = Input.GetTouch(0);
                         Touch touch2 = Input.GetTouch(1);
@@ -198,7 +198,7 @@ public class ThumbnailManager : MonoBehaviour
                             }
 
                         }
-                    }
+                    }*/
                 }
             }
         }
@@ -249,6 +249,7 @@ public class ThumbnailManager : MonoBehaviour
                     }
                     else
                     {
+                        ThumbnailReplace.instance.WhipFinish();
                         ValideAction();
                     }
                 }
@@ -260,12 +261,13 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                     {
-                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
+                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
                         {
                             return;
                         }
                         else
                         {
+                            ThumbnailReplace.instance.KneadFinish();
                             ValideAction();
                         }
                     }
@@ -281,6 +283,7 @@ public class ThumbnailManager : MonoBehaviour
                     if (transform.GetChild(vignetteNb).GetChild(0).transform.childCount > 1)
                     {
                         Debug.Log("Il a des enfants");
+                        ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
                         ValidateTemporary();
                     }
                     else
@@ -288,6 +291,8 @@ public class ThumbnailManager : MonoBehaviour
                         Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
                         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", true);
+                        ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
+                        ThumbnailReplace.instance.ResetNbCut();
                         ValideAction();
                     }
                 }
@@ -306,6 +311,7 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
+                        ThumbnailReplace.instance.CookFinish();
                         ValideAction();
                     }
                 }
@@ -323,6 +329,7 @@ public class ThumbnailManager : MonoBehaviour
                     }
                     else
                     {
+                        ThumbnailReplace.instance.BoilFinish();
                         ValideAction();
                     }
                 }
@@ -376,6 +383,8 @@ public class ThumbnailManager : MonoBehaviour
         Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
         GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
+        Unlock(inst);
+        ThumbnailReplace.instance.ResetNbCut();
 
         if(thumbnailsList.Count < 2 )
         {

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Life : MonoBehaviour
@@ -12,6 +13,7 @@ public class Life : MonoBehaviour
 
     public float nb;
     public bool stuned = false;
+    public bool platFinal = false;
 
     public void Update()
     {
@@ -43,7 +45,7 @@ public class Life : MonoBehaviour
         {
             GetComponent<Image>().fillAmount += 0.005f;
 
-            if(GetComponent<Image>().fillAmount == 1f)
+            if (GetComponent<Image>().fillAmount == 1f)
             {
                 ThumbnailManager.instance.HideThumbnail();
                 currentLife = lifeMax;
@@ -53,5 +55,6 @@ public class Life : MonoBehaviour
                 stuned = false;
             }
         }
+
     }
 }

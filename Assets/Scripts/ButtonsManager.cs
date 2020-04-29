@@ -63,6 +63,11 @@ public class ButtonsManager : MonoBehaviour
         FightManager.instance.Eat();
     }
 
+    public void EatFinal()
+    {
+        LevelManager.instance.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+    }
+
     public void Attack()
     {
         FightManager.instance.Attack();

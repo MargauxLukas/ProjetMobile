@@ -37,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -240}
-  m_SizeDelta: {x: 120, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2717968371175590327
 CanvasRenderer:
@@ -60,13 +60,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9215687, g: 0.7607844, b: 0.454902, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3760674464881954987, guid: fa0341f4afe8cf54aaefbddf3397d543,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6440ae2e559bd01488da002bc428fd89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -93,6 +92,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
+  isPotato: 0
   Lock: {fileID: 3549852047406121228}
 --- !u!1 &3549852047406121228
 GameObject:
@@ -131,7 +131,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 50}
-  m_SizeDelta: {x: 120, y: 100}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &176957835514860245
 CanvasRenderer:
@@ -154,13 +154,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29411766, g: 0.24313726, b: 0.15294118, a: 0.5882353}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.49019608}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3760674464881954987, guid: fa0341f4afe8cf54aaefbddf3397d543,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6440ae2e559bd01488da002bc428fd89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -187,6 +186,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
+  isPotato: 0
   Lock: {fileID: 0}
 --- !u!1001 &9091475469104352464
 PrefabInstance:

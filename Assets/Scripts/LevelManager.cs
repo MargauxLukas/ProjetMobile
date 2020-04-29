@@ -11,6 +11,8 @@ public class LevelManager : MonoBehaviour
     public Transform monsterParent;
 
     public GameObject topScreen;
+    public GameObject bottomScreen;
+    public GameObject endScreen;
 
     public GameObject kneadB;
     public GameObject cutB;
@@ -93,7 +95,16 @@ public class LevelManager : MonoBehaviour
 
     public void BeginGame()
     {
-        if (currentLevel.Count != 0)
+        if(currentLevel.Count == 1)
+        {
+            bottomScreen.SetActive(false);
+            endScreen.SetActive(true);
+
+            GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
+            monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.21f, -2f);
+            monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
+        }
+        else if (currentLevel.Count != 0)
         {
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.4f, -2f);
@@ -104,7 +115,6 @@ public class LevelManager : MonoBehaviour
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
-            
         }
         else
         {
@@ -145,7 +155,6 @@ public class LevelManager : MonoBehaviour
             if (ThumbnailManager.instance.transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isPotato)
             {
                 return i;
-                break;
             }
         }
 
