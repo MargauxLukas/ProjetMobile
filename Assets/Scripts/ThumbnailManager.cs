@@ -208,6 +208,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         Instantiate(thumbnailsList[0], transform.GetChild(0).transform.position, Quaternion.identity, transform.GetChild(0));
         SpawnObstacle(0);
+        transform.GetChild(0).GetChild(0).GetComponent<Thumbnail>().isFirst = true;
 
         if (thumbnailsList.Count > 1)
         {
@@ -383,7 +384,15 @@ public class ThumbnailManager : MonoBehaviour
         Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
         GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
-        Unlock(inst);
+
+        if(vignetteNb == 0)
+        {
+            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(180f, 180f);
+        }
+        if (inst.name.Contains("Locked"))
+        {
+            Unlock(inst);
+        }
         ThumbnailReplace.instance.ResetNbCut();
 
         if(thumbnailsList.Count < 2 )
@@ -402,6 +411,7 @@ public class ThumbnailManager : MonoBehaviour
         if (thumbnailsList.Count != 0 && transform.GetChild(1).childCount > 0 && transform.GetChild(0).childCount == 0)
         {
             transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(0).transform.position);
+            transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().isFirst = true;
             transform.GetChild(1).GetChild(0).transform.SetParent(transform.GetChild(0));
         }
 
@@ -456,6 +466,7 @@ public class ThumbnailManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     public void ShowThumbnail()
@@ -463,6 +474,7 @@ public class ThumbnailManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
         transform.GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     public void SpawnObstacle(int i)

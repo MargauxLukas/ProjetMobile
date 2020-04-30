@@ -27,6 +27,7 @@ public class Life : MonoBehaviour
                 stuned = true;
                 LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
                 ThumbnailManager.instance.phase1 = false;
+                TapisManager.instance.TapisOnPhase2();
                 FightManager.instance.attackText.SetActive(false);
                 FightManager.instance.defendText.SetActive(false);
                 LevelManager.instance.ActivatePhase2();
@@ -51,6 +52,7 @@ public class Life : MonoBehaviour
                 currentLife = lifeMax;
                 currentShield = 0;
                 ThumbnailManager.instance.phase1 = true;
+                TapisManager.instance.TapisOnPhase1();
                 LevelManager.instance.ActivatePhase1();
                 stuned = false;
             }

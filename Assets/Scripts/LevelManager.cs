@@ -99,6 +99,7 @@ public class LevelManager : MonoBehaviour
         {
             bottomScreen.SetActive(false);
             endScreen.SetActive(true);
+            TapisManager.instance.transform.parent.gameObject.SetActive(false);
 
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.21f, -2f);
@@ -107,6 +108,7 @@ public class LevelManager : MonoBehaviour
         else if (currentLevel.Count != 0)
         {
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
+            TapisManager.instance.TapisOnPhase1();
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.4f, -2f);
             monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
@@ -133,14 +135,14 @@ public class LevelManager : MonoBehaviour
 
     public void ActivatePhase1()
     {
-        phase1Buttons.SetActive(true);
-        phase2Buttons.SetActive(false);
+        phase1Buttons.transform.GetChild(0).GetComponent<ButtonMovePhase1>().needMove = true;
+        phase1Buttons.transform.GetChild(1).GetComponent<ButtonMovePhase1>().needMove = true;
     }
 
     public void ActivatePhase2()
     {
-        phase1Buttons.SetActive(false);
-        phase2Buttons.SetActive(true);
+        phase1Buttons.transform.GetChild(0).GetComponent<ButtonMovePhase1>().needMove = true;
+        phase1Buttons.transform.GetChild(1).GetComponent<ButtonMovePhase1>().needMove = true;
     }
 
     public void GoToBin(GameObject go)
