@@ -251,6 +251,7 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         ThumbnailReplace.instance.WhipFinish();
+                        FightManager.instance.MonsterWhip();
                         ValideAction();
                     }
                 }
@@ -262,15 +263,16 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                     {
-                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
-                        {
-                            return;
-                        }
-                        else
-                        {
-                            ThumbnailReplace.instance.KneadFinish();
-                            ValideAction();
-                        }
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        ThumbnailReplace.instance.KneadFinish();
+                        FightManager.instance.MonsterKnead();
+                        ValideAction();
+                    }
                     }
                     else
                     {
@@ -313,6 +315,7 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
                         ThumbnailReplace.instance.CookFinish();
+                        FightManager.instance.MonsterCook();
                         ValideAction();
                     }
                 }
@@ -331,6 +334,7 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         ThumbnailReplace.instance.BoilFinish();
+                        FightManager.instance.MonsterBoil();
                         ValideAction();
                     }
                 }
@@ -437,10 +441,6 @@ public class ThumbnailManager : MonoBehaviour
 
     public void HitMonster()
     {
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", false);
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isBoil", false);
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", false);
-
         if (thumbnailsList.Count == 0)
         {
             FightManager.instance.MonsterDeath();        

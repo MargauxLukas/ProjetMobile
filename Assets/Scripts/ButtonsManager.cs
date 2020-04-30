@@ -15,7 +15,6 @@ public class ButtonsManager : MonoBehaviour
 
     public void KneadDown()
     {
-        FightManager.instance.MonsterKnead();
         tm.CheckAction(2);
         ThumbnailManager.instance.knead = true;
     }
@@ -27,7 +26,6 @@ public class ButtonsManager : MonoBehaviour
 
     public void CookDown()
     {
-        FightManager.instance.MonsterCook();
         tm.CheckAction(4);
         ThumbnailManager.instance.cook = true;
     }
@@ -39,7 +37,6 @@ public class ButtonsManager : MonoBehaviour
 
     public void BoilDown()
     {
-        FightManager.instance.MonsterBoil();
         tm.CheckAction(5);
         ThumbnailManager.instance.boil = true;
     }
@@ -51,7 +48,6 @@ public class ButtonsManager : MonoBehaviour
 
     public void WhipDown()
     {
-        FightManager.instance.MonsterWhip();
         tm.CheckAction(1);
         ThumbnailManager.instance.whip = true;
     }
