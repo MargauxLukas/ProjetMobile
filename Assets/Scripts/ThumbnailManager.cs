@@ -291,9 +291,9 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
-                        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", true);
                         ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
                         ThumbnailReplace.instance.ResetNbCut();
+                        FightManager.instance.MonsterCut();
                         ValideAction();
                     }
                 }
@@ -443,7 +443,7 @@ public class ThumbnailManager : MonoBehaviour
 
         if (thumbnailsList.Count == 0)
         {
-            LevelManager.instance.NextMonster();
+            FightManager.instance.MonsterDeath();        
         }
         else
         {

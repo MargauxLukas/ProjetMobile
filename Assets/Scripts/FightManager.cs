@@ -180,6 +180,38 @@ public class FightManager : MonoBehaviour
         isMonsterAttacking = false;
     }
 
+    public void MonsterCut()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isCutting");
+    }
+
+
+    public void MonsterBoil()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isBoil");
+    }
+
+    public void MonsterCook()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isFire");
+    }
+
+    public void MonsterKnead()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isKnead");
+    }
+
+    public void MonsterWhip()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isWhip");
+    }
+
+    public void MonsterDeath()
+    {
+        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isDeath", true);
+        StartCoroutine("PlayDeathAnim");
+    }
+
     public void Attack()
     {
         isPlayerDefending = false;
@@ -241,5 +273,11 @@ public class FightManager : MonoBehaviour
     {
         timeBetweenAction = UnityEngine.Random.Range(2f, 5f);
         timeCooldown = timeBetweenAction;
+    }
+
+    IEnumerator PlayDeathAnim()
+    {
+        yield return new WaitForSeconds(1.200f);
+        LevelManager.instance.NextMonster();
     }
 }
