@@ -10,11 +10,17 @@ public class Thumbnail : MonoBehaviour
     public bool needToMaintain = false;
     public bool isLocked = false;
     public bool isPotato = false;
+    public bool isFirst = false;
 
     public GameObject Lock;
 
     public void Update()
-    {
+    {   
+        if(isFirst)
+        {
+            transform.GetComponent<RectTransform>().sizeDelta = new Vector2(180f, 180f);
+            isFirst = false;
+        }
         if(move)
         {        
             transform.position = Vector3.MoveTowards(transform.position, target, 20f);
@@ -22,6 +28,7 @@ public class Thumbnail : MonoBehaviour
             if(Vector3.Distance(transform.position, target) < 0.5f)
             {
                 move = false;
+                TapisManager.instance.SetTapisOff();
             }
         }
         else if(validate)
@@ -41,6 +48,8 @@ public class Thumbnail : MonoBehaviour
     {
         target = pos;
         move = true;
+
+        TapisManager.instance.SetTapisOn();
     }
 
     public void NeedToDestroy()

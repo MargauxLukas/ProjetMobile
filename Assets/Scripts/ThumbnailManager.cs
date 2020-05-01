@@ -208,6 +208,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         Instantiate(thumbnailsList[0], transform.GetChild(0).transform.position, Quaternion.identity, transform.GetChild(0));
         SpawnObstacle(0);
+        transform.GetChild(0).GetChild(0).GetComponent<Thumbnail>().isFirst = true;
 
         if (thumbnailsList.Count > 1)
         {
@@ -250,6 +251,7 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         ThumbnailReplace.instance.WhipFinish();
+                        FightManager.instance.MonsterWhip();
                         ValideAction();
                     }
                 }
@@ -261,15 +263,16 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
                     {
-                        if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
-                        {
-                            return;
-                        }
-                        else
-                        {
-                            ThumbnailReplace.instance.KneadFinish();
-                            ValideAction();
-                        }
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
+                    {
+                        return;
+                    }
+                    else
+                    {
+                        ThumbnailReplace.instance.KneadFinish();
+                        FightManager.instance.MonsterKnead();
+                        ValideAction();
+                    }
                     }
                     else
                     {
@@ -290,9 +293,9 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
-                        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", true);
                         ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
                         ThumbnailReplace.instance.ResetNbCut();
+                        FightManager.instance.MonsterCut();
                         ValideAction();
                     }
                 }
@@ -312,6 +315,7 @@ public class ThumbnailManager : MonoBehaviour
                     {
                         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
                         ThumbnailReplace.instance.CookFinish();
+                        FightManager.instance.MonsterCook();
                         ValideAction();
                     }
                 }
@@ -330,6 +334,7 @@ public class ThumbnailManager : MonoBehaviour
                     else
                     {
                         ThumbnailReplace.instance.BoilFinish();
+                        FightManager.instance.MonsterBoil();
                         ValideAction();
                     }
                 }
@@ -383,7 +388,15 @@ public class ThumbnailManager : MonoBehaviour
         Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
         GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
-        Unlock(inst);
+
+        if(vignetteNb == 0)
+        {
+            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(180f, 180f);
+        }
+        if (inst.name.Contains("Locked"))
+        {
+            Unlock(inst);
+        }
         ThumbnailReplace.instance.ResetNbCut();
 
         if(thumbnailsList.Count < 2 )
@@ -402,6 +415,7 @@ public class ThumbnailManager : MonoBehaviour
         if (thumbnailsList.Count != 0 && transform.GetChild(1).childCount > 0 && transform.GetChild(0).childCount == 0)
         {
             transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(0).transform.position);
+            transform.GetChild(1).GetChild(0).gameObject.GetComponent<Thumbnail>().isFirst = true;
             transform.GetChild(1).GetChild(0).transform.SetParent(transform.GetChild(0));
         }
 
@@ -427,13 +441,9 @@ public class ThumbnailManager : MonoBehaviour
 
     public void HitMonster()
     {
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isCut", false);
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isBoil", false);
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", false);
-
         if (thumbnailsList.Count == 0)
         {
-            LevelManager.instance.NextMonster();
+            FightManager.instance.MonsterDeath();        
         }
         else
         {
@@ -456,6 +466,7 @@ public class ThumbnailManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
         transform.GetChild(1).gameObject.SetActive(false);
         transform.GetChild(2).gameObject.SetActive(false);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     public void ShowThumbnail()
@@ -463,6 +474,7 @@ public class ThumbnailManager : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(true);
         transform.GetChild(1).gameObject.SetActive(true);
         transform.GetChild(2).gameObject.SetActive(true);
+        transform.GetChild(3).gameObject.SetActive(false);
     }
 
     public void SpawnObstacle(int i)

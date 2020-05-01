@@ -48,7 +48,6 @@ public class ButtonsManager : MonoBehaviour
 
     public void WhipDown()
     {
-        Debug.Log("WhipDown");
         tm.CheckAction(1);
         ThumbnailManager.instance.whip = true;
     }
