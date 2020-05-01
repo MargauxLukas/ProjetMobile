@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TapisManager : MonoBehaviour
 {
@@ -20,36 +21,38 @@ public class TapisManager : MonoBehaviour
 
     public void Update()
     {
-        if (goToPhase2)
-        {
-            transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, posPhase2, 0.05f);
-
-            if (Vector3.Distance(transform.parent.transform.position, posPhase2) < 0.001f)
+            if (goToPhase2)
             {
+                transform.position = Vector3.MoveTowards(transform.position, posPhase2, 0.05f);
 
-                goToPhase2 = false;
+                if (Vector3.Distance(transform.position, posPhase2) < 0.001f)
+                {
+
+                    goToPhase2 = false;
+                }
             }
-        }
-        else if( goToPhase1)
-        {
-            transform.parent.transform.position = Vector3.MoveTowards(transform.parent.transform.position, posPhase1, 0.05f);
-
-            if (Vector3.Distance(transform.parent.transform.position, posPhase1) < 0.001f)
+            else if (goToPhase1)
             {
+                transform.position = Vector3.MoveTowards(transform.position, posPhase1, 0.05f);
 
-                goToPhase1 = false;
+                if (Vector3.Distance(transform.position, posPhase1) < 0.001f)
+                {
+
+                    goToPhase1 = false;
+                }
             }
-        }
     }
 
     public void SetTapisOn()
     {
-        gameObject.GetComponent<Animator>().SetBool("moving", true);
+        transform.GetChild(1).gameObject.GetComponent<Animator>().SetBool("moving", true);
+        transform.GetChild(2).gameObject.GetComponent<Animator>().SetBool("moving", true);
     }
 
     public void SetTapisOff()
     {
-        gameObject.GetComponent<Animator>().SetBool("moving", false);
+        transform.GetChild(1).gameObject.GetComponent<Animator>().SetBool("moving", false);
+        transform.GetChild(2).gameObject.GetComponent<Animator>().SetBool("moving", false);
     } 
 
     public void TapisOnPhase2()
