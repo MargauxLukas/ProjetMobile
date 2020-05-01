@@ -112,7 +112,7 @@ public class LevelManager : MonoBehaviour
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.5f, -2f);
             monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
-            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
+            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
             FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
