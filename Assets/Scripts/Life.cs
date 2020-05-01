@@ -44,7 +44,7 @@ public class Life : MonoBehaviour
         }
         else
         {
-            GetComponent<Image>().fillAmount += 0.005f;
+            GetComponent<Image>().fillAmount += 0.003f;
 
             if (GetComponent<Image>().fillAmount == 1f)
             {
