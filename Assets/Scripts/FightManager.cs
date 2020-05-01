@@ -31,7 +31,7 @@ public class FightManager : MonoBehaviour
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 4f;
-    private int potatoLife = 5;
+    private int potatoLife = 1;
 
     public void Awake()
     {
@@ -40,6 +40,9 @@ public class FightManager : MonoBehaviour
 
     void Update()
     {
+        //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
+        Debug.Log(timeCooldown);
+
         if (ThumbnailManager.instance.phase1)
         {
             //Tout les 15% ou 5 secondes mais 1 à 4 secondes apres Actions il peut rien faire
@@ -85,7 +88,6 @@ public class FightManager : MonoBehaviour
     public void ChoosePatterns()
     {
         rand = UnityEngine.Random.Range(1,6);
-        SetLifeGoal();
 
         switch(rand)
         {
