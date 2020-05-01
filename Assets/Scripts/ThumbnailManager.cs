@@ -71,7 +71,7 @@ public class ThumbnailManager : MonoBehaviour
 
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
                     {
-                        transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right;
+                        transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right + new Vector3(0.5f,0f,0f);
 
                         if (transform.GetChild(vignetteNb).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
                         {
@@ -389,6 +389,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         Debug.Log("Rentré");
         yield return new WaitForSeconds(0.5f);
+
         Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
         GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
@@ -402,8 +403,9 @@ public class ThumbnailManager : MonoBehaviour
             Unlock(inst);
         }
         ThumbnailReplace.instance.ResetNbCut();
+        StopAllCoroutines();
 
-        if(thumbnailsList.Count < 2 )
+        if (thumbnailsList.Count < 2 )
         {
             Unlock(inst);
         }
@@ -457,7 +459,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Heal()
     {
-        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.05f);
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.03f);
     }
 
     public void Damage()

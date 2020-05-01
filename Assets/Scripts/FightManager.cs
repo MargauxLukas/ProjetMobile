@@ -33,6 +33,8 @@ public class FightManager : MonoBehaviour
     public float timeBetweenAction = 4f;
     private int potatoLife = 1;
 
+    private String name;
+
     public void Awake()
     {
         instance = this;
@@ -41,7 +43,6 @@ public class FightManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
-        Debug.Log(timeCooldown);
 
         if (ThumbnailManager.instance.phase1)
         {
@@ -111,6 +112,8 @@ public class FightManager : MonoBehaviour
 
     public void Action()
     {
+        timeCooldown = 30f;
+
         switch(ThumbnailManager.instance.pattern)
         {
             case ThumbnailManager.patterns.Neutral:
@@ -174,7 +177,6 @@ public class FightManager : MonoBehaviour
 
     public void MonsterDefend()
     {
-        SetTimeAction();
         SetLifeGoal();
         ThumbnailManager.instance.monsterLife.currentShield = ThumbnailManager.instance.monsterLife.countShield;
         defendText.SetActive(true);
@@ -211,7 +213,8 @@ public class FightManager : MonoBehaviour
     public void MonsterDeath()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isDeath", true);
-        StartCoroutine("PlayDeathAnim");
+
+        StartCoroutine("PlayDeathAnim", ThumbnailManager.instance.transform.parent.GetComponent<UniqueValues>().animDeathTime);
     }
 
     public void Attack()
@@ -244,6 +247,7 @@ public class FightManager : MonoBehaviour
             if (ThumbnailManager.instance.monsterLife.currentShield == 0)
             {
                 defendText.SetActive(false);
+                SetTimeAction();
             }
         }
         else
@@ -265,8 +269,12 @@ public class FightManager : MonoBehaviour
                     }
 
                     ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetComponent<Thumbnail>().isPotato = false;
-                    potatoLife = 5;
+                    potatoLife = 1;
                 }
+            }
+            else
+            {
+                ThumbnailManager.instance.Damage();
             }
         }
     }
@@ -277,9 +285,9 @@ public class FightManager : MonoBehaviour
         timeCooldown = timeBetweenAction;
     }
 
-    IEnumerator PlayDeathAnim()
+    IEnumerator PlayDeathAnim(float time)
     {
-        yield return new WaitForSeconds(1.200f);
+        yield return new WaitForSeconds(time);
         LevelManager.instance.NextMonster();
     }
 }

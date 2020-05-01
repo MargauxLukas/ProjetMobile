@@ -102,8 +102,8 @@ public class LevelManager : MonoBehaviour
             TapisManager.instance.transform.parent.gameObject.SetActive(false);
 
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
-            monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.21f, -2f);
-            monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
+            monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.21f, -2f);
+            monster.transform.GetChild(3).gameObject.transform.SetParent(monsterParent);
         }
         else if (currentLevel.Count != 0)
         {
@@ -114,6 +114,7 @@ public class LevelManager : MonoBehaviour
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
             FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
+            FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
