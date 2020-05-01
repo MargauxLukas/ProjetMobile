@@ -114,6 +114,7 @@ public class LevelManager : MonoBehaviour
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
             FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
+            FightManager.instance.SetLifeGoal();
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
