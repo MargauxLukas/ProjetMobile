@@ -81,7 +81,7 @@ public class ThumbnailManager : MonoBehaviour
                             ValideAction();
                         }
                     }
-                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && !cook && transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -50f)
+                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && !cook && transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -40f)
                     {
                         transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
                     }

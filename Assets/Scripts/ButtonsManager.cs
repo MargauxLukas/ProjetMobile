@@ -65,6 +65,7 @@ public class ButtonsManager : MonoBehaviour
     public void EatFinal()
     {
         LevelManager.instance.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+        ThumbnailManager.instance.Heal();
     }
 
     public void Attack()

@@ -98,7 +98,7 @@ public class LevelManager : MonoBehaviour
     {
         if(currentLevel.Count == 1 && !currentLevel[0].name.Contains("Boss"))
         {
-            bottomScreen.SetActive(false);
+            //bottomScreen.SetActive(false);
             endScreen.SetActive(true);
             //TapisManager.instance.transform.parent.gameObject.SetActive(false);                                              
 
