@@ -96,7 +96,7 @@ public class LevelManager : MonoBehaviour
 
     public void BeginGame()
     {
-        if(currentLevel.Count == 1)
+        if(currentLevel.Count == 1 && !currentLevel[0].name.Contains("Boss"))
         {
             bottomScreen.SetActive(false);
             endScreen.SetActive(true);
