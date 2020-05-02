@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5984539131583938744}
   - component: {fileID: 748105327392130560}
   - component: {fileID: 6640716301352923895}
+  - component: {fileID: 8320875899878818304}
   m_Layer: 0
   m_Name: Mix_VFX_PREF
   m_TagString: Untagged
@@ -103,6 +104,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8320875899878818304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7535401632187233669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3dd5b43a89232544ac44c2e07b1b399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8551218831966622882
 GameObject:
   m_ObjectHideFlags: 0

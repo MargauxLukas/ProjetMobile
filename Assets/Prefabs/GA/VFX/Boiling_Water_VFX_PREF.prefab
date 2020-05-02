@@ -4782,6 +4782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1319358835066829369}
   - component: {fileID: 1319358835066829368}
+  - component: {fileID: 4485912869339036722}
   m_Layer: 0
   m_Name: Boiling_Water_VFX_PREF
   m_TagString: Untagged
@@ -4825,6 +4826,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4485912869339036722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1319358835066829371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3dd5b43a89232544ac44c2e07b1b399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1319358835182185445
 GameObject:
   m_ObjectHideFlags: 0

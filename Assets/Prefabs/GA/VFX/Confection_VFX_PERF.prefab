@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8617125057044857001}
   - component: {fileID: 2578830538640752097}
   - component: {fileID: 8690028186625949307}
+  - component: {fileID: 7483953916949204912}
   m_Layer: 0
   m_Name: Confection_VFX_PERF
   m_TagString: Untagged
@@ -103,6 +104,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7483953916949204912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3377401848810657862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3dd5b43a89232544ac44c2e07b1b399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4771909797957727819
 GameObject:
   m_ObjectHideFlags: 0

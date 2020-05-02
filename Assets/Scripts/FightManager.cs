@@ -180,32 +180,70 @@ public class FightManager : MonoBehaviour
     public void MonsterCut()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isCutting");
-        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isCut");
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().cut_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x,
+                                                                                                 LevelManager.instance.monsterParent.GetChild(1).position.y,
+                                                                                                 -3f),
+                                                                                                 Quaternion.identity,
+                                                                                                 LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
+        MonsterBlood();
     }
 
 
     public void MonsterBoil()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isBoil");
-        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isBoil");
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().boil_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x, 
+                                                                                                 LevelManager.instance.monsterParent.GetChild(1).position.y, 
+                                                                                                 -3f), 
+                                                                                                 Quaternion.identity, 
+                                                                                                 LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
+
+        MonsterBlood();
     }
 
     public void MonsterCook()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isFire");
-        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isFire");
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().fire_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x,
+                                                                                                 LevelManager.instance.monsterParent.GetChild(1).position.y,
+                                                                                                 -3f),
+                                                                                                 Quaternion.identity,
+                                                                                                 LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
+
+        MonsterBlood();
     }
 
     public void MonsterKnead()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isKnead");
-        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isKnead");
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().knead_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x,
+                                                                                                 LevelManager.instance.monsterParent.GetChild(1).position.y,
+                                                                                                 -3f),
+                                                                                                 Quaternion.identity,
+                                                                                                 LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
+
+        MonsterBlood();
     }
 
     public void MonsterWhip()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isWhip");
-        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isWhip");
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().mix_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x,
+                                                                                                 LevelManager.instance.monsterParent.GetChild(1).position.y,
+                                                                                                 -3f),
+                                                                                                 Quaternion.identity,
+                                                                                                 LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
+
+        MonsterBlood();
+    }
+
+    public void MonsterBlood()
+    {
+        Instantiate(LevelManager.instance.player.GetComponent<PrefabSFX>().blood_VFX, new Vector3(LevelManager.instance.monsterParent.GetChild(1).position.x,
+                                                                                         LevelManager.instance.monsterParent.GetChild(1).position.y,
+                                                                                         -3f),
+                                                                                         Quaternion.identity,
+                                                                                         LevelManager.instance.player.GetComponent<PrefabSFX>().groupVFX.transform);
     }
 
     public void MonsterDeath()
