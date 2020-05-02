@@ -1152,6 +1152,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background_Provisoir
       objectReference: {fileID: 0}
+    - target: {fileID: 5147999352664088051, guid: 56b12987a17aff54f8f5ea374d93de44,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8499684285540605983, guid: 56b12987a17aff54f8f5ea374d93de44,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: 5534199494937301531, guid: d1257d6dfae40ae4b8bbcc6e2a7c1775,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5534199494937301532, guid: d1257d6dfae40ae4b8bbcc6e2a7c1775,
         type: 3}
@@ -1669,7 +1674,7 @@ PrefabInstance:
     - target: {fileID: 7576358204169585059, guid: d9d77c2bfdb8acf42a55d6596677dc6d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7576358204873878883, guid: d9d77c2bfdb8acf42a55d6596677dc6d,
         type: 3}
