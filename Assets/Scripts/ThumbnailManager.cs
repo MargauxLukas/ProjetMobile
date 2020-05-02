@@ -75,6 +75,9 @@ public class ThumbnailManager : MonoBehaviour
 
                         if (transform.GetChild(vignetteNb).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
                         {
+                            LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
+                            ThumbnailReplace.instance.CookMaintainFinish();
+                            FightManager.instance.MonsterCook();
                             ValideAction();
                         }
                     }
@@ -121,8 +124,9 @@ public class ThumbnailManager : MonoBehaviour
 
                         if (posEnd < posStart && swipeDifference > 200f)
                         {
-                            Debug.Log(swipeDifference);
                             whip = false;
+                            ThumbnailReplace.instance.WhipFinish();
+                            FightManager.instance.MonsterWhip();
                             ValideAction();
                         }
                         else
@@ -154,8 +158,9 @@ public class ThumbnailManager : MonoBehaviour
 
                         if (posEnd > posStart && swipeDifference > 200f)
                         {
-                            Debug.Log(swipeDifference);
                             boil = false;
+                            ThumbnailReplace.instance.BoilFinish();
+                            FightManager.instance.MonsterBoil();
                             ValideAction();
                         }
                         else
@@ -396,7 +401,7 @@ public class ThumbnailManager : MonoBehaviour
 
         if(vignetteNb == 0)
         {
-            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(180f, 180f);
+            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
         }
         if (inst.name.Contains("Locked"))
         {
