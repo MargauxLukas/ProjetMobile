@@ -246,7 +246,7 @@ public class ThumbnailManager : MonoBehaviour
         switch(nbAction)
         {
             case 1:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
                     {
@@ -265,7 +265,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 2:
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                     {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
                     {
@@ -285,7 +285,7 @@ public class ThumbnailManager : MonoBehaviour
                 
                 break;
             case 3:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cut") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
                     if (transform.GetChild(vignetteNb).GetChild(0).transform.childCount > 1)
                     {
@@ -309,7 +309,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 4:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cook") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Cook") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain"))
                     {
@@ -329,7 +329,7 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 5:
-                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isPotato)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch"))
                     {
@@ -489,8 +489,9 @@ public class ThumbnailManager : MonoBehaviour
 
         if(random == 1)
         {
-            transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isPotato = true;
-            Instantiate(LevelManager.instance.obstacle, transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
+            int chipRandom = Random.Range(0, 2);
+            transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip = true;
+            Instantiate(LevelManager.instance.obstacles[chipRandom], transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
         }
     }
 }

@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     public GameObject cookB;
     public GameObject boilB;
 
-    public GameObject obstacle;
+    public List<GameObject> obstacles;
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -99,10 +99,10 @@ public class LevelManager : MonoBehaviour
         {
             bottomScreen.SetActive(false);
             endScreen.SetActive(true);
-            TapisManager.instance.transform.parent.gameObject.SetActive(false);
+            //TapisManager.instance.transform.parent.gameObject.SetActive(false);                                              
 
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
-            monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.21f, -2f);
+            monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.47f, -2f);
             monster.transform.GetChild(3).gameObject.transform.SetParent(monsterParent);
         }
         else if (currentLevel.Count != 0)
@@ -152,11 +152,11 @@ public class LevelManager : MonoBehaviour
         go.transform.SetParent(bin.transform);
     }
 
-    public int GetPotato()
+    public int GetChip()
     {
         for(int i = 0; i < 4; i++)
         {
-            if (ThumbnailManager.instance.transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isPotato)
+            if (ThumbnailManager.instance.transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip)
             {
                 return i;
             }

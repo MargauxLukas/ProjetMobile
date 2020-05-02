@@ -9,7 +9,7 @@ public class Thumbnail : MonoBehaviour
     public bool validate = false;
     public bool needToMaintain = false;
     public bool isLocked = false;
-    public bool isPotato = false;
+    public bool isChip = false;
     public bool isFirst = false;
 
     public GameObject Lock;
@@ -18,7 +18,7 @@ public class Thumbnail : MonoBehaviour
     {   
         if(isFirst)
         {
-            transform.GetComponent<RectTransform>().sizeDelta = new Vector2(180f, 180f);
+            transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
             isFirst = false;
         }
         if(move)

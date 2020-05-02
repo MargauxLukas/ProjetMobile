@@ -9,8 +9,7 @@ public class FightManager : MonoBehaviour
 {
     public static FightManager instance;
 
-    public GameObject attackText;
-    public GameObject defendText;
+    public GameObject shieldGroup;
 
     public float percentFight = 0.15f;
     public float percentLife;
@@ -31,9 +30,7 @@ public class FightManager : MonoBehaviour
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 4f;
-    private int potatoLife = 1;
-
-    private String name;
+    private int chipLife = 1;
 
     public void Awake()
     {
@@ -50,7 +47,6 @@ public class FightManager : MonoBehaviour
             if (isMonsterAttacking)
             {
                 timerAttack -= Time.deltaTime;
-                attackText.transform.GetChild(0).GetComponent<Text>().text = timerAttack.ToString("F2");
 
                 if (timerAttack <= 0)
                 {
@@ -74,7 +70,6 @@ public class FightManager : MonoBehaviour
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
         isMonsterAttacking = false;
-        attackText.SetActive(false);
         SetTimeAction();
         SetLifeGoal();
         timerAttack = 1.5f;
@@ -171,7 +166,6 @@ public class FightManager : MonoBehaviour
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", true);
         timeCooldown = timerAttack;
-        attackText.SetActive(true);
         isMonsterAttacking = true;
     }
 
@@ -179,8 +173,7 @@ public class FightManager : MonoBehaviour
     {
         SetLifeGoal();
         ThumbnailManager.instance.monsterLife.currentShield = ThumbnailManager.instance.monsterLife.countShield;
-        defendText.SetActive(true);
-        defendText.transform.GetChild(0).GetComponent<Text>().text = ThumbnailManager.instance.monsterLife.currentShield.ToString();
+        shieldGroup.GetComponent<SpawnShield>().ShieldInstance(ThumbnailManager.instance.monsterLife.countShield);
         isMonsterAttacking = false;
     }
 
@@ -242,34 +235,33 @@ public class FightManager : MonoBehaviour
         if (ThumbnailManager.instance.phase1)
         {
             ThumbnailManager.instance.monsterLife.currentShield--;
-            defendText.transform.GetChild(0).GetComponent<Text>().text = ThumbnailManager.instance.monsterLife.currentShield.ToString();
+            Destroy(shieldGroup.transform.GetChild(0).gameObject);
 
             if (ThumbnailManager.instance.monsterLife.currentShield == 0)
             {
-                defendText.SetActive(false);
                 SetTimeAction();
             }
         }
         else
         {
-            int potato = LevelManager.instance.GetPotato();
+            int vignetteWhereChipIs = LevelManager.instance.GetChip();
 
-            if (potato != -1)
+            if (vignetteWhereChipIs != -1)
             {
-                potatoLife--;
+                chipLife--;
 
-                if (potatoLife == 0)
+                if (chipLife <= 0)
                 {
-                    for(int i = 0; i < ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).childCount; i++)
+                    for(int i = 0; i < ThumbnailManager.instance.transform.GetChild(vignetteWhereChipIs).GetChild(0).childCount; i++)
                     {
-                        if(ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetChild(i).name.Contains("Potato"))
+                        if(ThumbnailManager.instance.transform.GetChild(vignetteWhereChipIs).GetChild(0).GetChild(i).name.Contains("Chip"))
                         {
-                            Destroy(ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetChild(i).gameObject);
+                            Destroy(ThumbnailManager.instance.transform.GetChild(vignetteWhereChipIs).GetChild(0).GetChild(i).gameObject);
                         }
                     }
 
-                    ThumbnailManager.instance.transform.GetChild(potato).GetChild(0).GetComponent<Thumbnail>().isPotato = false;
-                    potatoLife = 1;
+                    ThumbnailManager.instance.transform.GetChild(vignetteWhereChipIs).GetChild(0).GetComponent<Thumbnail>().isChip = false;
+                    chipLife = 1;
                 }
             }
             else

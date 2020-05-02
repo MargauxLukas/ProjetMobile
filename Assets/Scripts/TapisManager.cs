@@ -21,7 +21,7 @@ public class TapisManager : MonoBehaviour
 
     public void Update()
     {
-            if (goToPhase2)
+            /*if (goToPhase2)
             {
                 transform.position = Vector3.MoveTowards(transform.position, posPhase2, 0.05f);
 
@@ -40,7 +40,7 @@ public class TapisManager : MonoBehaviour
 
                     goToPhase1 = false;
                 }
-            }
+            }*/
     }
 
     public void SetTapisOn()
