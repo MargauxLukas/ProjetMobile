@@ -71,19 +71,19 @@ public class ThumbnailManager : MonoBehaviour
 
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
                     {
-                        transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += Vector3.right + new Vector3(0.5f,0f,0f);
+                        transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value += 0.05f;
 
-                        if (transform.GetChild(vignetteNb).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
+                        if (transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value == 1f)
                         {
                             LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
-                            ThumbnailReplace.instance.CookMaintainFinish();
+                            //ThumbnailReplace.instance.CookMaintainFinish();
                             FightManager.instance.MonsterCook();
                             ValideAction();
                         }
                     }
-                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && !cook && transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -40f)
+                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && !cook && transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value < 1f)
                     {
-                        transform.GetChild(vignetteNb).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
+                        transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value -= 0.05f;
                     }
                 }
 

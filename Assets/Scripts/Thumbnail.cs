@@ -18,7 +18,14 @@ public class Thumbnail : MonoBehaviour
     {   
         if(isFirst)
         {
-            transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
+            if (gameObject.name.Contains("CookMaintain"))
+            {
+                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 260f);
+            }
+            else
+            {
+                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
+            }
             isFirst = false;
         }
         if(move)
