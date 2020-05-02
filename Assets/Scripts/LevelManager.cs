@@ -165,4 +165,9 @@ public class LevelManager : MonoBehaviour
 
         return -1;
     }
+
+    public void PlayerDeath()
+    {
+        //dd
+    }
 }

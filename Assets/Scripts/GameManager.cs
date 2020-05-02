@@ -23,6 +23,11 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         lifeFill.fillAmount -= 0.02f;
 
+        if(lifeFill.fillAmount == 0f)
+        {
+            LevelManager.instance.PlayerDeath();
+        }
+
         StartCoroutine(Life());
     }
 }

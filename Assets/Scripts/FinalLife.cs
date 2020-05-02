@@ -27,6 +27,11 @@ public class FinalLife : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        if (PlayerPrefs.GetInt("level") == UIManager.chosenLevel)
+        {
+            PlayerPrefs.SetInt("level", UIManager.chosenLevel + 1);
+        }
+
         SceneManager.LoadScene(0);
     }
 }
