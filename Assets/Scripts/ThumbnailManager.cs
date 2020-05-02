@@ -490,13 +490,16 @@ public class ThumbnailManager : MonoBehaviour
 
     public void SpawnObstacle(int i)
     {
-        int random = Random.Range(1, 11);
-
-        if(random == 1)
+        if (!thumbnailsList[i].name.Contains("Lock"))
         {
-            int chipRandom = Random.Range(0, 2);
-            transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip = true;
-            Instantiate(LevelManager.instance.obstacles[chipRandom], transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
+            int random = Random.Range(1, 11);
+
+            if (random == 1)
+            {
+                int chipRandom = Random.Range(0, 2);
+                transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip = true;
+                Instantiate(LevelManager.instance.obstacles[chipRandom], transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
+            }
         }
     }
 }
