@@ -27,6 +27,12 @@ public class Life : MonoBehaviour
                 stuned = true;
                 LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
                 ThumbnailManager.instance.phase1 = false;
+
+                for(int i = 0; i < FightManager.instance.shieldGroup.transform.childCount; i++)
+                {
+                    Destroy(FightManager.instance.shieldGroup.transform.GetChild(i).gameObject);
+                }
+
                 TapisManager.instance.TapisOnPhase2();
                 LevelManager.instance.ActivatePhase2();
 

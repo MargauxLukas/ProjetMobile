@@ -180,27 +180,32 @@ public class FightManager : MonoBehaviour
     public void MonsterCut()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isCutting");
+        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isCut");
     }
 
 
     public void MonsterBoil()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isBoil");
+        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isBoil");
     }
 
     public void MonsterCook()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isFire");
+        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isFire");
     }
 
     public void MonsterKnead()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isKnead");
+        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isKnead");
     }
 
     public void MonsterWhip()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetTrigger("isWhip");
+        LevelManager.instance.player.GetComponent<Animator>().SetTrigger("isWhip");
     }
 
     public void MonsterDeath()

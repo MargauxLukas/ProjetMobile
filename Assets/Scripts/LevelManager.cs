@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
+    public GameObject player;
     public Transform bin;
     public Transform monsterParent;
 
