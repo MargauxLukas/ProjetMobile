@@ -27,4 +27,12 @@ public class SpawnShield : MonoBehaviour
         pos.z = center.z + radius * Mathf.Cos(ang * Mathf.Deg2Rad);
         return pos;
     }
+
+    public void DestroyAll()
+    {
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            Destroy(transform.GetChild(i).gameObject);
+        }
+    }
 }

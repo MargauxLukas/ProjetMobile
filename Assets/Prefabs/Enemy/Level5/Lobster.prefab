@@ -260,7 +260,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7d41884cc244b964b830ed0f12958e1e, type: 3}
+  m_Sprite: {fileID: -220228237276883412, guid: e6971832d4b92c14694a381cbb75edfb,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -356,7 +357,7 @@ GameObject:
   - component: {fileID: 8356807623944433584}
   - component: {fileID: 831141634694717155}
   m_Layer: 5
-  m_Name: Pizza
+  m_Name: Lobster
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

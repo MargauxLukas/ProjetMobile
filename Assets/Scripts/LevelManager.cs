@@ -118,6 +118,7 @@ public class LevelManager : MonoBehaviour
             FightManager.instance.timerAttack = 1.5f;
             FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
+            //FightManager.instance.shieldGroup.GetComponent<SpawnShield>().DestroyAll();
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
