@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonsManager : MonoBehaviour
@@ -97,5 +98,24 @@ public class ButtonsManager : MonoBehaviour
     {
         Player.instance.GetComponent<AudioSource>().clip = ac;
         Player.instance.GetComponent<AudioSource>().Play();
+    }
+
+    public void PlayNom()
+    {
+        int i = Random.Range(0, 6);
+        Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
+    }
+
+    public void PlayNomFinal()
+    {
+        if (LevelManager.instance.topScreen.transform.GetChild(0).GetComponent<FinalLife>().currentLife > 1)
+        {
+            int i = Random.Range(0, 6);
+            Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
+        }
+        else
+        {
+            Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[6].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
+        }
     }
 }
