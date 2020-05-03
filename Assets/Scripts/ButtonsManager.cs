@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -14,6 +15,11 @@ public class ButtonsManager : MonoBehaviour
     {
         fm = FightManager.instance;
         lm = LevelManager.instance;
+    }
+
+    public void Update()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     #region Cut
@@ -143,9 +149,17 @@ public class ButtonsManager : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene(0);
-        GameObject lvlMenu = GameObject.FindGameObjectWithTag("LvlMenu");
-        GameObject mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
-        lvlMenu.SetActive(true);
-        mainMenu.SetActive(false);
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.buildIndex == 0)
+        {
+                    Time.timeScale = 1f;
+            GameObject mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
+            GameObject lvlMenu = mainMenu.transform.parent.transform.GetChild(3).gameObject;
+            lvlMenu.SetActive(true);
+            mainMenu.SetActive(false);
+        }
     }
 }
