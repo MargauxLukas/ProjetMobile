@@ -24,6 +24,12 @@ public class ButtonMovePhase1 : MonoBehaviour
             if (Vector3.Distance(transform.position, posInit) < 0.001f)
             {
                 needMove = false;
+
+                if (LevelManager.instance.isInfinite)
+                {
+                    LevelManager.instance.DesactivateAllButtons();
+                    LevelManager.instance.ActivateGoodButtons();
+                }
             }
         }
         else if(needMove && !ThumbnailManager.instance.phase1)                                                                                         //Si on est en Phase 2, le bouton prend la place "target".

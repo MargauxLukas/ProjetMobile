@@ -132,12 +132,6 @@ public class LevelManager : MonoBehaviour
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
-
-            if(isInfinite)
-            {
-                DesactivateAllButtons();
-                ActivateGoodButtons();
-            }
         }
         else
         {
