@@ -235,7 +235,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifeMax: 20
   currentLife: 20
-  countShield: 7
+  countShield: 5
   currentShield: 0
   nb: 0
   stuned: 0
