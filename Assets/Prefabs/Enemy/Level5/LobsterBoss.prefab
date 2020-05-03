@@ -515,7 +515,7 @@ Animator:
   m_GameObject: {fileID: 8356807623129781606}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 553129db51f061b43873e9bd81b0a1b8, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -741,4 +741,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1310188d78542384a8b522ff2a120654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animDeathTime: 1
+  animDeathTime: 1.517
