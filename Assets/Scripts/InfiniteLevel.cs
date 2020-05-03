@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InfiniteLevel : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class InfiniteLevel : MonoBehaviour
 
     public string buttonName;
     private GameObject thumbnailChoosen;
+
+    public Text bestScore;
+    public Text actualScore;
 
     public int nbFloor = 1;
 
@@ -79,10 +83,5 @@ public class InfiniteLevel : MonoBehaviour
     {
         buttonStringRemove.RemoveAt(Random.Range(0, buttonStringRemove.Count));
         buttonStringRemove.RemoveAt(Random.Range(0, buttonStringRemove.Count));
-    }
-
-    public void WhichButtonList()
-    {
-
     }
 }

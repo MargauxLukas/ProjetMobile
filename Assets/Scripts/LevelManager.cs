@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public GameObject bottomScreen;
     public GameObject endScreen;
     public GameObject scoreScreen;
+    public GameObject infiniteScreen;
 
     public GameObject kneadB;
     public GameObject cutB;
@@ -93,6 +94,11 @@ public class LevelManager : MonoBehaviour
             case 6:
                 currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
                 isInfinite = true;
+                if (LevelManager.instance.isInfinite)
+                {
+                    LevelManager.instance.DesactivateAllButtons();
+                    LevelManager.instance.ActivateGoodButtons();
+                }
                 break;
             default:
                 foreach (GameObject go in level3)
@@ -232,14 +238,15 @@ public class LevelManager : MonoBehaviour
                 PlayerPrefs.SetInt("floorReached", gameObject.GetComponent<InfiniteLevel>().nbFloor);
             }
 
-            //Afficher Meilleur score : FloorReached
-            //Afficher Score actuel : nbFloor
+            gameObject.GetComponent<InfiniteLevel>().bestScore.text = PlayerPrefs.GetInt("floorReached").ToString();
+            gameObject.GetComponent<InfiniteLevel>().actualScore.text = gameObject.GetComponent<InfiniteLevel>().nbFloor.ToString();
+            Time.timeScale = 0f;
+            scoreScreen.SetActive(true);
+            scoreScreen.transform.GetChild(2).gameObject.SetActive(true);
         }
         else
         {
             Time.timeScale = 0f;
-            scoreScreen.SetActive(true);
-            scoreScreen.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
