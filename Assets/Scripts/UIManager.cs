@@ -5,10 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager instance ;
+    public AudioClip sportTheme;
     public static int chosenLevel;
 
     public void Start()
     {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            Destroy(instance.gameObject);
+            instance = this;
+        }
         DontDestroyOnLoad(this);
     }
 
@@ -19,6 +30,8 @@ public class UIManager : MonoBehaviour
 
     public void Play()
     {
+        gameObject.GetComponent<AudioSource>().clip = sportTheme;
+        gameObject.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(1);
     }
 
@@ -31,5 +44,10 @@ public class UIManager : MonoBehaviour
     {
         Player.instance.GetComponent<AudioSource>().clip = ac;
         Player.instance.GetComponent<AudioSource>().Play();
+    }
+
+    public void StopMusic()
+    {
+        gameObject.GetComponent<AudioSource>().Stop();
     }
 }

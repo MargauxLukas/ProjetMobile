@@ -2276,6 +2276,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   star2: {fileID: 1047865393}
   star3: {fileID: 945052407}
+  nbStars: 0
 --- !u!1001 &612476494
 PrefabInstance:
   m_ObjectHideFlags: 0
