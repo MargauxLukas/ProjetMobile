@@ -42,7 +42,7 @@ public class FightManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
-
+        Debug.Log(timeCooldown);
         if (ThumbnailManager.instance.phase1)
         {
             //Tout les 15% ou 5 secondes mais 1 à 4 secondes apres Actions il peut rien faire
@@ -58,7 +58,6 @@ public class FightManager : MonoBehaviour
             else if (ThumbnailManager.instance.monsterLife.currentLife <= lifeGoal || timeCooldown <= 0)
             {
                 Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
-                Debug.Log(timeCooldown);
                 Action();
             }
             else
@@ -176,6 +175,7 @@ public class FightManager : MonoBehaviour
     public void MonsterDefend()
     {
         SetLifeGoal();
+        SetTimeAction();
         ThumbnailManager.instance.monsterLife.currentShield = ThumbnailManager.instance.monsterLife.countShield;
         shieldGroup.GetComponent<SpawnShield>().ShieldInstance(ThumbnailManager.instance.monsterLife.countShield);
         isMonsterAttacking = false;

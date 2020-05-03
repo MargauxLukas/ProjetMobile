@@ -294,13 +294,11 @@ public class ThumbnailManager : MonoBehaviour
                 {
                     if (transform.GetChild(vignetteNb).GetChild(0).transform.childCount > 1)
                     {
-                        Debug.Log("Il a des enfants");
                         ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
                         ValidateTemporary();
                     }
                     else
                     {
-                        Debug.Log("Stop Coroutine Validation");
                         StopAllCoroutines();
                         ThumbnailReplace.instance.ChooseCut(thumbnailsList[vignetteNb].gameObject.name);
                         ThumbnailReplace.instance.ResetNbCut();
@@ -392,10 +390,9 @@ public class ThumbnailManager : MonoBehaviour
 
     public IEnumerator Compteur()
     {
-        Debug.Log("Rentré");
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log("Temps écoulé");
+        //Debug.Log("Temps écoulé");
         Destroy(transform.GetChild(vignetteNb).GetChild(0).gameObject);
         GameObject inst = Instantiate(thumbnailsList[vignetteNb], transform.GetChild(vignetteNb).transform.position, Quaternion.identity, transform.GetChild(vignetteNb));
 
