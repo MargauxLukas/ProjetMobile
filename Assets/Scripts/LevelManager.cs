@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class LevelManager : MonoBehaviour
 {
@@ -179,6 +180,7 @@ public class LevelManager : MonoBehaviour
     {
         Time.timeScale = 0f;
         scoreScreen.SetActive(true);
+        scoreScreen.GetComponent<VictoryStars>().SetStars(GameManager.instance.GetPlayerLife());
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 }
