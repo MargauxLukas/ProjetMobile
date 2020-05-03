@@ -24,6 +24,7 @@ public class LevelManager : MonoBehaviour
     public GameObject boilB;
 
     public List<GameObject> obstacles;
+    private List<float> positionButtonList = new List<float>() { -224f, 2.5f, 229f };
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -35,6 +36,8 @@ public class LevelManager : MonoBehaviour
 
     public GameObject phase1Buttons;
     public GameObject phase2Buttons;
+
+    public bool isInfinite = false;
 
     public void Awake()
     {
@@ -87,6 +90,10 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 break;
+            case 6:
+                currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
+                isInfinite = true;
+                break;
             default:
                 foreach (GameObject go in level3)
                 {
@@ -100,7 +107,7 @@ public class LevelManager : MonoBehaviour
 
     public void BeginGame()
     {
-        if(currentLevel.Count == 1)
+        if(currentLevel.Count == 1 && !isInfinite)
         {
             //bottomScreen.SetActive(false);
             endScreen.SetActive(true);
@@ -125,6 +132,12 @@ public class LevelManager : MonoBehaviour
             //FightManager.instance.ChoosePatterns();
             monster.transform.parent = topScreen.transform;
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
+
+            if(isInfinite)
+            {
+                DesactivateAllButtons();
+                ActivateGoodButtons();
+            }
         }
         else
         {
@@ -134,11 +147,56 @@ public class LevelManager : MonoBehaviour
 
     public void NextMonster()
     {
+        if(isInfinite)
+        {
+            gameObject.GetComponent<InfiniteLevel>().nbFloor++;
+            currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
+        }
+
         currentLevel.RemoveAt(0);
         Destroy(topScreen.transform.GetChild(0).gameObject);
         Destroy(monsterParent.transform.GetChild(1).gameObject);
         BeginGame();
         ActivatePhase1();
+    }
+
+    public void ActivateGoodButtons()
+    {
+        for(int i = 0; i < 3; i++)
+        {
+            switch(gameObject.GetComponent<InfiniteLevel>().buttonStringRemove[i])
+            {
+                case "cut":
+                    cutB.transform.localPosition   = new Vector2(positionButtonList[i], 295.5f);
+                    cutB.SetActive(true);
+                    break;
+                case "whip":
+                    whipB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    whipB.SetActive(true);
+                    break;
+                case "knead":
+                    kneadB.transform.localPosition = new Vector2(positionButtonList[i], 295.5f);
+                    kneadB.SetActive(true);
+                    break;
+                case "cook":
+                    cookB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    cookB.SetActive(true);
+                    break;
+                case "boil":
+                    boilB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    boilB.SetActive(true);
+                    break;
+            }
+        }
+    }
+
+    public void DesactivateAllButtons()
+    {
+        cutB  .SetActive(false);
+        whipB .SetActive(false);
+        kneadB.SetActive(false);
+        cookB .SetActive(false);
+        boilB .SetActive(false);
     }
 
     public void ActivatePhase1()

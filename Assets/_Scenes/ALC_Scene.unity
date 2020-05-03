@@ -1045,6 +1045,7 @@ GameObject:
   - component: {fileID: 305585310}
   - component: {fileID: 305585311}
   - component: {fileID: 305585312}
+  - component: {fileID: 305585313}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1145,6 +1146,7 @@ MonoBehaviour:
   currentLevel: []
   phase1Buttons: {fileID: 1794993807}
   phase2Buttons: {fileID: 117066124}
+  isInfinite: 0
 --- !u!114 &305585311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1208,6 +1210,68 @@ MonoBehaviour:
   boilFinish: {fileID: 21300000, guid: 34c6ce96e1c45a244ac7472f673b145c, type: 3}
   boilSwipeUpFinish: {fileID: 21300000, guid: 259c801784f49404ab7dcf323b17174e, type: 3}
   nbCut: 0
+--- !u!114 &305585313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305585306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23aa6f8a4b3cb0d45b8baf5f5af446bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monstersList:
+  - {fileID: 8356807623944433587, guid: 0f8f535aaac63734a8f76f44cee5532d, type: 3}
+  - {fileID: 8356807623944433587, guid: 8949490fb91c2e74990a06058154a44e, type: 3}
+  - {fileID: 8356807623944433587, guid: 9f6dc92468a3e824fb17658a7e510437, type: 3}
+  - {fileID: 8356807623944433587, guid: 4aacbb52c53dc7746a80a2d1dc0afc7d, type: 3}
+  - {fileID: 8356807623944433587, guid: 7eca39d517c98d942b5e524f2717ebff, type: 3}
+  - {fileID: 8356807623944433587, guid: e79f3111aabf1cb4bb47672b76d49d9f, type: 3}
+  - {fileID: 8356807623944433587, guid: b037345ee76ee2f4ab0d4d43f22edfbc, type: 3}
+  - {fileID: 8356807623944433587, guid: e3e11944f634bb249a5a1a92d60a565e, type: 3}
+  cutThumbnailsList:
+  - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
+  - {fileID: 2717968371175590322, guid: 9c0a7e5404530d64b927c1cfcbbf9b61, type: 3}
+  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
+  - {fileID: 2717968371175590322, guid: 21e1fc5cc378a404b81a17bfb7c4c17e, type: 3}
+  - {fileID: 2717968371175590322, guid: e2ca24e18c2cfa84991bf58b8be9fe71, type: 3}
+  - {fileID: 2717968371175590322, guid: 32fff81f4105e7043a75561a9a100469, type: 3}
+  whipThumbnailsList:
+  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
+  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
+  - {fileID: 452751715470780242, guid: 55b0a3e185072664994b61cc114651f3, type: 3}
+  - {fileID: 452751715470780242, guid: f8dcc3d50d7d54440851e68868d5b1ac, type: 3}
+  kneadThumbnailsList:
+  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
+  - {fileID: 405921424277012632, guid: e15b6796079d67c46b0ecb5368e1631b, type: 3}
+  - {fileID: 405921424277012632, guid: a7d06fd7295aeb246982bae4627ff000, type: 3}
+  cookThumbnailsList:
+  - {fileID: 2717968371175590322, guid: 12ef0bbae12ad09419cbd3e689f31ecc, type: 3}
+  - {fileID: 1904672208470637732, guid: 47a24ae0968b5f046bc11b75e91f4642, type: 3}
+  - {fileID: 2717968371175590322, guid: 40f8805d546abe44fa87049d32256f76, type: 3}
+  - {fileID: 1904672208470637732, guid: fc1501cdf6edffa4b8bfbadd44507230, type: 3}
+  boilThumbnailsList:
+  - {fileID: 2717968371175590322, guid: f14c591396393c6408d07749631abc4c, type: 3}
+  - {fileID: 2717968371175590322, guid: ccf9b9b5787948248b8f7d532af37fa1, type: 3}
+  - {fileID: 2717968371175590322, guid: de11832a5945f1143bdd347a0e5b131a, type: 3}
+  randomThumbnailsList: []
+  buttonString:
+  - cut
+  - whip
+  - knead
+  - cook
+  - boil
+  buttonStringRemove:
+  - cut
+  - whip
+  - knead
+  - cook
+  - boil
+  buttonName: 
+  nbFloor: 1
 --- !u!1 &392840486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2210,7 +2274,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b4a3f02521a0e49ae0a291d32fab53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  star1: {fileID: 0}
   star2: {fileID: 1047865393}
   star3: {fileID: 945052407}
 --- !u!1001 &612476494
