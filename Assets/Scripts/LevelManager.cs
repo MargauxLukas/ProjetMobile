@@ -54,6 +54,8 @@ public class LevelManager : MonoBehaviour
             case 1:
                 foreach (GameObject go in level1)
                 {
+                    cutB.transform.position = whipB.transform.position;
+                    whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 break;
