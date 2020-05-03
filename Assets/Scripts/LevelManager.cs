@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
     public GameObject topScreen;
     public GameObject bottomScreen;
     public GameObject endScreen;
+    public GameObject scoreScreen;
 
     public GameObject kneadB;
     public GameObject cutB;
@@ -168,6 +169,15 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        //dd
+        Time.timeScale = 0f;
+        scoreScreen.SetActive(true);
+        scoreScreen.transform.GetChild(1).gameObject.SetActive(true);
+    }
+
+    public void PlayerWin()
+    {
+        Time.timeScale = 0f;
+        scoreScreen.SetActive(true);
+        scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

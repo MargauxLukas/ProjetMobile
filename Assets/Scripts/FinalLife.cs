@@ -32,6 +32,6 @@ public class FinalLife : MonoBehaviour
             PlayerPrefs.SetInt("level", UIManager.chosenLevel + 1);
         }
 
-        SceneManager.LoadScene(0);
+        LevelManager.instance.PlayerWin();
     }
 }

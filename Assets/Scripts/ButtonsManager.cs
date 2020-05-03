@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ButtonsManager : MonoBehaviour
@@ -132,4 +133,19 @@ public class ButtonsManager : MonoBehaviour
         }
     }
     #endregion
+
+    public void LoadLevelAgain()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene(0);
+        GameObject lvlMenu = GameObject.FindGameObjectWithTag("LvlMenu");
+        GameObject mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
+        lvlMenu.SetActive(true);
+        mainMenu.SetActive(false);
+    }
 }
