@@ -19,6 +19,12 @@ public class DangerZone : MonoBehaviour
     void UnlockAll()
     {
         PlayerPrefs.SetInt("level", 6);
+        PlayerPrefs.SetInt("starLevel1", 3);
+        PlayerPrefs.SetInt("starLevel2", 3);
+        PlayerPrefs.SetInt("starLevel3", 3);
+        PlayerPrefs.SetInt("starLevel4", 3);
+        PlayerPrefs.SetInt("starLevel5", 3);
+
         Application.Quit();
     }
 

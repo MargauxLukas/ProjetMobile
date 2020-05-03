@@ -3628,10 +3628,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 468178469}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7268658c84406d419f994a0e4ff1d53, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ed34fe2444719742b81e287e9e85f86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelRequirement: 6
+  starsLevel1Requirement: 3
+  starsLevel2Requirement: 3
+  starsLevel3Requirement: 3
+  starsLevel4Requirement: 3
+  starsLevel5Requirement: 3
 --- !u!114 &468178472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5260,7 +5264,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 360, y: -75.71423}
+  m_AnchoredPosition: {x: 360, y: -75.71411}
   m_SizeDelta: {x: 572, y: 105}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &697561816

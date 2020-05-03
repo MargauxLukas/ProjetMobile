@@ -231,9 +231,22 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerDeath()
     {
-        Time.timeScale = 0f;
-        scoreScreen.SetActive(true);
-        scoreScreen.transform.GetChild(1).gameObject.SetActive(true);
+        if (isInfinite)
+        {
+            if (PlayerPrefs.GetInt("floorReached") < gameObject.GetComponent<InfiniteLevel>().nbFloor)
+            {
+                PlayerPrefs.SetInt("floorReached", gameObject.GetComponent<InfiniteLevel>().nbFloor);
+            }
+
+            //Afficher Meilleur score : FloorReached
+            //Afficher Score actuel : nbFloor
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            scoreScreen.SetActive(true);
+            scoreScreen.transform.GetChild(1).gameObject.SetActive(true);
+        }
     }
 
     public void PlayerWin()
@@ -241,6 +254,8 @@ public class LevelManager : MonoBehaviour
         Time.timeScale = 0f;
         scoreScreen.SetActive(true);
         scoreScreen.GetComponent<VictoryStars>().SetStars(GameManager.instance.GetPlayerLife());
+
+        PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString(), scoreScreen.GetComponent<VictoryStars>().nbStars);
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
     }
 }

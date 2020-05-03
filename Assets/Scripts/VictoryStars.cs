@@ -9,15 +9,19 @@ public class VictoryStars : MonoBehaviour
 
     public GameObject star2;
     public GameObject star3;
+    public int nbStars = 0;
 
     public void SetStars(float life)
     {
+        nbStars = 1;
         if(life > 0.3333)
         {
+            nbStars = 2;
             star2.GetComponent<Image>().color = gold;
         }
         if(life > 0.6666)
         {
+            nbStars = 3;
             star3.GetComponent<Image>().color = gold;
         }
     }
