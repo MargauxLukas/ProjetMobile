@@ -26,7 +26,7 @@ public class FightManager : MonoBehaviour
 
     public int rand;
 
-    private bool isAttacked = false;
+    public bool isAttacked = false;
 
     public float timerAttack = 1.5f;
     private float timeCooldown = 5f;
@@ -42,7 +42,6 @@ public class FightManager : MonoBehaviour
     void Update()
     {
         //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
-        Debug.Log(timeCooldown);
         if (ThumbnailManager.instance.phase1)
         {
             //Tout les 15% ou 5 secondes mais 1 à 4 secondes apres Actions il peut rien faire
