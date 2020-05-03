@@ -169,44 +169,20 @@ public class ThumbnailManager : MonoBehaviour
                         }
                     }
 
-                    /*if (Input.touchCount >= 2)
+                    if (Input.touchCount >= 2)
                     {
                         Touch touch1 = Input.GetTouch(0);
                         Touch touch2 = Input.GetTouch(1);
 
                         if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch") && knead)
                         {
-                            if (touch1.phase == TouchPhase.Moved)
-                            {
-                                touchun = Input.GetTouch(0).position;
-
-                            }
-                            if (touch2.phase == TouchPhase.Moved)
-                            {
-                                touchdeux = Input.GetTouch(1).position;
-                            }
-
-                            if (distance1 == 0f)
-                            {
-                                distance1 = Vector2.Distance(touchun, touchdeux); 
-                            }
-
-                            distance2 = Vector2.Distance(touchun, touchdeux); 
-
-                            if (distance2 < distance1 && distance2 <= distance1 * 0.20f)                                 // % voulue lors du Pinch, on veut que Distance 2 soit inférieure à 80% de distance1
-                            {
-                                distance1 = 0f;
-                                distance2 = 0f;
-                                knead = false;
-                                ValideAction();
-                            }
-                            else
-                            {
-                                return;
-                            }
-
+                            ValideAction();
                         }
-                    }*/
+                        else
+                        {
+                            return;
+                        }
+                    }             
                 }
             }
         }
@@ -271,7 +247,7 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                     {
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
                     {
                         return;
                     }
