@@ -1,19 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ButtonsManager : MonoBehaviour
 {
-    public Text text;
     public ThumbnailManager tm;
 
+    private FightManager fm;
+    private LevelManager lm;
+
+    private void Start()
+    {
+        fm = FightManager.instance;
+        lm = LevelManager.instance;
+    }
+
+    #region Cut
     public void Cut()
     {
         tm.CheckAction(3);
     }
+    #endregion
 
+    #region Knead
     public void KneadDown()
     {
         tm.CheckAction(2);
@@ -24,66 +33,68 @@ public class ButtonsManager : MonoBehaviour
     {
         ThumbnailManager.instance.knead = false;
     }
+    #endregion
 
+    #region Cook
     public void CookDown()
     {
         tm.CheckAction(4);
-        ThumbnailManager.instance.cook = true;
+        tm.cook = true;
     }
 
     public void CookUp()
     {
-        ThumbnailManager.instance.cook = false;
+        tm.cook = false;
     }
+    #endregion
 
+    #region Boil
     public void BoilDown()
     {
         tm.CheckAction(5);
-        ThumbnailManager.instance.boil = true;
+        tm.boil = true;
     }
+    #endregion
 
-    public void BoilUp()
-    {
-
-    }
-
+    #region Whip
     public void WhipDown()
     {
         tm.CheckAction(1);
-        ThumbnailManager.instance.whip = true;
+        tm.whip = true;
     }
-    public void WhipUp()
-    {
-        Debug.Log("WhipUP");
-    }
+    #endregion
 
-
+    #region Eat
     public void Eat()
     {
-        FightManager.instance.Eat();
+        fm.Eat();
     }
 
     public void EatFinal()
     {
-        LevelManager.instance.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
-        ThumbnailManager.instance.Heal();
+        lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+        tm.Heal();
     }
+    #endregion
 
+    #region Attack & Defend
     public void Attack()
     {
-        FightManager.instance.Attack();
+        fm.Attack();
     }
 
     public void DefendDown()
     {
-        FightManager.instance.Defend();
+        fm.Defend();
     }
 
     public void DefendUp()
     {
-        FightManager.instance.DontDefend();
+        fm.DontDefend();
     }
+    #endregion
 
+    #region Pause
     public void Pause()
     {
         Time.timeScale = 0;
@@ -93,7 +104,9 @@ public class ButtonsManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+    #endregion
 
+    #region Audio
     public void PlayMusic(AudioClip ac)
     {
         Player.instance.GetComponent<AudioSource>().clip = ac;
@@ -108,7 +121,7 @@ public class ButtonsManager : MonoBehaviour
 
     public void PlayNomFinal()
     {
-        if (LevelManager.instance.topScreen.transform.GetChild(0).GetComponent<FinalLife>().currentLife > 1)
+        if (lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().currentLife > 1)
         {
             int i = Random.Range(0, 6);
             Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
@@ -118,4 +131,5 @@ public class ButtonsManager : MonoBehaviour
             Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[6].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
         }
     }
+    #endregion
 }

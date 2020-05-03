@@ -104,7 +104,6 @@ public class ThumbnailManager : MonoBehaviour
                     //TOUCH
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMixed") && whip)
                     {
-                        Debug.Log("Touch");
                         Touch touch = Input.GetTouch(0);
 
                         if (touch.phase == TouchPhase.Began)

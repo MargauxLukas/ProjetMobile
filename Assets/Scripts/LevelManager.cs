@@ -46,7 +46,7 @@ public class LevelManager : MonoBehaviour
 
     public void ChooseLevel(int i)
     {
-        Debug.Log(i);
+        //Debug.Log(i);
         switch (i)
         {
             case 1:

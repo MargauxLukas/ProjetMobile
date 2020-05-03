@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class ButtonMovePhase1 : MonoBehaviour
 {
-    public Vector2 posInit;
+    private Vector2  posInit;
     public Vector2 posTarget;
 
     public bool needMove = false;
 
     public void Start()
     {
-        posInit = transform.position;
+        posInit     = transform.position;
         posTarget.y = posInit.y;
     }
 
     public void Update()
     {
-        if(needMove && ThumbnailManager.instance.phase1)
+        if(needMove && ThumbnailManager.instance.phase1)                                                                                               //Si on est en Phase 1, le bouton reprend sa place initial.
         {
             transform.position = Vector3.MoveTowards(transform.position, posInit, 30f);
 
@@ -26,9 +26,9 @@ public class ButtonMovePhase1 : MonoBehaviour
                 needMove = false;
             }
         }
-        else if(needMove && !ThumbnailManager.instance.phase1)
+        else if(needMove && !ThumbnailManager.instance.phase1)                                                                                         //Si on est en Phase 2, le bouton prend la place "target".
         {
-            transform.position = Vector3.MoveTowards(transform.position, posTarget, 30f);
+            transform.position = Vector3.MoveTowards(transform.position, posTarget, 30f);                                                              
 
             if (Vector3.Distance(transform.position, posTarget) < 0.001f)
             {
@@ -36,5 +36,4 @@ public class ButtonMovePhase1 : MonoBehaviour
             }
         }
     }
-
 }

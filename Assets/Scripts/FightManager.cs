@@ -56,7 +56,7 @@ public class FightManager : MonoBehaviour
             }
             else if (ThumbnailManager.instance.monsterLife.currentLife <= lifeGoal || timeCooldown <= 0)
             {
-                Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
+                //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
                 Action();
             }
             else
@@ -76,7 +76,7 @@ public class FightManager : MonoBehaviour
 
         if (!isPlayerDefending)
         {
-            Debug.Log("Degat ! ");
+            //Debug.Log("Degat ! ");
             Player.instance.GetComponent<AudioSource>().clip = damageClip;
             Player.instance.GetComponent<AudioSource>().Play();
             GameManager.instance.lifeFill.fillAmount -= 0.33f;
