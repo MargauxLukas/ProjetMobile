@@ -92,4 +92,10 @@ public class ButtonsManager : MonoBehaviour
     {
         Time.timeScale = 1;
     }
+
+    public void PlayMusic(AudioClip ac)
+    {
+        Player.instance.GetComponent<AudioSource>().clip = ac;
+        Player.instance.GetComponent<AudioSource>().Play();
+    }
 }

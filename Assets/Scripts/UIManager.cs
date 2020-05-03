@@ -26,4 +26,10 @@ public class UIManager : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void PlayMusic(AudioClip ac)
+    {
+        Player.instance.GetComponent<AudioSource>().clip = ac;
+        Player.instance.GetComponent<AudioSource>().Play();
+    }
 }

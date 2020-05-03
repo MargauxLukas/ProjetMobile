@@ -11,6 +11,8 @@ public class FightManager : MonoBehaviour
 
     public GameObject shieldGroup;
 
+    public AudioClip damageClip;
+
     public float percentFight = 0.15f;
     public float percentLife;
     public float lifeGoal;
@@ -77,6 +79,8 @@ public class FightManager : MonoBehaviour
         if (!isPlayerDefending)
         {
             Debug.Log("Degat ! ");
+            Player.instance.GetComponent<AudioSource>().clip = damageClip;
+            Player.instance.GetComponent<AudioSource>().Play();
             GameManager.instance.lifeFill.fillAmount -= 0.33f;
         }
     }
