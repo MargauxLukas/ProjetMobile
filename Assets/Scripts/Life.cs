@@ -57,6 +57,7 @@ public class Life : MonoBehaviour
                 ThumbnailManager.instance.HideThumbnail();
                 currentLife = lifeMax;
                 currentShield = 0;
+                FightManager.instance.SetLifeGoal();
                 ThumbnailManager.instance.phase1 = true;
                 TapisManager.instance.TapisOnPhase1();
                 LevelManager.instance.ActivatePhase1();
