@@ -79,7 +79,7 @@ public class FightManager : MonoBehaviour
             //Debug.Log("Degat ! ");
             Player.instance.GetComponent<AudioSource>().clip = damageClip;
             Player.instance.GetComponent<AudioSource>().Play();
-            GameManager.instance.lifeFill.fillAmount -= 0.33f;
+            GameManager.instance.lifeFill.fillAmount -= 0.15f;
         }
     }
 
