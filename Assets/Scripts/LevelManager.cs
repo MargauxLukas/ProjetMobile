@@ -39,6 +39,9 @@ public class LevelManager : MonoBehaviour
     public GameObject phase2Buttons;
 
     public bool isInfinite = false;
+    public int countMonster;
+
+    public GameObject beginTextGameObject;
 
     public void Awake()
     {
@@ -52,7 +55,6 @@ public class LevelManager : MonoBehaviour
 
     public void ChooseLevel(int i)
     {
-        //Debug.Log(i);
         switch (i)
         {
             case 1:
@@ -62,12 +64,14 @@ public class LevelManager : MonoBehaviour
                     whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                countMonster = level1.Count;
                 break;
             case 2:
                 foreach (GameObject go in level2)
                 {
                     currentLevel.Add(go);
                 }
+                countMonster = level2.Count;
                 break;
             case 3:
                 foreach (GameObject go in level3)
@@ -76,6 +80,7 @@ public class LevelManager : MonoBehaviour
                     whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                countMonster = level3.Count;
                 break;
             case 4:
                 foreach (GameObject go in level4)
@@ -84,12 +89,14 @@ public class LevelManager : MonoBehaviour
                     cutB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                countMonster = level4.Count;
                 break;
             case 5:
                 foreach (GameObject go in level5)
                 {
                     currentLevel.Add(go);
                 }
+                countMonster = level5.Count;
                 break;
             case 6:
                 currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
@@ -143,6 +150,20 @@ public class LevelManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
+
+        if(currentLevel.Count == countMonster || ThumbnailManager.instance.thumbnailsList.Count == 1)
+        {
+            Time.timeScale = 0f;
+            beginTextGameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("isBegin", true);
+            StartCoroutine("WaitAnimation");
+        }
+    }
+
+    IEnumerator WaitAnimation()
+    {
+        yield return new WaitForSecondsRealtime(1.333f);
+        Time.timeScale = 1f;
+        Destroy(beginTextGameObject.gameObject);
     }
 
     public void NextMonster()
