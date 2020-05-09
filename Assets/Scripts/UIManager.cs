@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance ;
     public AudioClip sportTheme;
+    public AudioClip MenuMusic;
     public static int chosenLevel;
 
     public void Start()

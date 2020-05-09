@@ -5337,6 +5337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sportTheme: {fileID: 8300000, guid: 3cfd05928d35cf042856ed7d23ba89a3, type: 3}
+  MenuMusic: {fileID: 0}
 --- !u!82 &650299202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5347,8 +5348,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: e656606d1de8f6a43aed5072705e7383, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 0.03
   m_Pitch: 1
   Loop: 1

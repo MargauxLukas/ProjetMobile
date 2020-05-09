@@ -87,7 +87,7 @@ public class ThumbnailManager : MonoBehaviour
                     }
                 }
 
-                /*else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
+                else if (thumbnailsList[0].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButtonUp(0))
                 {
                     if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f && transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x < 50f)
                     {
@@ -98,7 +98,7 @@ public class ThumbnailManager : MonoBehaviour
                         transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition = new Vector3(-50f, transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.y,
                                                                                                              transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.z);
                     }
-                }*/
+                }
                 if (Input.touchCount > 0)
                 {
                     //TOUCH
@@ -169,7 +169,7 @@ public class ThumbnailManager : MonoBehaviour
                         }
                     }
 
-                    /*
+                   /* 
                     if (Input.touchCount >= 2)
                     {
                         Touch touch1 = Input.GetTouch(0);
@@ -183,7 +183,7 @@ public class ThumbnailManager : MonoBehaviour
                         {
                             return;
                         }
-                    }   */          
+                    }   */      
                 }
             }
         }
@@ -229,16 +229,16 @@ public class ThumbnailManager : MonoBehaviour
             case 1:
                 if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
+                    /*if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
                     {
                         return;
                     }
                     else
-                    {
+                    {*/
                         ThumbnailReplace.instance.WhipFinish();
                         FightManager.instance.MonsterWhip();
                         ValideAction();
-                    }
+                    //}
                 }
                 else
                 {

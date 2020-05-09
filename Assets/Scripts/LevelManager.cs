@@ -247,6 +247,8 @@ public class LevelManager : MonoBehaviour
         else
         {
             Time.timeScale = 0f;
+            scoreScreen.SetActive(true);
+            scoreScreen.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 

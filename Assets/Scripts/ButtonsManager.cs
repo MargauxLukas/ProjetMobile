@@ -155,7 +155,9 @@ public class ButtonsManager : MonoBehaviour
     {
         if (scene.buildIndex == 0)
         {
-                    Time.timeScale = 1f;
+            UIManager.instance.gameObject.GetComponent<AudioSource>().clip = UIManager.instance.MenuMusic;
+            UIManager.instance.gameObject.GetComponent<AudioSource>().Play();
+            Time.timeScale = 1f;
             GameObject mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
             GameObject lvlMenu = mainMenu.transform.parent.transform.GetChild(3).gameObject;
             lvlMenu.SetActive(true);
