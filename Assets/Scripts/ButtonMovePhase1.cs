@@ -5,7 +5,7 @@ using UnityEngine;
 public class ButtonMovePhase1 : MonoBehaviour
 {
     private Vector2  posInit;
-    public Vector2 posTarget;
+    private Vector2 posTarget;
 
     public bool needMove = false;
 
@@ -13,6 +13,16 @@ public class ButtonMovePhase1 : MonoBehaviour
     {
         posInit     = transform.position;
         posTarget.y = posInit.y;
+
+        if (gameObject.name.Contains("Defend"))
+        {
+            posTarget.x = posInit.x - Screen.width/1.6f;
+        }
+        else
+        {
+            posTarget.x = posInit.x + Screen.width/1.6f;
+        }
+
     }
 
     public void Update()
@@ -34,7 +44,7 @@ public class ButtonMovePhase1 : MonoBehaviour
         }
         else if(needMove && !ThumbnailManager.instance.phase1)                                                                                         //Si on est en Phase 2, le bouton prend la place "target".
         {
-            transform.position = Vector3.MoveTowards(transform.position, posTarget, 30f);                                                              
+            transform.position = Vector3.MoveTowards(transform.position, posTarget, 30f);
 
             if (Vector3.Distance(transform.position, posTarget) < 0.001f)
             {
