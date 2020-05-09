@@ -75,6 +75,7 @@ public class ButtonsManager : MonoBehaviour
     public void Eat()
     {
         fm.Eat();
+        tm.Heal();
     }
 
     public void EatFinal()
