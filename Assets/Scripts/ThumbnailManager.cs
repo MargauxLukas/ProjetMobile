@@ -35,6 +35,8 @@ public class ThumbnailManager : MonoBehaviour
     public Vector2 touchun;
     public Vector2 touchdeux;
 
+    public bool isTransit = false;
+
     private void Awake()
     {
         instance = this;
@@ -391,7 +393,10 @@ public class ThumbnailManager : MonoBehaviour
 
     public void WrongAction()
     {
-        Damage();
+        if (!isTransit)
+        {
+            Damage();
+        }
     }
 
     public void NewWave()

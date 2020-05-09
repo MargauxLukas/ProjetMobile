@@ -42,6 +42,7 @@ public class LevelManager : MonoBehaviour
     public int countMonster;
 
     public GameObject beginTextGameObject;
+    public GameObject eatItTextGameObject;
 
     public void Awake()
     {
@@ -129,6 +130,11 @@ public class LevelManager : MonoBehaviour
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.47f, -2f);
             monster.transform.GetChild(3).gameObject.transform.SetParent(monsterParent);
+
+            Time.timeScale = 0f;
+            eatItTextGameObject.SetActive(true);
+            eatItTextGameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("isBegin", true);
+            StartCoroutine("WaitAnimationEat");
         }
         else if (currentLevel.Count != 0)
         {
@@ -155,15 +161,22 @@ public class LevelManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             beginTextGameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("isBegin", true);
-            StartCoroutine("WaitAnimation");
+            StartCoroutine("WaitAnimationFight");
         }
     }
 
-    IEnumerator WaitAnimation()
+    IEnumerator WaitAnimationFight()
     {
         yield return new WaitForSecondsRealtime(1.333f);
         Time.timeScale = 1f;
         Destroy(beginTextGameObject.gameObject);
+    }
+
+    IEnumerator WaitAnimationEat()
+    {
+        yield return new WaitForSecondsRealtime(1.333f);
+        Time.timeScale = 1f;
+        Destroy(eatItTextGameObject.gameObject);
     }
 
     public void NextMonster()
@@ -230,6 +243,14 @@ public class LevelManager : MonoBehaviour
     {
         phase1Buttons.transform.GetChild(0).GetComponent<ButtonMovePhase1>().needMove = true;
         phase1Buttons.transform.GetChild(1).GetComponent<ButtonMovePhase1>().needMove = true;
+        ThumbnailManager.instance.isTransit = true;
+        StartCoroutine("WaitTransition");
+    }
+
+    IEnumerator WaitTransition()
+    {
+        yield return new WaitForSeconds(1f);
+        ThumbnailManager.instance.isTransit = false;
     }
 
     public void GoToBin(GameObject go)
