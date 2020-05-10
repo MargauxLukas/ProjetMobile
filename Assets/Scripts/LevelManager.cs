@@ -141,15 +141,16 @@ public class LevelManager : MonoBehaviour
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             TapisManager.instance.TapisOnPhase1();
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.5f, -2f);
-            monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.6f, 0.6f, 0.6f);
+            //monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
+            //monsterParent.transform.GetChild(1).transform.localScale = new Vector3(0.5f , 0.5f, 0.5f);
             FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
             FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
             //FightManager.instance.shieldGroup.GetComponent<SpawnShield>().DestroyAll();
             //FightManager.instance.ChoosePatterns();
-            monster.transform.parent = topScreen.transform;
+            monster.transform.SetParent(topScreen.transform);
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
         }
         else

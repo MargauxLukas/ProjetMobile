@@ -376,7 +376,7 @@ public class ThumbnailManager : MonoBehaviour
 
         if(vignetteNb == 0)
         {
-            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
+            inst.transform.GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 110f);
         }
         if (inst.name.Contains("Locked"))
         {

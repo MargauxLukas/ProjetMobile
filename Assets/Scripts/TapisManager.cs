@@ -45,14 +45,14 @@ public class TapisManager : MonoBehaviour
 
     public void SetTapisOn()
     {
+        transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("moving", true);
         transform.GetChild(1).gameObject.GetComponent<Animator>().SetBool("moving", true);
-        transform.GetChild(2).gameObject.GetComponent<Animator>().SetBool("moving", true);
     }
 
     public void SetTapisOff()
     {
+        transform.GetChild(0).gameObject.GetComponent<Animator>().SetBool("moving", false);
         transform.GetChild(1).gameObject.GetComponent<Animator>().SetBool("moving", false);
-        transform.GetChild(2).gameObject.GetComponent<Animator>().SetBool("moving", false);
     } 
 
     public void TapisOnPhase2()

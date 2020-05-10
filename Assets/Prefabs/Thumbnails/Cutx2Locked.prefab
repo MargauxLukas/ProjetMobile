@@ -92,7 +92,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 0
-  isPotato: 0
+  isChip: 0
   isFirst: 0
   Lock: {fileID: 0}
 --- !u!1 &2717968371175590322
@@ -133,9 +133,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -240}
-  m_SizeDelta: {x: 120, y: 120}
-  m_Pivot: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2717968371175590327
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
-  isPotato: 0
+  isChip: 0
   isFirst: 0
   Lock: {fileID: 0}
 --- !u!1 &5118037219855399015
@@ -229,7 +229,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 150}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4985397646015761980
 CanvasRenderer:
@@ -284,7 +284,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 1
-  isPotato: 0
+  isChip: 0
   isFirst: 0
   Lock: {fileID: 0}
 --- !u!1 &7350201428373570145
@@ -379,7 +379,7 @@ MonoBehaviour:
   validate: 0
   needToMaintain: 0
   isLocked: 0
-  isPotato: 0
+  isChip: 0
   isFirst: 0
   Lock: {fileID: 0}
 --- !u!1001 &3525028161560994280
@@ -467,12 +467,12 @@ PrefabInstance:
     - target: {fileID: 1166992072577266727, guid: 992d607b0728c0a4baaa25286e58617b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1166992072577266727, guid: 992d607b0728c0a4baaa25286e58617b,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1166992072577266727, guid: 992d607b0728c0a4baaa25286e58617b,
         type: 3}

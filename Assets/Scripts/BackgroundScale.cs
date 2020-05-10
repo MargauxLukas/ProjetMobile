@@ -4,12 +4,9 @@ using UnityEngine;
 
 public class BackgroundScale : MonoBehaviour
 {
-    public float screenWidth;
-
-
-    void Start()
+    public void Start()
     {
-        screenWidth = Screen.width * 0.001f;
-        transform.localScale = new Vector3((screenWidth*0.35f), (screenWidth * 0.35f), 1f);
+        Debug.Log(Screen.width);
+        //transform.localScale = new Vector3();
     }
 }

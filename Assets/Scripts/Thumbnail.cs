@@ -20,11 +20,21 @@ public class Thumbnail : MonoBehaviour
         {
             if (gameObject.name.Contains("CookMaintain"))
             {
-                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 260f);
+                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 230f);
+                if (isLocked)
+                {
+                    transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 230f);
+                    transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 230f);
+                }
             }
             else
             {
-                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(140f, 140f);
+                transform.GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 110f);
+                if (isLocked)
+                {
+                    transform.GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 110f);
+                    transform.GetChild(0).GetChild(0).GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 110f);
+                }
             }
             isFirst = false;
         }
