@@ -138,7 +138,6 @@ public class ThumbnailManager : MonoBehaviour
                     }
                     else if(thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch") && boil)
                     {
-                        Debug.Log("Touch");
                         Touch touch = Input.GetTouch(0);
 
                         if (touch.phase == TouchPhase.Began)
@@ -155,7 +154,6 @@ public class ThumbnailManager : MonoBehaviour
                         }
 
                         swipeDifference = Mathf.Abs(posStart - posEnd);
-                        Debug.Log(swipeDifference);
 
                         if (posEnd > posStart && swipeDifference > 200f)
                         {
@@ -171,7 +169,7 @@ public class ThumbnailManager : MonoBehaviour
                         }
                     }
 
-                   /* 
+                    
                     if (Input.touchCount >= 2)
                     {
                         Touch touch1 = Input.GetTouch(0);
@@ -185,7 +183,7 @@ public class ThumbnailManager : MonoBehaviour
                         {
                             return;
                         }
-                    }   */      
+                    }         
                 }
             }
         }
@@ -250,7 +248,7 @@ public class ThumbnailManager : MonoBehaviour
             case 2:
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                     {
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") /*|| thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch")*/)
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
                     {
                         return;
                     }

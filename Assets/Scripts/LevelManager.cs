@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
     public GameObject boilB;
 
     public List<GameObject> obstacles;
-    private List<float> positionButtonList = new List<float>() { -224f, 2.5f, 229f };
+    private List<float> positionLeftButtonList = new List<float> {32, 260, 485 };
+    private List<float> positionRightButtonList = new List<float> {480, 254, 26 };
 
     public List<GameObject> level1;
     public List<GameObject> level2;
@@ -202,23 +203,28 @@ public class LevelManager : MonoBehaviour
             switch(gameObject.GetComponent<InfiniteLevel>().buttonStringRemove[i])
             {
                 case "cut":
-                    cutB.transform.localPosition   = new Vector2(positionButtonList[i], 295.5f);
+                    cutB.GetComponent<RectTransform>().offsetMax = new Vector2(-positionRightButtonList[i], cutB.GetComponent<RectTransform>().offsetMax.y);
+                    cutB.GetComponent<RectTransform>().offsetMin = new Vector2(positionLeftButtonList[i], cutB.GetComponent<RectTransform>().offsetMin.y);
                     cutB.SetActive(true);
                     break;
                 case "whip":
-                    whipB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    whipB.GetComponent<RectTransform>().offsetMax = new Vector2(-positionRightButtonList[i], whipB.GetComponent<RectTransform>().offsetMax.y);
+                    whipB.GetComponent<RectTransform>().offsetMin = new Vector2(positionLeftButtonList[i], whipB.GetComponent<RectTransform>().offsetMin.y);
                     whipB.SetActive(true);
                     break;
                 case "knead":
-                    kneadB.transform.localPosition = new Vector2(positionButtonList[i], 295.5f);
+                    kneadB.GetComponent<RectTransform>().offsetMax = new Vector2(-positionRightButtonList[i], kneadB.GetComponent<RectTransform>().offsetMax.y);
+                    kneadB.GetComponent<RectTransform>().offsetMin = new Vector2(positionLeftButtonList[i], kneadB.GetComponent<RectTransform>().offsetMin.y);
                     kneadB.SetActive(true);
                     break;
                 case "cook":
-                    cookB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    cookB.GetComponent<RectTransform>().offsetMax = new Vector2(-positionRightButtonList[i], cookB.GetComponent<RectTransform>().offsetMax.y);
+                    cookB.GetComponent<RectTransform>().offsetMin = new Vector2(positionLeftButtonList[i], cookB.GetComponent<RectTransform>().offsetMin.y);
                     cookB.SetActive(true);
                     break;
                 case "boil":
-                    boilB.transform.localPosition  = new Vector2(positionButtonList[i], 295.5f);
+                    boilB.GetComponent<RectTransform>().offsetMax = new Vector2(-positionRightButtonList[i], boilB.GetComponent<RectTransform>().offsetMax.y);
+                    boilB.GetComponent<RectTransform>().offsetMin = new Vector2(positionLeftButtonList[i], boilB.GetComponent<RectTransform>().offsetMin.y);
                     boilB.SetActive(true);
                     break;
             }
