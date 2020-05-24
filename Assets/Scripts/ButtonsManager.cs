@@ -88,17 +88,24 @@ public class ButtonsManager : MonoBehaviour
     {
         if (tm.monsterLife.currentShield > 0)
         {
-            Debug.Log("EatUp");
             ss.isMaintainEat = false;
             ss.eatUp = true;
         }
-        //tm.Heal();
     }
 
-    public void EatFinal()
+    public void EatFinalDown()
     {
-        lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
-        tm.Heal();
+        slider.SetActive(true);
+        ss.isMaintainEat = true;
+
+        /*lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+        tm.Heal();*/
+    }
+
+    public void EatFinalUp()
+    {
+        ss.isMaintainEat = false;
+        ss.eatUpFinal = true;
     }
     #endregion
 

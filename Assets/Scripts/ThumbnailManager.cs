@@ -443,6 +443,11 @@ public class ThumbnailManager : MonoBehaviour
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.03f);
     }
 
+    public void HealMax()
+    {
+        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.20f);
+    }
+
     public void Damage()
     {
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
