@@ -317,6 +317,18 @@ public class FightManager : MonoBehaviour
         }
     }
 
+    public void EatAll()
+    {
+        ThumbnailManager.instance.monsterLife.currentShield = 0;
+
+        for(int i = 0; i < shieldGroup.transform.childCount; i++)
+        {
+            Destroy(shieldGroup.transform.GetChild(i).gameObject);
+        }
+
+        SetTimeAction();
+    }
+
     public void SetTimeAction()
     {
         timeBetweenAction = UnityEngine.Random.Range(2f, 5f);
