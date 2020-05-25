@@ -79,8 +79,13 @@ public class ButtonsManager : MonoBehaviour
     {
         if (tm.monsterLife.currentShield > 0)
         {
+            ss.DefineSweetSpot();
             slider.SetActive(true);
             ss.isMaintainEat = true;
+        }
+        else
+        {
+            fm.Eat();
         }
     }
 
@@ -97,9 +102,6 @@ public class ButtonsManager : MonoBehaviour
     {
         slider.SetActive(true);
         ss.isMaintainEat = true;
-
-        /*lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
-        tm.Heal();*/
     }
 
     public void EatFinalUp()

@@ -25,12 +25,13 @@ public class Life : MonoBehaviour
             if (currentLife == 0)
             {
                 stuned = true;
+                currentShield = 0;
                 LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
                 FightManager.instance.isMonsterAttacking = false;
                 FightManager.instance.timerAttack = 1.5f;
                 ThumbnailManager.instance.phase1 = false;
 
-                for(int i = 0; i < FightManager.instance.shieldGroup.transform.childCount; i++)
+                for (int i = 0; i < FightManager.instance.shieldGroup.transform.childCount; i++)
                 {
                     Destroy(FightManager.instance.shieldGroup.transform.GetChild(i).gameObject);
                 }

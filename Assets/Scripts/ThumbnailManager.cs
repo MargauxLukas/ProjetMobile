@@ -46,7 +46,6 @@ public class ThumbnailManager : MonoBehaviour
     void Start()
     {
         gm = GameManager.instance;
-        //ChooseThumbnail();
     }
 
     public void Update()
@@ -57,20 +56,6 @@ public class ThumbnailManager : MonoBehaviour
             {
                 if (thumbnailsList[vignetteNb].gameObject != null)
                 {
-                    /*if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && Input.GetMouseButton(0) && knead)
-                    {
-                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition += new Vector3(2f,0,0);
-
-                        if (transform.GetChild(0).GetChild(0).GetChild(1).transform.localPosition.x > 40f)
-                        {
-                            ValideAction();
-                        }
-                    }
-                    else if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") && !knead && transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition.x > -50f)
-                    {
-                        transform.GetChild(0).GetChild(0).GetChild(1).GetComponent<RectTransform>().localPosition -= Vector3.right;
-                    }*/
-
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("CookMaintain") && Input.GetMouseButton(0) && cook)
                     {
                         transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value += 0.05f;
@@ -78,7 +63,6 @@ public class ThumbnailManager : MonoBehaviour
                         if (transform.GetChild(vignetteNb).GetChild(0).GetComponent<Slider>().value == 1f)
                         {
                             LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isFire", true);
-                            //ThumbnailReplace.instance.CookMaintainFinish();
                             FightManager.instance.MonsterCook();
                             ValideAction();
                         }
@@ -229,16 +213,17 @@ public class ThumbnailManager : MonoBehaviour
             case 1:
                 if (thumbnailsList[vignetteNb].gameObject.name.Contains("Whip") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
-                    /*if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
+#if UNITY_ANDROID
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("WhipMix"))
                     {
                         return;
                     }
-                    else
-                    {*/
-                        ThumbnailReplace.instance.WhipFinish();
-                        FightManager.instance.MonsterWhip();
-                        ValideAction();
-                    //}
+#endif
+
+                    ThumbnailReplace.instance.WhipFinish();
+                    FightManager.instance.MonsterWhip();
+                    ValideAction();
+
                 }
                 else
                 {
@@ -246,9 +231,16 @@ public class ThumbnailManager : MonoBehaviour
                 }
                 break;
             case 2:
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
+                if (thumbnailsList[vignetteNb].gameObject.name.Contains("Knead") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
+                {
+#if UNITY_ANDROID
+                    if(thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
                     {
-                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain") || thumbnailsList[vignetteNb].gameObject.name.Contains("KneadPinch"))
+                        return;
+                    }
+#endif
+
+                    if (thumbnailsList[vignetteNb].gameObject.name.Contains("KneadMaintain"))
                     {
                         return;
                     }
@@ -258,11 +250,11 @@ public class ThumbnailManager : MonoBehaviour
                         FightManager.instance.MonsterKnead();
                         ValideAction();
                     }
-                    }
-                    else
-                    {
-                        WrongAction();
-                    }
+                }
+                else
+                {
+                    WrongAction();
+                }
                 
                 break;
             case 3:
@@ -310,16 +302,16 @@ public class ThumbnailManager : MonoBehaviour
             case 5:
                 if (thumbnailsList[vignetteNb].gameObject.name.Contains("Boil") && !transform.GetChild(vignetteNb).GetChild(0).gameObject.GetComponent<Thumbnail>().isChip)
                 {
+#if UNITY_ANDROID
                     if (thumbnailsList[vignetteNb].gameObject.name.Contains("BoilLaunch"))
                     {
                         return;
                     }
-                    else
-                    {
-                        ThumbnailReplace.instance.BoilFinish();
-                        FightManager.instance.MonsterBoil();
-                        ValideAction();
-                    }
+#endif
+
+                    ThumbnailReplace.instance.BoilFinish();
+                    FightManager.instance.MonsterBoil();
+                    ValideAction();
                 }
                 else
                 {
