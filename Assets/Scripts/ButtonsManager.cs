@@ -10,14 +10,11 @@ public class ButtonsManager : MonoBehaviour
 
     private FightManager fm;
     private LevelManager lm;
-    private ShieldSlider ss;
-    public GameObject slider;
 
     private void Start()
     {
         fm = FightManager.instance;
         lm = LevelManager.instance;
-        ss = slider.GetComponent<ShieldSlider>();
     }
 
     public void Update()
@@ -75,39 +72,16 @@ public class ButtonsManager : MonoBehaviour
     #endregion
 
     #region Eat
-    public void EatDown()
+    public void Eat()
     {
-        if (tm.monsterLife.currentShield > 0)
-        {
-            ss.DefineSweetSpot();
-            slider.SetActive(true);
-            ss.isMaintainEat = true;
-        }
-        else
-        {
-            fm.Eat();
-        }
+        fm.Eat();
+        tm.Heal();
     }
 
-    public void EatUp()
+    public void EatFinal()
     {
-        if (tm.monsterLife.currentShield > 0)
-        {
-            ss.isMaintainEat = false;
-            ss.eatUp = true;
-        }
-    }
-
-    public void EatFinalDown()
-    {
-        slider.SetActive(true);
-        ss.isMaintainEat = true;
-    }
-
-    public void EatFinalUp()
-    {
-        ss.isMaintainEat = false;
-        ss.eatUpFinal = true;
+        lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+        tm.Heal();
     }
     #endregion
 

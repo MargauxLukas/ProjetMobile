@@ -124,7 +124,7 @@ public class LevelManager : MonoBehaviour
     {
         if(currentLevel.Count == 1 && !isInfinite)
         {
-            //bottomScreen.SetActive(false);
+            bottomScreen.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
             endScreen.SetActive(true);
             //TapisManager.instance.transform.parent.gameObject.SetActive(false);                                              
 

@@ -28,7 +28,7 @@ public class FightManager : MonoBehaviour
 
     public bool isAttacked = false;
 
-    public float timerAttack = 1.5f;
+    public float timerAttack = 1.517f;
     private float timeCooldown = 5f;
 
     public float timeBetweenAction = 4f;
@@ -72,7 +72,7 @@ public class FightManager : MonoBehaviour
         isMonsterAttacking = false;
         SetTimeAction();
         SetLifeGoal();
-        timerAttack = 1.5f;
+        timerAttack = 1.517f;
 
         if (!isPlayerDefending)
         {
