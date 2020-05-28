@@ -40,7 +40,7 @@ public class Thumbnail : MonoBehaviour
         }
         else if(validate)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, 50f);
+            transform.position = Vector3.MoveTowards(transform.position, target, 20f);
             transform.Rotate(new Vector3(0f, 0f, -40f));
 
             if (Vector3.Distance(transform.position, target) < 200f)

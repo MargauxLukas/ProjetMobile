@@ -303,9 +303,10 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerWin()
     {
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
         scoreScreen.SetActive(true);
         scoreScreen.GetComponent<VictoryStars>().SetStars(GameManager.instance.GetPlayerLife());
+        bottomScreen.transform.parent.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
 
         PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString(), scoreScreen.GetComponent<VictoryStars>().nbStars);
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);

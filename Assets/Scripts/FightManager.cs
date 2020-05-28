@@ -10,6 +10,7 @@ public class FightManager : MonoBehaviour
     public static FightManager instance;
 
     public GameObject shieldGroup;
+    public GameObject targetThumb;
 
     public AudioClip damageClip;
 
