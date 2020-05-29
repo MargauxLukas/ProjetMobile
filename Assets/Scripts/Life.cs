@@ -25,6 +25,7 @@ public class Life : MonoBehaviour
             if (currentLife == 0)
             {
                 stuned = true;
+                LevelManager.instance.particle.transform.GetChild(1).gameObject.SetActive(true);
                 currentShield = 0;
                 LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
                 FightManager.instance.isMonsterAttacking = false;
@@ -59,6 +60,7 @@ public class Life : MonoBehaviour
                 currentLife = lifeMax;
                 currentShield = 0;
                 FightManager.instance.SetLifeGoal();
+                LevelManager.instance.particle.transform.GetChild(1).gameObject.SetActive(false);
                 ThumbnailManager.instance.phase1 = true;
                 TapisManager.instance.TapisOnPhase1();
                 LevelManager.instance.ActivatePhase1();
