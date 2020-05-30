@@ -408,7 +408,6 @@ public class ThumbnailManager : MonoBehaviour
         {
             transform.GetChild(3).GetChild(0).gameObject.GetComponent<Thumbnail>().NeedToMove(transform.GetChild(2).transform.position);
             transform.GetChild(3).GetChild(0).transform.SetParent(transform.GetChild(2));
-            //Instantiate(thumbnailsList[2], transform.GetChild(2).transform.position, Quaternion.identity, transform.GetChild(2));
         }
 
         if (thumbnailsList.Count > 3)

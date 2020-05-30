@@ -253,6 +253,7 @@ public class FightManager : MonoBehaviour
     public void MonsterDeath()
     {
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isDeath", true);
+        LevelManager.instance.particle.transform.GetChild(1).gameObject.SetActive(false);
 
         StartCoroutine("PlayDeathAnim", ThumbnailManager.instance.transform.parent.GetComponent<UniqueValues>().animDeathTime);
     }

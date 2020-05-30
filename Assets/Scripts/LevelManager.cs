@@ -4,30 +4,48 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager instance;
     public GameObject player;
+
+    [Header("Canvas > Bin")]
     public Transform bin;
+
+    [Header("TopScreenOutUI")]
     public Transform monsterParent;
 
+    [Header("Canvas Screens")]
     public GameObject topScreen;
     public GameObject bottomScreen;
     public GameObject endScreen;
     public GameObject scoreScreen;
     public GameObject infiniteScreen;
 
-    public GameObject kneadB;
-    public GameObject cutB;
-    public GameObject whipB;
-    public GameObject cookB;
-    public GameObject boilB;
+    [Header("Canvas > BottomScreen > Button Area > Phase1 Button && Phase2 Button")]
+    public GameObject phase1Buttons;
+    public GameObject phase2Buttons;
 
+    private GameObject kneadB;
+    private GameObject cutB;
+    private GameObject whipB;
+    private GameObject cookB;
+    private GameObject boilB;
+
+    private GameObject attackB;
+    private GameObject defendB;
+    private GameObject eatB;
+
+    [Header("Crumb")]
     public List<GameObject> obstacles;
+
     private List<float> positionLeftButtonList = new List<float> {32, 260, 485 };
     private List<float> positionRightButtonList = new List<float> {480, 254, 26 };
 
+    [Header("Levels")]
+    public bool isInfinite = false;
     public List<GameObject> level1;
     public List<GameObject> level2;
     public List<GameObject> level3;
@@ -36,15 +54,14 @@ public class LevelManager : MonoBehaviour
 
     public List<GameObject> currentLevel;
 
-    public GameObject phase1Buttons;
-    public GameObject phase2Buttons;
+    private bool isLevel1 = false;
+    private int countMonster;                       
 
-    public bool isInfinite = false;
-    public int countMonster;
-
+    [Header("Transition Text")]
     public GameObject beginTextGameObject;
     public GameObject eatItTextGameObject;
 
+    [Header("Particle GameObject")]
     public GameObject particle;
 
     public void Awake()
@@ -54,6 +71,17 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
+        boilB  = phase2Buttons.transform.GetChild(0).gameObject;
+        whipB  = phase2Buttons.transform.GetChild(1).gameObject;
+        kneadB = phase2Buttons.transform.GetChild(2).gameObject;
+        cutB   = phase2Buttons.transform.GetChild(3).gameObject;
+        cookB  = phase2Buttons.transform.GetChild(4).gameObject;
+
+        attackB = phase1Buttons.transform.GetChild(0).gameObject;
+        defendB = phase1Buttons.transform.GetChild(1).gameObject;
+
+        eatB = phase1Buttons.transform.parent.transform.GetChild(0).GetChild(0).gameObject;
+
         ChooseLevel(UIManager.chosenLevel);
     }
 
@@ -68,6 +96,7 @@ public class LevelManager : MonoBehaviour
                     whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                isLevel1 = true;
                 countMonster = level1.Count;
                 break;
             case 2:
@@ -124,11 +153,10 @@ public class LevelManager : MonoBehaviour
 
     public void BeginGame()
     {
-        if(currentLevel.Count == 1 && !isInfinite)
+        if(currentLevel.Count == 1 && !isInfinite && !isLevel1)
         {
             bottomScreen.transform.GetChild(1).GetChild(0).GetChild(0).gameObject.SetActive(false);
-            endScreen.SetActive(true);
-            //TapisManager.instance.transform.parent.gameObject.SetActive(false);                                              
+            endScreen.SetActive(true);                                          
 
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.47f, -2f);
@@ -139,20 +167,16 @@ public class LevelManager : MonoBehaviour
             eatItTextGameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("isBegin", true);
             StartCoroutine("WaitAnimationEat");
         }
-        else if (currentLevel.Count != 0)
+        else if (currentLevel.Count != 0 || isLevel1)
         {
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
             TapisManager.instance.TapisOnPhase1();
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.5f, -2f);
-            //monster.transform.GetChild(2).gameObject.transform.localScale = new Vector3(0.2f, 0.2f, 0.2f);
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
-            //monsterParent.transform.GetChild(1).transform.localScale = new Vector3(0.5f , 0.5f, 0.5f);
             FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
             FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
-            //FightManager.instance.shieldGroup.GetComponent<SpawnShield>().DestroyAll();
-            //FightManager.instance.ChoosePatterns();
             monster.transform.SetParent(topScreen.transform);
             gameObject.GetComponent<ButtonsManager>().tm = monster.transform.GetChild(2).GetComponent<ThumbnailManager>();
         }
@@ -171,7 +195,9 @@ public class LevelManager : MonoBehaviour
 
     IEnumerator WaitAnimationFight()
     {
+        UninteractableButtons();
         yield return new WaitForSecondsRealtime(1.333f);
+        InteractableButtons();
         Time.timeScale = 1f;
         Destroy(beginTextGameObject.gameObject);
     }
@@ -181,6 +207,20 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.333f);
         Time.timeScale = 1f;
         Destroy(eatItTextGameObject.gameObject);
+    }
+
+    public void UninteractableButtons()
+    {
+        attackB.GetComponent<Button>().interactable = false;
+        defendB.GetComponent<Button>().interactable = false;
+        eatB   .GetComponent<Button>().interactable = false;
+    }
+
+    public void InteractableButtons()
+    {
+        attackB.GetComponent<Button>().interactable = true;
+        defendB.GetComponent<Button>().interactable = true;
+        eatB   .GetComponent<Button>().interactable = true;
     }
 
     public void NextMonster()

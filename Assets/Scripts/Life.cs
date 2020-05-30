@@ -6,14 +6,25 @@ using UnityEngine.UI;
 
 public class Life : MonoBehaviour
 {
-    public int lifeMax = 10;
-    public int currentLife = 10;
-    public int countShield = 10;
-    public int currentShield = 0;
+    [Header("Life")]
+    public int lifeMax     = 10;                                //Nombre de point de vie du Monstre
+    public int currentLife = 10;                                //Nombre de point de vue actuel
 
-    public float nb;
-    public bool stuned = false;
-    public bool platFinal = false;
+    [Header("Shield")]
+    public int countShield   = 10;                              //Le nombre de bouclier que le monstre se mettra à chaque protection
+    public int currentShield =  0;                              //Le nombre de bouclier actuel
+
+    private float nb;                                           //Le nombre de vie que le monstre perd par coup
+    private bool stuned = false;
+
+    private FightManager fm;
+    private LevelManager lm;
+
+    private void Start()
+    {
+        fm = FightManager.instance;
+        lm = LevelManager.instance;
+    }
 
     public void Update()
     {
@@ -24,30 +35,29 @@ public class Life : MonoBehaviour
 
             if (currentLife == 0)
             {
+                if(ThumbnailManager.instance.thumbnailsList.Count == 0)
+                {
+                    ReturnToMenuException();                                                                                                           //Si le monstre n'a pas de Thumbnail, le joueur gagne directement
+                }
+
                 stuned = true;
-                LevelManager.instance.particle.transform.GetChild(1).gameObject.SetActive(true);
-                currentShield = 0;
-                LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
-                FightManager.instance.isMonsterAttacking = false;
-                FightManager.instance.timerAttack = 1.5f;
+                lm.particle     .transform.GetChild(1).gameObject.SetActive(true);                                                                     //Activation VFX Stunned
+                lm.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
+                fm.isMonsterAttacking = false;
+                fm.timerAttack = 1.5f;
                 ThumbnailManager.instance.phase1 = false;
 
-                for (int i = 0; i < FightManager.instance.shieldGroup.transform.childCount; i++)
+                currentShield = 0;                                                                                                                      //SECURITÉ : On met le nombre de bouclier actuel à 0 ! 
+                for (int i = 0; i < fm.shieldGroup.transform.childCount; i++)
                 {
-                    Destroy(FightManager.instance.shieldGroup.transform.GetChild(i).gameObject);
+                    Destroy(fm.shieldGroup.transform.GetChild(i).gameObject);                                                                           //SECURITÉ : On détruit les boucliers au cas-ou ! 
                 }
 
                 TapisManager.instance.TapisOnPhase2();
-                LevelManager.instance.ActivatePhase2();
+                lm.ActivatePhase2();
 
-                if (ThumbnailManager.instance.transform.GetChild(0).transform.childCount > 0)
-                {
-                    ThumbnailManager.instance.ShowThumbnail();
-                }
-                else
-                {
-                    ThumbnailManager.instance.ChooseThumbnail();
-                }
+                if (ThumbnailManager.instance.transform.GetChild(0).transform.childCount > 0) {ThumbnailManager.instance.ShowThumbnail()  ;}
+                else                                                                          {ThumbnailManager.instance.ChooseThumbnail();}
             }
         }
         else
@@ -56,17 +66,27 @@ public class Life : MonoBehaviour
 
             if (GetComponent<Image>().fillAmount == 1f)
             {
+                stuned = false;
+                lm.particle.transform.GetChild(1).gameObject.SetActive(false);
                 ThumbnailManager.instance.HideThumbnail();
                 currentLife = lifeMax;
                 currentShield = 0;
-                FightManager.instance.SetLifeGoal();
-                LevelManager.instance.particle.transform.GetChild(1).gameObject.SetActive(false);
+                fm.SetLifeGoal();
                 ThumbnailManager.instance.phase1 = true;
                 TapisManager.instance.TapisOnPhase1();
-                LevelManager.instance.ActivatePhase1();
-                stuned = false;
+                lm.ActivatePhase1();
             }
         }
 
+    }
+
+    public void ReturnToMenuException()
+    {
+        if (PlayerPrefs.GetInt("level") == UIManager.chosenLevel)
+        {
+            PlayerPrefs.SetInt("level", UIManager.chosenLevel + 1);
+        }
+
+        LevelManager.instance.PlayerWin();
     }
 }

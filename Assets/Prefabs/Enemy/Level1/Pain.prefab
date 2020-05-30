@@ -198,9 +198,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5480935d977c6b243957be397850aceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeMax: 18
-  currentLife: 18
-  countShield: 2
+  lifeMax: 10
+  currentLife: 10
+  countShield: 0
   currentShield: 0
   nb: 0
   stuned: 0
@@ -666,14 +666,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: 2
+  pattern: 1
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
-  thumbnailsList:
-  - {fileID: 2717968371175590322, guid: e2ca24e18c2cfa84991bf58b8be9fe71, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
-  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  thumbnailsList: []
   vignetteNb: 0
   knead: 0
   cook: 0
