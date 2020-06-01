@@ -170,6 +170,17 @@ public class FightManager : MonoBehaviour
         LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", true);
         timeCooldown = timerAttack;
         isMonsterAttacking = true;
+
+        if (LevelManager.instance.level1Tuto)
+        {
+            StartCoroutine("Wait2sec");
+        }
+    }
+
+    IEnumerator Wait2sec()
+    {
+        yield return new WaitForSeconds(0.2f);
+        TutorialManager.instance.Level1FirstEnnemyAttack();
     }
 
     public void MonsterDefend()

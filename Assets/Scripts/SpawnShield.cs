@@ -16,6 +16,11 @@ public class SpawnShield : MonoBehaviour
             Quaternion rot = Quaternion.identity;
             Instantiate(prefab, pos, rot, transform);
         }
+
+        if (LevelManager.instance.level4Tuto)
+        {
+            TutorialManager.instance.Level4FirstShield();
+        }
     }
 
     Vector3 RandomCircle(Vector3 center, float radius, int a)

@@ -462,11 +462,11 @@ public class ThumbnailManager : MonoBehaviour
 
     public void SpawnObstacle(int i)
     {
-        if (!thumbnailsList[i].name.Contains("Lock"))
+        if ((!thumbnailsList[i].name.Contains("Lock") && UIManager.chosenLevel > 13) || transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().wantCandy)
         {
             int random = Random.Range(1, 11);
 
-            if (random == 1)
+            if (random == 1 || transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().wantCandy)
             {
                 int chipRandom = Random.Range(0, 2);
                 transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip = true;

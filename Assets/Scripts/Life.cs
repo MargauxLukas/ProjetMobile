@@ -58,11 +58,19 @@ public class Life : MonoBehaviour
 
                 if (ThumbnailManager.instance.transform.GetChild(0).transform.childCount > 0) {ThumbnailManager.instance.ShowThumbnail()  ;}
                 else                                                                          {ThumbnailManager.instance.ChooseThumbnail();}
+
+                if(LevelManager.instance.level2Tuto)
+                {
+                    TutorialManager.instance.Level2Stunned();
+                }
             }
         }
         else
         {
-            GetComponent<Image>().fillAmount += 0.003f;
+            if (Time.timeScale != 0f)
+            {
+                GetComponent<Image>().fillAmount += 0.003f;
+            }
 
             if (GetComponent<Image>().fillAmount == 1f)
             {

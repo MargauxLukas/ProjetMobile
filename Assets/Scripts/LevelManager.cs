@@ -51,10 +51,34 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> level3;
     public List<GameObject> level4;
     public List<GameObject> level5;
+    public List<GameObject> level6;
+    public List<GameObject> level7;
+    public List<GameObject> level8;
+    public List<GameObject> level9;
+    public List<GameObject> level10;
+    public List<GameObject> level11;
+    public List<GameObject> level12;
+    public List<GameObject> level13;
+    public List<GameObject> level14;
+    public List<GameObject> level15;
+    public List<GameObject> level16;
+    public List<GameObject> level17;
+    public List<GameObject> level18;
+    public List<GameObject> level19;
+    public List<GameObject> level20;
+
+
 
     public List<GameObject> currentLevel;
 
     private bool isLevel1 = false;
+
+    public bool level1Tuto = false;
+    public bool level2Tuto = false;
+    public bool level4Tuto = false;
+    public bool level6Tuto = false;
+    private bool level7Tuto = false;
+
     private int countMonster;                       
 
     [Header("Transition Text")]
@@ -92,12 +116,18 @@ public class LevelManager : MonoBehaviour
             case 1:
                 foreach (GameObject go in level1)
                 {
-                    cutB.transform.position = whipB.transform.position;
-                    whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                cutB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
                 isLevel1 = true;
                 countMonster = level1.Count;
+
+                if(PlayerPrefs.GetInt("level1Tuto") == 0)
+                {
+                    level1Tuto = true;
+                }
+
                 break;
             case 2:
                 foreach (GameObject go in level2)
@@ -105,33 +135,153 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level2.Count;
+
+                if (PlayerPrefs.GetInt("level2Tuto") == 0)
+                {
+                    level2Tuto = true;
+                }
                 break;
             case 3:
                 foreach (GameObject go in level3)
                 {
-                    boilB.transform.position = whipB.transform.position;
-                    whipB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
+                cookB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
                 countMonster = level3.Count;
                 break;
             case 4:
                 foreach (GameObject go in level4)
                 {
-                    cookB.transform.position = cutB.transform.position;
-                    cutB.gameObject.SetActive(false);
                     currentLevel.Add(go);
                 }
                 countMonster = level4.Count;
+
+                if (PlayerPrefs.GetInt("level4Tuto") == 0)
+                {
+                    level4Tuto = true;
+                }
                 break;
             case 5:
                 foreach (GameObject go in level5)
                 {
                     currentLevel.Add(go);
                 }
+                boilB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
                 countMonster = level5.Count;
                 break;
             case 6:
+                foreach (GameObject go in level6)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level6.Count;
+
+                if (PlayerPrefs.GetInt("level6Tuto") == 0)
+                {
+                    level6Tuto = true;
+                }
+                break;
+            case 7:
+                foreach (GameObject go in level7)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level7.Count;
+                break;
+            case 8:
+                foreach (GameObject go in level8)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level8.Count;
+                break;
+            case 9:
+                foreach (GameObject go in level9)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level9.Count;
+                break;
+            case 10:
+                foreach (GameObject go in level10)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level10.Count;
+                break;
+            case 11:
+                foreach (GameObject go in level11)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level11.Count;
+                break;
+            case 12:
+                foreach (GameObject go in level12)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level12.Count;
+                break;
+            case 13:
+                foreach (GameObject go in level13)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level13.Count;
+                break;
+            case 14:
+                foreach (GameObject go in level14)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level14.Count;
+                break;
+            case 15:
+                foreach (GameObject go in level15)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level15.Count;
+                break;
+            case 16:
+                foreach (GameObject go in level16)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level16.Count;
+                break;
+            case 17:
+                foreach (GameObject go in level17)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level17.Count;
+                break;
+            case 18:
+                foreach (GameObject go in level18)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level18.Count;
+                break;
+            case 19:
+                foreach (GameObject go in level19)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level19.Count;
+                break;
+            case 20:
+                foreach (GameObject go in level20)
+                {
+                    currentLevel.Add(go);
+                }
+                countMonster = level20.Count;
+                break;
+            case 21:
                 currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
                 isInfinite = true;
                 if (LevelManager.instance.isInfinite)
@@ -200,6 +350,15 @@ public class LevelManager : MonoBehaviour
         InteractableButtons();
         Time.timeScale = 1f;
         Destroy(beginTextGameObject.gameObject);
+
+        if(level1Tuto)
+        {
+            TutorialManager.instance.Level1Begin();
+        }
+        else if(level2Tuto)
+        {
+            TutorialManager.instance.Level2Begin();
+        }
     }
 
     IEnumerator WaitAnimationEat()
@@ -207,6 +366,11 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1.333f);
         Time.timeScale = 1f;
         Destroy(eatItTextGameObject.gameObject);
+
+        if(level2Tuto)
+        {
+            TutorialManager.instance.Level2FinalDish();
+        }
     }
 
     public void UninteractableButtons()
@@ -214,6 +378,11 @@ public class LevelManager : MonoBehaviour
         attackB.GetComponent<Button>().interactable = false;
         defendB.GetComponent<Button>().interactable = false;
         eatB   .GetComponent<Button>().interactable = false;
+        cutB.GetComponent<Button>().interactable = false;
+        kneadB.GetComponent<Button>().interactable = false;
+        whipB.GetComponent<Button>().interactable = false;
+        boilB.GetComponent<Button>().interactable = false;
+        cookB.GetComponent<Button>().interactable = false;
     }
 
     public void InteractableButtons()
@@ -221,6 +390,11 @@ public class LevelManager : MonoBehaviour
         attackB.GetComponent<Button>().interactable = true;
         defendB.GetComponent<Button>().interactable = true;
         eatB   .GetComponent<Button>().interactable = true;
+        cutB.GetComponent<Button>().interactable = true;
+        kneadB.GetComponent<Button>().interactable = true;
+        whipB.GetComponent<Button>().interactable = true;
+        boilB.GetComponent<Button>().interactable = true;
+        cookB.GetComponent<Button>().interactable = true;
     }
 
     public void NextMonster()
@@ -351,6 +525,7 @@ public class LevelManager : MonoBehaviour
         bottomScreen.transform.parent.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
 
         PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString(), scoreScreen.GetComponent<VictoryStars>().nbStars);
+        PlayerPrefs.SetInt("level" + UIManager.chosenLevel.ToString() + "Tuto", 1);
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
 
         Time.timeScale = 0f;

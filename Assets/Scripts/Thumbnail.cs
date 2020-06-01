@@ -11,6 +11,7 @@ public class Thumbnail : MonoBehaviour
     public bool isLocked = false;
     public bool isChip = false;
     public bool isFirst = false;
+    public bool wantCandy = false;
 
     public GameObject Lock;
 
@@ -26,6 +27,25 @@ public class Thumbnail : MonoBehaviour
             {
                 transform.GetComponent<RectTransform>().sizeDelta = new Vector2(110f, 110f);
             }
+
+
+            if (LevelManager.instance.level6Tuto)
+            {
+                if (gameObject.name.Contains("x2"))
+                {
+                    TutorialManager.instance.Level6SpecialCut();
+                }
+
+                if (gameObject.name.Contains("Pinch"))
+                {
+                    TutorialManager.instance.Level6SpecialKnead();
+                }
+
+                if (gameObject.name.Contains("Mixed"))
+                {
+                    TutorialManager.instance.Level6SpecialWhip();
+                }
+            }
             isFirst = false;
         }
         if(move)
@@ -36,6 +56,7 @@ public class Thumbnail : MonoBehaviour
             {
                 move = false;
                 TapisManager.instance.SetTapisOff();
+
             }
         }
         else if(validate)
