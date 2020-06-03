@@ -383,7 +383,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void WrongAction()
     {
-        if (!isTransit)
+        if (!isTransit || Time.timeScale == 1)
         {
             Damage();
         }
@@ -462,7 +462,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void SpawnObstacle(int i)
     {
-        if ((!thumbnailsList[i].name.Contains("Lock") && UIManager.chosenLevel > 13) || transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().wantCandy)
+        if ((!thumbnailsList[i].name.Contains("Lock") && UIManager.chosenLevel > 20) || transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().wantCandy)
         {
             int random = Random.Range(1, 11);
 
@@ -471,6 +471,11 @@ public class ThumbnailManager : MonoBehaviour
                 int chipRandom = Random.Range(0, 2);
                 transform.GetChild(i).GetChild(0).GetComponent<Thumbnail>().isChip = true;
                 Instantiate(LevelManager.instance.obstacles[chipRandom], transform.GetChild(i).transform.position, Quaternion.identity, transform.GetChild(i).GetChild(0));
+            }
+
+            if(LevelManager.instance.level13Tuto)
+            {
+                TutorialManager.instance.Level13FirstCandy();
             }
         }
     }

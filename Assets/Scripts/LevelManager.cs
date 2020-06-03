@@ -37,6 +37,7 @@ public class LevelManager : MonoBehaviour
     private GameObject attackB;
     private GameObject defendB;
     private GameObject eatB;
+    private GameObject pauseB;
 
     [Header("Crumb")]
     public List<GameObject> obstacles;
@@ -77,7 +78,9 @@ public class LevelManager : MonoBehaviour
     public bool level2Tuto = false;
     public bool level4Tuto = false;
     public bool level6Tuto = false;
-    private bool level7Tuto = false;
+    public bool level8Tuto = false;
+    public bool level11Tuto = false;
+    public bool level13Tuto = false;
 
     private int countMonster;                       
 
@@ -105,6 +108,7 @@ public class LevelManager : MonoBehaviour
         defendB = phase1Buttons.transform.GetChild(1).gameObject;
 
         eatB = phase1Buttons.transform.parent.transform.GetChild(0).GetChild(0).gameObject;
+        pauseB = phase1Buttons.transform.parent.transform.GetChild(0).GetChild(1).gameObject;
 
         ChooseLevel(UIManager.chosenLevel);
     }
@@ -195,6 +199,16 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                boilB.transform.position = cutB.transform.position;
+                cookB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
+                cutB.gameObject.SetActive(false);
+
+                if(PlayerPrefs.GetInt("level8Tuto") == 0)
+                {
+                    level8Tuto = true;
+                }
+
                 countMonster = level8.Count;
                 break;
             case 9:
@@ -202,6 +216,9 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                cookB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
+
                 countMonster = level9.Count;
                 break;
             case 10:
@@ -215,6 +232,13 @@ public class LevelManager : MonoBehaviour
                 foreach (GameObject go in level11)
                 {
                     currentLevel.Add(go);
+                }
+                boilB.transform.position = whipB.transform.position;
+                whipB.gameObject.SetActive(false);
+
+                if (PlayerPrefs.GetInt("level11Tuto") == 0)
+                {
+                    level11Tuto = true;
                 }
                 countMonster = level11.Count;
                 break;
@@ -230,6 +254,11 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+
+                if (PlayerPrefs.GetInt("level13Tuto") == 0)
+                {
+                    level13Tuto = true;
+                }
                 countMonster = level13.Count;
                 break;
             case 14:
@@ -237,6 +266,9 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                cookB.transform.position = kneadB.transform.position;
+                kneadB.SetActive(false);
+
                 countMonster = level14.Count;
                 break;
             case 15:
@@ -244,6 +276,11 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                boilB.transform.position = kneadB.transform.position;
+                cookB.transform.position = whipB.transform.position;
+                kneadB.SetActive(false);
+                whipB.SetActive(false);
+
                 countMonster = level15.Count;
                 break;
             case 16:
@@ -265,6 +302,11 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                boilB.transform.position = kneadB.transform.position;
+                cookB.transform.position = whipB.transform.position;
+                kneadB.SetActive(false);
+                whipB.SetActive(false);
+
                 countMonster = level18.Count;
                 break;
             case 19:
@@ -272,6 +314,10 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+
+                boilB.transform.position = kneadB.transform.position;
+                kneadB.SetActive(false);
+
                 countMonster = level19.Count;
                 break;
             case 20:
@@ -279,6 +325,9 @@ public class LevelManager : MonoBehaviour
                 {
                     currentLevel.Add(go);
                 }
+                cookB.transform.position = whipB.transform.position;
+                whipB.SetActive(false);
+
                 countMonster = level20.Count;
                 break;
             case 21:
@@ -383,6 +432,7 @@ public class LevelManager : MonoBehaviour
         whipB.GetComponent<Button>().interactable = false;
         boilB.GetComponent<Button>().interactable = false;
         cookB.GetComponent<Button>().interactable = false;
+        pauseB.GetComponent<Button>().interactable = false;
     }
 
     public void InteractableButtons()
@@ -395,6 +445,7 @@ public class LevelManager : MonoBehaviour
         whipB.GetComponent<Button>().interactable = true;
         boilB.GetComponent<Button>().interactable = true;
         cookB.GetComponent<Button>().interactable = true;
+        pauseB.GetComponent<Button>().interactable = true;
     }
 
     public void NextMonster()

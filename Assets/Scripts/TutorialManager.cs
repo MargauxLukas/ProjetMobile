@@ -14,6 +14,10 @@ public class TutorialManager : MonoBehaviour
     private bool isFirstCut = true;
     private bool isFirstKnead = true;
     private bool isFirstWhip = true;
+    private bool isFirstBoil = true;
+    private bool isFirstCook = true;
+    private bool isFirstLock = true;
+    private bool isFirstCandy = true;
 
     public void Awake()
     {
@@ -41,6 +45,9 @@ public class TutorialManager : MonoBehaviour
         tutoGo.transform.GetChild(6).gameObject.SetActive(false);
         tutoGo.transform.GetChild(7).gameObject.SetActive(false);
         tutoGo.transform.GetChild(8).gameObject.SetActive(false);
+        tutoGo.transform.GetChild(9).gameObject.SetActive(false);
+        tutoGo.transform.GetChild(10).gameObject.SetActive(false);
+        tutoGo.transform.GetChild(11).gameObject.SetActive(false);
     }
     #endregion
 
@@ -141,6 +148,60 @@ public class TutorialManager : MonoBehaviour
             tutoGo.transform.GetChild(8).gameObject.SetActive(true);
             ActivateText();
             isFirstWhip = false;
+        }
+    }
+    #endregion
+
+    #region Level 8
+    public void Level8SpecialBoil()
+    {
+        if (isFirstBoil)
+        {
+            Time.timeScale = 0f;
+            tutorialText.text = "To achieve a perfect action on a boiling thumbnail, you'll have to swipe up with your finger while pressing ";
+            tutoGo.transform.GetChild(9).gameObject.SetActive(true);
+            ActivateText();
+            isFirstBoil = false;
+        }
+    }
+
+    public void Level8SpecialCook()
+    {
+        if (isFirstCook)
+        {
+            Time.timeScale = 0f;
+            tutorialText.lineSpacing = 1.5f;
+            tutorialText.text = "Here comes a special cooking thumbnail. For this one, you will have to maintain the pressure on        until the sliding bar is full. ";
+            tutoGo.transform.GetChild(10).gameObject.SetActive(true);
+            ActivateText();
+            isFirstCook = false;
+        }
+    }
+    #endregion
+
+    #region Level 11
+    public void Level11FirstLock()
+    {
+        if (isFirstLock)
+        {
+            Time.timeScale = 0f;
+            tutorialText.text = "Look, this thumbnail is locked, try to achieve the action linked to the next thumbnail to unlock the first one.";
+            ActivateText();
+            isFirstLock = false;
+        }
+    }
+    #endregion
+
+    #region Level 13
+    public void Level13FirstCandy()
+    {
+        if (isFirstCandy)
+        {
+            Time.timeScale = 0f;
+            tutorialText.text = "Uh oh, you let some crumbs escape while eating the ennemy's shield. Now they're hiding some thumbnails. Hit              to eat the crumbs !";
+            tutoGo.transform.GetChild(11).gameObject.SetActive(true);
+            ActivateText();
+            isFirstCandy = false;
         }
     }
     #endregion

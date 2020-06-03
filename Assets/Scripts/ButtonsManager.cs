@@ -32,8 +32,11 @@ public class ButtonsManager : MonoBehaviour
     #region Knead
     public void KneadDown()
     {
-        tm.CheckAction(2);
-        ThumbnailManager.instance.knead = true;
+        if (Time.timeScale == 1)
+        {
+            tm.CheckAction(2);
+            ThumbnailManager.instance.knead = true;
+        }
     }
 
     public void KneadUp()
@@ -45,8 +48,11 @@ public class ButtonsManager : MonoBehaviour
     #region Cook
     public void CookDown()
     {
-        tm.CheckAction(4);
-        tm.cook = true;
+        if (Time.timeScale == 1)
+        {
+            tm.CheckAction(4);
+            tm.cook = true;
+        }
     }
 
     public void CookUp()
@@ -58,8 +64,11 @@ public class ButtonsManager : MonoBehaviour
     #region Boil
     public void BoilDown()
     {
-        tm.CheckAction(5);
-        tm.boil = true;
+        if (Time.timeScale == 1)
+        {
+            tm.CheckAction(5);
+            tm.boil = true;
+        }
     }
     #endregion
 

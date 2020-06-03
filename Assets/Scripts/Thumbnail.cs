@@ -46,6 +46,25 @@ public class Thumbnail : MonoBehaviour
                     TutorialManager.instance.Level6SpecialWhip();
                 }
             }
+            else if(LevelManager.instance.level8Tuto)
+            {
+                if(gameObject.name.Contains("Maintain"))
+                {
+                    TutorialManager.instance.Level8SpecialCook();
+                }
+
+                if(gameObject.name.Contains("Launch"))
+                {
+                    TutorialManager.instance.Level8SpecialBoil();
+                }
+            }
+            else if(LevelManager.instance.level11Tuto)
+            {
+                if(gameObject.name.Contains("Lock"))
+                {
+                    TutorialManager.instance.Level11FirstLock();
+                }
+            }
             isFirst = false;
         }
         if(move)
