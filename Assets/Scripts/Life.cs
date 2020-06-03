@@ -43,6 +43,7 @@ public class Life : MonoBehaviour
                 stuned = true;
                 lm.particle     .transform.GetChild(1).gameObject.SetActive(true);                                                                     //Activation VFX Stunned
                 lm.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", false);
+                lm.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isStun", true);
                 fm.isMonsterAttacking = false;
                 fm.timerAttack = 1.5f;
                 ThumbnailManager.instance.phase1 = false;
@@ -76,6 +77,7 @@ public class Life : MonoBehaviour
             {
                 stuned = false;
                 lm.particle.transform.GetChild(1).gameObject.SetActive(false);
+                lm.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isStun", false);
                 ThumbnailManager.instance.HideThumbnail();
                 currentLife = lifeMax;
                 currentShield = 0;
