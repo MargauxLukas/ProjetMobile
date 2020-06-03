@@ -90,6 +90,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Particle GameObject")]
     public GameObject particle;
+    public GameObject cookieVFX;
 
     public void Awake()
     {

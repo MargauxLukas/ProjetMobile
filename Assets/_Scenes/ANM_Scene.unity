@@ -2308,6 +2308,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eat_Cookie_VFX_PREF
       objectReference: {fileID: 0}
+    - target: {fileID: 4740931920198938684, guid: 5f1d6d3ee57e0fb41b352d11f3d5025d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6279671376451762818, guid: 5f1d6d3ee57e0fb41b352d11f3d5025d,
         type: 3}
       propertyPath: m_LocalPosition.x

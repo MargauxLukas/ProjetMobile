@@ -294,7 +294,17 @@ public class FightManager : MonoBehaviour
         if (ThumbnailManager.instance.phase1)
         {
             ThumbnailManager.instance.monsterLife.currentShield--;
+            GameObject particleCookie = Instantiate(LevelManager.instance.cookieVFX, shieldGroup.transform.GetChild(0).position, Quaternion.identity, LevelManager.instance.particle.transform);
+            if (particleCookie.transform.position.z > -2)
+            {
+                particleCookie.GetComponent<ParticleSystemRenderer>().sortingOrder = 0;
+            }
+            else
+            {
+                particleCookie.GetComponent<ParticleSystemRenderer>().sortingOrder = 1;
+            }
             Destroy(shieldGroup.transform.GetChild(0).gameObject);
+            Destroy(particleCookie, 2.0f);
 
             if (ThumbnailManager.instance.monsterLife.currentShield == 0)
             {
