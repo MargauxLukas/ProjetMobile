@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using System.Resources;
 using UnityEngine;
 using UnityEngine.UI;
@@ -91,7 +89,7 @@ public class FightManager : MonoBehaviour
 
     IEnumerator DesactiveDefendVFX()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.3f);
         LevelManager.instance.defendVFX.SetActive(false);
     }
 
@@ -286,6 +284,11 @@ public class FightManager : MonoBehaviour
 
         if (ThumbnailManager.instance.monsterLife.currentShield <= 0)
         {
+            GameObject attackAnim = Instantiate(LevelManager.instance.attackVFX, LevelManager.instance.particle.transform);
+            attackAnim.GetComponent<Animator>().SetInteger("AttackInt", Random.Range(1, 6));
+            attackAnim.transform.localScale = new Vector3(-0.5f, -0.5f, -0.5f);
+            Destroy(attackAnim, 2f);
+
             ThumbnailManager.instance.monsterLife.currentLife--;
         }
     }

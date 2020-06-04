@@ -37,6 +37,8 @@ public class ThumbnailManager : MonoBehaviour
 
     public bool isTransit = false;
 
+    public string token;
+
     private void Awake()
     {
         instance = this;
@@ -421,6 +423,9 @@ public class ThumbnailManager : MonoBehaviour
     {
         if (thumbnailsList.Count == 0)
         {
+            int temp = PlayerPrefs.GetInt(token);
+            PlayerPrefs.SetInt(token, temp+1);
+            Debug.Log(token + " " + PlayerPrefs.GetInt(token));
             FightManager.instance.MonsterDeath();        
         }
         else

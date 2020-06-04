@@ -6803,6 +6803,8 @@ MonoBehaviour:
     type: 3}
   eatVFX: {fileID: 6291375256747471029, guid: 9a646de8e96c5fb4d8e48dd128b98d1e, type: 3}
   defendVFX: {fileID: 630218745}
+  attackVFX: {fileID: 411553717605908737, guid: e41e3d197b99e354c9f6f330356da45a,
+    type: 3}
 --- !u!114 &305585311
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -688,6 +688,7 @@ MonoBehaviour:
   touchun: {x: 0, y: 0}
   touchdeux: {x: 0, y: 0}
   isTransit: 0
+  token: BreadN
 --- !u!114 &4751082692300471794
 MonoBehaviour:
   m_ObjectHideFlags: 0

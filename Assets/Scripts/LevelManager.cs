@@ -91,6 +91,7 @@ public class LevelManager : MonoBehaviour
     public GameObject cookieVFX;
     public GameObject eatVFX;
     public GameObject defendVFX;
+    public GameObject attackVFX;
 
     public void Awake()
     {

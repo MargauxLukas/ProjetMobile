@@ -202,9 +202,6 @@ MonoBehaviour:
   currentLife: 10
   countShield: 0
   currentShield: 0
-  nb: 0
-  stuned: 0
-  platFinal: 0
 --- !u!1 &8356807622261119516
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,6 +678,7 @@ MonoBehaviour:
   touchun: {x: 0, y: 0}
   touchdeux: {x: 0, y: 0}
   isTransit: 0
+  token: BreadN
 --- !u!114 &4751082692300471794
 MonoBehaviour:
   m_ObjectHideFlags: 0
