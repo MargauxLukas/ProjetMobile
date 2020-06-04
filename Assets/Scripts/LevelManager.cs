@@ -68,8 +68,6 @@ public class LevelManager : MonoBehaviour
     public List<GameObject> level19;
     public List<GameObject> level20;
 
-
-
     public List<GameObject> currentLevel;
 
     private bool isLevel1 = false;
@@ -92,6 +90,7 @@ public class LevelManager : MonoBehaviour
     public GameObject particle;
     public GameObject cookieVFX;
     public GameObject eatVFX;
+    public GameObject defendVFX;
 
     public void Awake()
     {

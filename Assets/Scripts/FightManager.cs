@@ -82,6 +82,17 @@ public class FightManager : MonoBehaviour
             Player.instance.GetComponent<AudioSource>().Play();
             GameManager.instance.lifeFill.fillAmount -= 0.15f;
         }
+        else
+        {
+            LevelManager.instance.defendVFX.SetActive(true);
+            StartCoroutine("DesactiveDefendVFX");
+        }
+    }
+
+    IEnumerator DesactiveDefendVFX()
+    {
+        yield return new WaitForSeconds(1f);
+        LevelManager.instance.defendVFX.SetActive(false);
     }
 
     public void ChoosePatterns()
