@@ -90,6 +90,8 @@ public class ButtonsManager : MonoBehaviour
     public void EatFinal()
     {
         lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().Damage();
+        Instantiate(lm.eatVFX, new Vector3(0f, 0f, 0f), Quaternion.identity, lm.particle.transform);
+        Destroy(lm.eatVFX,2f);
         tm.Heal();
     }
     #endregion
