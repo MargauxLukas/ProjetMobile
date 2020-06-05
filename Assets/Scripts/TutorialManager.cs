@@ -1,13 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager instance;
-    public Text tutorialText;
+    public TextMeshProUGUI tutorialText;
     public GameObject tutoGo;
+    public TMP_SpriteAsset attack;
+    public TMP_SpriteAsset defend;
+    public TMP_SpriteAsset eat;
+    public TMP_SpriteAsset cut;
+    public TMP_SpriteAsset knead;
+    public TMP_SpriteAsset whip;
+    public TMP_SpriteAsset boil;
+    public TMP_SpriteAsset cook;
 
     private bool isFirstAttack = true;
     private bool isFirstShield = true;
@@ -37,17 +46,6 @@ public class TutorialManager : MonoBehaviour
         LevelManager.instance.InteractableButtons();
         tutoGo.SetActive(false);
         tutorialText.lineSpacing = 1f;
-
-        tutoGo.transform.GetChild(2).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(3).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(4).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(5).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(6).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(7).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(8).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(9).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(10).gameObject.SetActive(false);
-        tutoGo.transform.GetChild(11).gameObject.SetActive(false);
     }
     #endregion
 
@@ -55,8 +53,7 @@ public class TutorialManager : MonoBehaviour
     public void Level1Begin()
     {
         Time.timeScale = 0f;
-        tutorialText.text = "This bread wants to fight !\nJust Beat it down with :";
-        tutoGo.transform.GetChild(2).gameObject.SetActive(true);
+        tutorialText.text = "This bread wants to fight !\nJust Beat it down with : <sprite=0>";
         ActivateText();
     }
 
@@ -65,8 +62,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstAttack)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "Look out! It's ready to punch you. Protect yourself with       to avoid taking damages.";
-            tutoGo.transform.GetChild(3).gameObject.SetActive(true);
+            tutorialText.spriteAsset = defend;
+            tutorialText.text = "Look out! It's ready to punch you. Protect yourself with <sprite=0> to avoid taking damages.";
             ActivateText();
             isFirstAttack = false;
         }
@@ -92,8 +89,8 @@ public class TutorialManager : MonoBehaviour
     public void Level2FinalDish()
     {
         Time.timeScale = 0f;
-        tutorialText.text = "Hey ! Nice one ! Now eat it with :\n";
-        tutoGo.transform.GetChild(4).gameObject.SetActive(true);
+        tutorialText.spriteAsset = eat;
+        tutorialText.text = "Hey ! Nice one ! Now eat it with : <sprite=0>";
         ActivateText();
     }
 
@@ -105,8 +102,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstShield)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "Look, it's protecting itself. I think you can break its shield by eating it with :\n";
-            tutoGo.transform.GetChild(5).gameObject.SetActive(true);
+            tutorialText.spriteAsset = eat;
+            tutorialText.text = "Look, it's protecting itself. I think you can break its shield by eating it with : <sprite=0>";
             ActivateText();
             isFirstShield = false;
         }
@@ -119,8 +116,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstCut)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "The next thumbnail is a special one. To perfectly cut the ingredient, you'll have to rapidly press :";
-            tutoGo.transform.GetChild(6).gameObject.SetActive(true);
+            tutorialText.spriteAsset = cut;
+            tutorialText.text = "The next thumbnail is a special one. To perfectly cut the ingredient, you'll have to rapidly press : <sprite=0>";
             ActivateText();
             isFirstCut = false;
         }
@@ -132,8 +129,8 @@ public class TutorialManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             tutorialText.lineSpacing = 1.5f;
-            tutorialText.text = "The next one is an other special thumbnail, you will have to press       with two fingers to perform the right action.";
-            tutoGo.transform.GetChild(7).gameObject.SetActive(true);
+            tutorialText.spriteAsset = knead;
+            tutorialText.text = "The next one is an other special thumbnail, you will have to press <sprite=0> with two fingers to perform the right action.";
             ActivateText();
             isFirstKnead = false;
         }
@@ -144,8 +141,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstWhip)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "Another special thumnail is coming. For this one you'll need to swipe down with your finger while pressing ";
-            tutoGo.transform.GetChild(8).gameObject.SetActive(true);
+            tutorialText.spriteAsset = whip;
+            tutorialText.text = "Another special thumnail is coming. For this one you'll need to swipe down with your finger while pressing <sprite=0>";
             ActivateText();
             isFirstWhip = false;
         }
@@ -158,8 +155,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstBoil)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "To achieve a perfect action on a boiling thumbnail, you'll have to swipe up with your finger while pressing ";
-            tutoGo.transform.GetChild(9).gameObject.SetActive(true);
+            tutorialText.spriteAsset = boil;
+            tutorialText.text = "To achieve a perfect action on a boiling thumbnail, you'll have to swipe up with your finger while pressing <sprite=0>";
             ActivateText();
             isFirstBoil = false;
         }
@@ -171,8 +168,8 @@ public class TutorialManager : MonoBehaviour
         {
             Time.timeScale = 0f;
             tutorialText.lineSpacing = 1.5f;
-            tutorialText.text = "Here comes a special cooking thumbnail. For this one, you will have to maintain the pressure on        until the sliding bar is full. ";
-            tutoGo.transform.GetChild(10).gameObject.SetActive(true);
+            tutorialText.spriteAsset = cook;
+            tutorialText.text = "Here comes a special cooking thumbnail. For this one, you will have to maintain the pressure on <sprite=0> until the sliding bar is full. ";
             ActivateText();
             isFirstCook = false;
         }
@@ -198,8 +195,8 @@ public class TutorialManager : MonoBehaviour
         if (isFirstCandy)
         {
             Time.timeScale = 0f;
-            tutorialText.text = "Uh oh, you let some crumbs escape while eating the ennemy's shield. Now they're hiding some thumbnails. Hit              to eat the crumbs !";
-            tutoGo.transform.GetChild(11).gameObject.SetActive(true);
+            tutorialText.spriteAsset = eat;
+            tutorialText.text = "Uh oh, you let some crumbs escape while eating the ennemy's shield. Now they're hiding some thumbnails. Hit   <sprite=0> to eat the crumbs !";
             ActivateText();
             isFirstCandy = false;
         }
