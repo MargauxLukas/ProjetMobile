@@ -348,7 +348,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Boeuf
+  m_Text: Jean Debeef
 --- !u!1 &8356807622573218293
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,6 +653,7 @@ MonoBehaviour:
   touchun: {x: 0, y: 0}
   touchdeux: {x: 0, y: 0}
   isTransit: 0
+  token: 
 --- !u!114 &908499458661579391
 MonoBehaviour:
   m_ObjectHideFlags: 0
