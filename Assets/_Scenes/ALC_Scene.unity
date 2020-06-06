@@ -5718,8 +5718,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -360, y: -10}
-  m_SizeDelta: {x: 720, y: -441}
+  m_AnchoredPosition: {x: -360, y: 0}
+  m_SizeDelta: {x: 720, y: -431}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &232864939
 MonoBehaviour:
@@ -6827,6 +6827,8 @@ MonoBehaviour:
   - {fileID: 2717968371175590322, guid: 21e1fc5cc378a404b81a17bfb7c4c17e, type: 3}
   - {fileID: 2717968371175590322, guid: e2ca24e18c2cfa84991bf58b8be9fe71, type: 3}
   - {fileID: 2717968371175590322, guid: 32fff81f4105e7043a75561a9a100469, type: 3}
+  - {fileID: 2717968371175590322, guid: ed9d7074d57e1b84a8e29e161e4bb286, type: 3}
+  - {fileID: 2717968371175590322, guid: b7a8366e8dc350942a3b61e49b238a76, type: 3}
   whipThumbnailsList:
   - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
   - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
@@ -7542,7 +7544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 336ac76971b62fc429a4393ec0cd6ba4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6e784ebda131d8489e8fe9d62e9229f, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8436,7 +8438,7 @@ PrefabInstance:
     - target: {fileID: 7832064756840709978, guid: f20c6cf419ae17d4380328542f8c7b2a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 7832064756840709978, guid: f20c6cf419ae17d4380328542f8c7b2a,
         type: 3}
@@ -9182,7 +9184,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0348275061985ff4186bc632ad792a42, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9639ee3650aa62c438d56adcd461c84c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9888,7 +9890,7 @@ PrefabInstance:
     - target: {fileID: 7832064756840709978, guid: 088d06d14e793544ab4eaf1053c95622,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 7832064756840709978, guid: 088d06d14e793544ab4eaf1053c95622,
         type: 3}
@@ -22433,8 +22435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6.700012, y: 0}
-  m_SizeDelta: {x: -75, y: -50}
+  m_AnchoredPosition: {x: 6.100006, y: 0.050048828}
+  m_SizeDelta: {x: -1.000011, y: -27.899988}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533903380
 MonoBehaviour:
@@ -22454,7 +22456,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0a72f392eef340e4394a03f116d61c01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 045c847e742af4741a53d77a4c33d0ff, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24412,7 +24414,7 @@ PrefabInstance:
     - target: {fileID: 2479315785102210822, guid: a44dd53c17fc9b74ea2b369ab882ad41,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 2479315785102210822, guid: a44dd53c17fc9b74ea2b369ab882ad41,
         type: 3}
@@ -24531,7 +24533,7 @@ PrefabInstance:
     - target: {fileID: 4870051074098657574, guid: 4a0734709637f6443ac36f468ed630ec,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 4870051074098657574, guid: 4a0734709637f6443ac36f468ed630ec,
         type: 3}
@@ -24807,7 +24809,7 @@ PrefabInstance:
     - target: {fileID: 7832064756840709978, guid: 4c02ed15137ed814f9cd1c4826d9cd2e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 7832064756840709978, guid: 4c02ed15137ed814f9cd1c4826d9cd2e,
         type: 3}

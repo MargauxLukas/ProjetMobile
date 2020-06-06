@@ -12,7 +12,7 @@ public class PhaseButtonScale : MonoBehaviour
     public void ScaleButtons()
     {
         bottomScreenHeight = bottomScreen.GetComponent<RectTransform>().offsetMax.y;
-        top = bottomScreenHeight * 0.15f;
+        top = bottomScreenHeight * 0.13f;
         bottom = bottomScreenHeight * 0.32f;
 
         GetComponent<RectTransform>().offsetMax = new Vector2(GetComponent<RectTransform>().offsetMax.x, top);
