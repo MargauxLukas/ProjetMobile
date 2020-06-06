@@ -6809,14 +6809,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monstersList:
-  - {fileID: 8356807623944433587, guid: 0f8f535aaac63734a8f76f44cee5532d, type: 3}
-  - {fileID: 8356807623944433587, guid: 8949490fb91c2e74990a06058154a44e, type: 3}
-  - {fileID: 8356807623944433587, guid: 9f6dc92468a3e824fb17658a7e510437, type: 3}
-  - {fileID: 8356807623944433587, guid: 4aacbb52c53dc7746a80a2d1dc0afc7d, type: 3}
-  - {fileID: 8356807623944433587, guid: 7eca39d517c98d942b5e524f2717ebff, type: 3}
-  - {fileID: 8356807623944433587, guid: e79f3111aabf1cb4bb47672b76d49d9f, type: 3}
-  - {fileID: 8356807623944433587, guid: b037345ee76ee2f4ab0d4d43f22edfbc, type: 3}
-  - {fileID: 8356807623944433587, guid: e3e11944f634bb249a5a1a92d60a565e, type: 3}
+  - {fileID: 8356807623944433587, guid: 8d522e2f20866f94da08a218e56faa28, type: 3}
+  - {fileID: 8356807623944433587, guid: 7a9de84a95c535245b624bcb17b39fd9, type: 3}
+  - {fileID: 8356807623944433587, guid: 8918492e35a34514983c88eb98c5e19b, type: 3}
+  - {fileID: 8356807623944433587, guid: 41c45e4e5018e5e4aa49058cb262e732, type: 3}
+  - {fileID: 8356807623944433587, guid: 5605030b7bf6d9b44a6b0dd734004446, type: 3}
+  - {fileID: 8356807623944433587, guid: e6f372af5bea3c443a5c48cbc7bc2654, type: 3}
+  - {fileID: 8356807623944433587, guid: 750f027a66e13c64eb293e7d7560b880, type: 3}
+  - {fileID: 8356807623944433587, guid: 1a315725e447e444abd2d6cb3a7ccbc5, type: 3}
+  - {fileID: 8356807623944433587, guid: e170d568101c6cf4db3b208b3fc9a9ff, type: 3}
+  - {fileID: 8356807623944433587, guid: 0d843ff88948649478906a9727e8f9f7, type: 3}
+  - {fileID: 8356807623944433587, guid: 68df74b073c808d48b2d8a891e2259fb, type: 3}
   cutThumbnailsList:
   - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
   - {fileID: 2717968371175590322, guid: 9c0a7e5404530d64b927c1cfcbbf9b61, type: 3}
@@ -6843,6 +6846,7 @@ MonoBehaviour:
   - {fileID: 2717968371175590322, guid: f14c591396393c6408d07749631abc4c, type: 3}
   - {fileID: 2717968371175590322, guid: ccf9b9b5787948248b8f7d532af37fa1, type: 3}
   - {fileID: 2717968371175590322, guid: de11832a5945f1143bdd347a0e5b131a, type: 3}
+  - {fileID: 2717968371175590322, guid: 1fa20c0fb0b8eb84a893d80835149878, type: 3}
   randomThumbnailsList: []
   buttonString:
   - cut

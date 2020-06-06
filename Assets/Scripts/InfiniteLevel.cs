@@ -25,6 +25,7 @@ public class InfiniteLevel : MonoBehaviour
     public Text actualScore;
 
     public int nbFloor = 1;
+    private int nbThumbnails;
 
     public GameObject AddMonster()
     {
@@ -46,14 +47,17 @@ public class InfiniteLevel : MonoBehaviour
     {
         RandomButtons();
 
-        for (int i = 1; i <= nbFloor; i++)
+        nbThumbnails = Mathf.CeilToInt(nbFloor / 2);
+        Debug.Log(nbThumbnails);
+        
+        for (int i = 1; i <= nbFloor/2; i++)
         {
             buttonName = buttonStringRemove[Random.Range(0, 3)];
 
             switch(buttonName)
             {
                 case "cut":
-                    if (i == nbFloor){thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count-2)]; }
+                    if (i == nbFloor){thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count-4)]; }
                     else             {thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count   )];}
                     break;
                 case "whip":
@@ -69,7 +73,7 @@ public class InfiniteLevel : MonoBehaviour
                     else              { thumbnailChoosen = cookThumbnailsList[Random.Range(0, cookThumbnailsList.Count    )]; }
                     break;
                 case "boil":
-                    if (i == nbFloor) { thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count - 1)]; }
+                    if (i == nbFloor) { thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count - 2)]; }
                     else              { thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count    )]; }
                     break;
             }
