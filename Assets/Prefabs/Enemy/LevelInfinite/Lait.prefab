@@ -692,7 +692,7 @@ MonoBehaviour:
   touchun: {x: 0, y: 0}
   touchdeux: {x: 0, y: 0}
   isTransit: 0
-  token: 
+  token: LaitN
 --- !u!114 &3867725388156385596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -718,7 +718,7 @@ GameObject:
   - component: {fileID: 8356807623944433584}
   - component: {fileID: -2658312620862132576}
   m_Layer: 5
-  m_Name: Lait 1
+  m_Name: Lait
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

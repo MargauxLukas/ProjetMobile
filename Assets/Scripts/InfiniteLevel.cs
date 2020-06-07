@@ -48,9 +48,14 @@ public class InfiniteLevel : MonoBehaviour
         RandomButtons();
 
         nbThumbnails = Mathf.CeilToInt(nbFloor / 2);
+        if(nbThumbnails%2 == 0)
+        {
+            nbThumbnails = nbThumbnails + 1;
+        }
+
         Debug.Log(nbThumbnails);
         
-        for (int i = 1; i <= nbFloor/2; i++)
+        for (int i = 1; i <= nbThumbnails; i++)
         {
             buttonName = buttonStringRemove[Random.Range(0, 3)];
 

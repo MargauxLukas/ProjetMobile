@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
 
     [Header("Levels")]
     public bool isInfinite = false;
+    private bool isFirstFight = true;
     public List<GameObject> level1;
     public List<GameObject> level2;
     public List<GameObject> level3;
@@ -147,7 +148,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level2.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy1;
 
                 if (PlayerPrefs.GetInt("level2Tuto") == 0)
                 {
@@ -169,7 +170,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level4.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy1;
 
                 if (PlayerPrefs.GetInt("level4Tuto") == 0)
                 {
@@ -184,7 +185,7 @@ public class LevelManager : MonoBehaviour
                 boilB.transform.position = whipB.transform.position;
                 whipB.gameObject.SetActive(false);
                 countMonster = level5.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 6:
                 foreach (GameObject go in level6)
@@ -197,7 +198,7 @@ public class LevelManager : MonoBehaviour
                 {
                     level6Tuto = true;
                 }
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy1;
                 break;
             case 7:
                 foreach (GameObject go in level7)
@@ -205,7 +206,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level7.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy2;
                 break;
             case 8:
                 foreach (GameObject go in level8)
@@ -216,7 +217,7 @@ public class LevelManager : MonoBehaviour
                 cookB.transform.position = whipB.transform.position;
                 whipB.gameObject.SetActive(false);
                 cutB.gameObject.SetActive(false);
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
 
                 if (PlayerPrefs.GetInt("level8Tuto") == 0)
                 {
@@ -232,7 +233,7 @@ public class LevelManager : MonoBehaviour
                 }
                 cookB.transform.position = whipB.transform.position;
                 whipB.gameObject.SetActive(false);
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge1;
 
                 countMonster = level9.Count;
                 break;
@@ -242,7 +243,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level10.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 11:
                 foreach (GameObject go in level11)
@@ -251,7 +252,7 @@ public class LevelManager : MonoBehaviour
                 }
                 boilB.transform.position = whipB.transform.position;
                 whipB.gameObject.SetActive(false);
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy1;
 
                 if (PlayerPrefs.GetInt("level11Tuto") == 0)
                 {
@@ -265,7 +266,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level12.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 13:
                 foreach (GameObject go in level13)
@@ -278,7 +279,7 @@ public class LevelManager : MonoBehaviour
                     level13Tuto = true;
                 }
                 countMonster = level13.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 14:
                 foreach (GameObject go in level14)
@@ -288,7 +289,7 @@ public class LevelManager : MonoBehaviour
                 cookB.transform.position = kneadB.transform.position;
                 kneadB.SetActive(false);
                 countMonster = level14.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 15:
                 foreach (GameObject go in level15)
@@ -301,7 +302,7 @@ public class LevelManager : MonoBehaviour
                 whipB.SetActive(false);
 
                 countMonster = level15.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy2;
                 break;
             case 16:
                 foreach (GameObject go in level16)
@@ -309,7 +310,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level16.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge1;
                 break;
             case 17:
                 foreach (GameObject go in level17)
@@ -317,7 +318,7 @@ public class LevelManager : MonoBehaviour
                     currentLevel.Add(go);
                 }
                 countMonster = level17.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = candy2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = candy2;
                 break;
             case 18:
                 foreach (GameObject go in level18)
@@ -330,7 +331,7 @@ public class LevelManager : MonoBehaviour
                 whipB.SetActive(false);
 
                 countMonster = level18.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 19:
                 foreach (GameObject go in level19)
@@ -342,7 +343,7 @@ public class LevelManager : MonoBehaviour
                 kneadB.SetActive(false);
 
                 countMonster = level19.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge2;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge2;
                 break;
             case 20:
                 foreach (GameObject go in level20)
@@ -353,7 +354,7 @@ public class LevelManager : MonoBehaviour
                 whipB.SetActive(false);
 
                 countMonster = level20.Count;
-                monsterParent.parent.GetComponent<SpriteRenderer>().sprite = fridge1;
+                monsterParent.GetChild(0).GetComponent<SpriteRenderer>().sprite = fridge1;
                 break;
             case 21:
                 currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
@@ -397,7 +398,7 @@ public class LevelManager : MonoBehaviour
             TapisManager.instance.TapisOnPhase1();
             monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.5f, -2f);
             monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
-            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
+            FightManager.instance.percentLife = monster.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Life>().lifeMax * FightManager.instance.percentFight;
             FightManager.instance.timerAttack = 1.5f;
             FightManager.instance.isMonsterAttacking = false;
             FightManager.instance.SetLifeGoal();
@@ -409,10 +410,11 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
 
-        if(currentLevel.Count == countMonster || ThumbnailManager.instance.thumbnailsList.Count == 1)
+        if(isFirstFight)
         {
             Time.timeScale = 0f;
             beginTextGameObject.transform.GetChild(2).GetComponent<Animator>().SetBool("isBegin", true);
+            isFirstFight = false;
             StartCoroutine("WaitAnimationFight");
         }
     }
