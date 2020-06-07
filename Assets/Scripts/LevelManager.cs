@@ -100,6 +100,10 @@ public class LevelManager : MonoBehaviour
     public Sprite candy1;
     public Sprite candy2;
 
+    public Material bronze;
+    public Material argent;
+    public Material or;
+
     public void Awake()
     {
         instance = this;
@@ -373,6 +377,11 @@ public class LevelManager : MonoBehaviour
                 break;
         }
 
+
+        if(UIManager.difficulty != "Noob")
+        {
+            SwitchDifficulty();
+        }
         BeginGame();
     }
 
@@ -608,4 +617,32 @@ public class LevelManager : MonoBehaviour
 
         Time.timeScale = 0f;
     }
+
+    public void SwitchDifficulty()
+    {
+        if(UIManager.difficulty == "Easy")
+        {
+            foreach(GameObject mob in currentLevel)
+            {
+                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = bronze;
+                EnemyNameUpdate.instance.ChangeNameEasy(mob.name);
+            }
+        }
+        else if(UIManager.difficulty == "Medium")
+        {
+            foreach (GameObject mob in currentLevel)
+            {
+                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = argent;
+                EnemyNameUpdate.instance.ChangeNameMedium(mob.name);
+            }
+        }
+        else
+        {
+            foreach (GameObject mob in currentLevel)
+            {
+                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = or;
+                EnemyNameUpdate.instance.ChangeNameHard(mob.name);
+            }
+        }
+    }   
 }

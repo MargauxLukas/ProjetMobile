@@ -9,6 +9,7 @@ public class UIManager : MonoBehaviour
     public AudioClip sportTheme;
     public AudioClip MenuMusic;
     public static int chosenLevel;
+    public static string difficulty;
 
     public void Start()
     {

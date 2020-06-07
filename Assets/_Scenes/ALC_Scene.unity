@@ -6732,6 +6732,9 @@ MonoBehaviour:
   fridge2: {fileID: 21300000, guid: daad9779fee7bb5489f7265a1e6ead93, type: 3}
   candy1: {fileID: 21300000, guid: 7b5a395ee78ccbd4eb7791c7741c24da, type: 3}
   candy2: {fileID: 21300000, guid: 9d379c4e0ab5294499107713536bb356, type: 3}
+  bronze: {fileID: 2100000, guid: bdca4df7373316f4bb01da0fe71a6f12, type: 2}
+  argent: {fileID: 2100000, guid: e0f9463ed864e8142857b01a8677e306, type: 2}
+  or: {fileID: 2100000, guid: 820a57bd98b854649bcf14ce896fc011, type: 2}
 --- !u!114 &305585311
 MonoBehaviour:
   m_ObjectHideFlags: 0
