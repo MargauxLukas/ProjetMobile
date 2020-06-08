@@ -100,6 +100,7 @@ public class LevelManager : MonoBehaviour
     public Sprite candy1;
     public Sprite candy2;
 
+    public Material defaultMat;
     public Material bronze;
     public Material argent;
     public Material or;
@@ -612,7 +613,7 @@ public class LevelManager : MonoBehaviour
         bottomScreen.transform.parent.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
 
         //Difficulty Manage
-        PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString(), scoreScreen.GetComponent<VictoryStars>().nbStars);
+        PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString() + UIManager.difficulty, scoreScreen.GetComponent<VictoryStars>().nbStars);
         PlayerPrefs.SetInt("level" + UIManager.chosenLevel.ToString() + "Tuto", 1);
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
 
@@ -621,28 +622,35 @@ public class LevelManager : MonoBehaviour
 
     public void SwitchDifficulty()
     {
-        if(UIManager.difficulty == "Easy")
+        if(UIManager.difficulty == "Noob")
         {
-            foreach(GameObject mob in currentLevel)
+            foreach (GameObject mob in currentLevel)
             {
-                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = bronze;
-                EnemyNameUpdate.instance.ChangeNameEasy(mob.name);
+                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = defaultMat;
             }
         }
-        else if(UIManager.difficulty == "Medium")
+        else if (UIManager.difficulty == "Easy")
+        {
+            foreach (GameObject mob in currentLevel)
+            {
+                mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = bronze;
+                mob.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = mob.transform.GetChild(0).GetChild(0).GetComponent<EnemyNameUpdate>().bronzeName;
+            }
+        }
+        else if (UIManager.difficulty == "Medium")
         {
             foreach (GameObject mob in currentLevel)
             {
                 mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = argent;
-                EnemyNameUpdate.instance.ChangeNameMedium(mob.name);
+                mob.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = mob.transform.GetChild(0).GetChild(0).GetComponent<EnemyNameUpdate>().argentName;
             }
         }
-        else if(UIManager.difficulty == "Hard")
+        else if (UIManager.difficulty == "Hard")
         {
             foreach (GameObject mob in currentLevel)
             {
                 mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = or;
-                EnemyNameUpdate.instance.ChangeNameHard(mob.name);
+                mob.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = mob.transform.GetChild(0).GetChild(0).GetComponent<EnemyNameUpdate>().orName;
             }
         }
     }   

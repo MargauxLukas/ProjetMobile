@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -9,7 +11,12 @@ public class UIManager : MonoBehaviour
     public AudioClip sportTheme;
     public AudioClip MenuMusic;
     public static int chosenLevel;
-    public static string difficulty;
+    public static string difficulty = "Noob";
+
+    public void Update()
+    {
+        Debug.Log(difficulty);
+    }
 
     public void Start()
     {
@@ -51,5 +58,68 @@ public class UIManager : MonoBehaviour
     public void StopMusic()
     {
         gameObject.GetComponent<AudioSource>().Stop();
+    }
+
+    public void SetEasy(GameObject go)
+    {
+        if (go.GetComponent<Toggle>().isOn)
+        {
+            difficulty = "Easy";
+            AllTexts.instance.SetStarsEasy();
+            go.transform.parent.transform.GetChild(1).GetComponent<Toggle>().isOn = false;
+            go.transform.parent.transform.GetChild(2).GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            difficulty = "Noob";
+            AllTexts.instance.SetStarsNoob();
+        }
+    }
+
+    public void SetMedium(GameObject go)
+    {
+        if (go.GetComponent<Toggle>().isOn)
+        {
+            difficulty = "Medium";
+            AllTexts.instance.SetStarsMedium();
+            go.transform.parent.transform.GetChild(0).GetComponent<Toggle>().isOn = false;
+            go.transform.parent.transform.GetChild(2).GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            difficulty = "Noob";
+            AllTexts.instance.SetStarsNoob();
+        }
+    }
+
+    public void SetHard(GameObject go)
+    {
+        if (go.GetComponent<Toggle>().isOn)
+        {
+            difficulty = "Hard";
+            AllTexts.instance.SetStarsHard();
+            go.transform.parent.transform.GetChild(0).GetComponent<Toggle>().isOn = false;
+            go.transform.parent.transform.GetChild(1).GetComponent<Toggle>().isOn = false;
+        }
+        else
+        {
+            difficulty = "Noob";
+            AllTexts.instance.SetStarsNoob();
+        }
+    }
+
+    public void SetNoob()
+    {
+        difficulty = "Noob";
+        AllTexts.instance.SetStarsNoob();
+    }
+
+    public void CheckIsOn(GameObject go)
+    {
+        if(!go.GetComponent<Toggle>().isOn)
+        {
+            difficulty = "Noob";
+            AllTexts.instance.SetStarsNoob();
+        }
     }
 }

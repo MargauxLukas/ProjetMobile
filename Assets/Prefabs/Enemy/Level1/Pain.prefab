@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Bread News Brown
+  m_Text: Rusty Brown
 --- !u!114 &7799664344140956704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,7 +580,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 820a57bd98b854649bcf14ce896fc011, type: 2}
+  - {fileID: 2100000, guid: bdca4df7373316f4bb01da0fe71a6f12, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -15,18 +15,18 @@ public class EnemyNameUpdate : MonoBehaviour
         instance = this;
     }
 
-    public void ChangeNameEasy(string name)
+    public void ChangeNameEasy(GameObject go)
     {
-        gameObject.GetComponent<Text>().text = bronzeName;
+        go.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = bronzeName;
     }
 
-    public void ChangeNameMedium(string name)
+    public void ChangeNameMedium(GameObject go)
     {
-        gameObject.GetComponent<Text>().text = argentName;
+        go.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = argentName;
     }
 
-    public void ChangeNameHard(string name)
+    public void ChangeNameHard(GameObject go)
     {
-        gameObject.GetComponent<Text>().text = orName;
+        go.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = orName;
     }
 }
