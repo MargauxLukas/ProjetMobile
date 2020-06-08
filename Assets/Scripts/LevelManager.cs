@@ -637,7 +637,7 @@ public class LevelManager : MonoBehaviour
                 EnemyNameUpdate.instance.ChangeNameMedium(mob.name);
             }
         }
-        else
+        else if(UIManager.difficulty == "Hard")
         {
             foreach (GameObject mob in currentLevel)
             {
