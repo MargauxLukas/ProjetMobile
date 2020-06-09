@@ -6955,14 +6955,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tutorialText: {fileID: 403036955}
   tutoGo: {fileID: 1272471118}
-  attack: {fileID: 0}
-  defend: {fileID: 0}
-  eat: {fileID: 0}
-  cut: {fileID: 0}
-  knead: {fileID: 0}
-  whip: {fileID: 0}
-  boil: {fileID: 0}
-  cook: {fileID: 0}
+  attack: {fileID: 11400000, guid: 0ea2486a856d5a9408c8276f886cb54c, type: 2}
+  defend: {fileID: 11400000, guid: fcbea988936ff244d8d0c3e3a5c3a971, type: 2}
+  eat: {fileID: 11400000, guid: 35f676c1556ce5148ac6369a66cb3dcb, type: 2}
+  cut: {fileID: 11400000, guid: cd524c5bf1b1bdc49837e082b633f995, type: 2}
+  knead: {fileID: 11400000, guid: 5b6c4ed2376f6d64e91fff534988d170, type: 2}
+  whip: {fileID: 11400000, guid: b0e4e6439c8b1d54fbcde2d61cfda9de, type: 2}
+  boil: {fileID: 11400000, guid: a62b906c4f8450a47a8e834953884101, type: 2}
+  cook: {fileID: 11400000, guid: c5455fa292686ef48b048e65e32f7a5a, type: 2}
 --- !u!1 &360568089
 GameObject:
   m_ObjectHideFlags: 0

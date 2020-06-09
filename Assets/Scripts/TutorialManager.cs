@@ -53,6 +53,7 @@ public class TutorialManager : MonoBehaviour
     public void Level1Begin()
     {
         Time.timeScale = 0f;
+        tutorialText.spriteAsset = attack;
         tutorialText.text = "This bread wants to fight !\nJust Beat it down with : <sprite=0>";
         ActivateText();
     }

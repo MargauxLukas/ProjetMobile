@@ -171,7 +171,7 @@ public class ButtonsManager : MonoBehaviour
             UIManager.instance.gameObject.GetComponent<AudioSource>().Play();
             Time.timeScale = 1f;
             GameObject mainMenu = GameObject.FindGameObjectWithTag("MainMenu");
-            GameObject lvlMenu = mainMenu.transform.parent.transform.GetChild(3).gameObject;
+            GameObject lvlMenu = mainMenu.transform.parent.transform.GetChild(6).gameObject;
             lvlMenu.SetActive(true);
             mainMenu.SetActive(false);
         }
