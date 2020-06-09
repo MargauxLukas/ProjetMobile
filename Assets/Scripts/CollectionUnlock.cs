@@ -33,6 +33,7 @@ public class CollectionUnlock : MonoBehaviour
         {
             transform.GetChild(0).GetComponent<Image>().material = null;
             transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 255);
+            gameObject.GetComponent<Button>().interactable = false;
         }
     }
 }
