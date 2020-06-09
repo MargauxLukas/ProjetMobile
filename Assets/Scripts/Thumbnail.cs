@@ -69,7 +69,7 @@ public class Thumbnail : MonoBehaviour
         }
         if(move)
         {        
-            transform.position = Vector3.MoveTowards(transform.position, target, 50f);
+            transform.position = Vector3.MoveTowards(transform.position, target, 90f);
 
             if(Vector3.Distance(transform.position, target) < 0.5f)
             {
@@ -80,7 +80,7 @@ public class Thumbnail : MonoBehaviour
         }
         else if(validate)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target, 20f);
+            transform.position = Vector3.MoveTowards(transform.position, target, 50f);
             transform.Rotate(new Vector3(0f, 0f, -40f));
 
             if (Vector3.Distance(transform.position, target) < 200f)
@@ -102,8 +102,8 @@ public class Thumbnail : MonoBehaviour
     public void NeedToDestroy()
     {
         LevelManager.instance.GoToBin(this.gameObject);
-        target.x = -382f;
-        target.y = 2000f;
+        target.x = Random.Range(-382f, 300f);
+        target.y = 3000f;
         move = false;
         validate = true;
     }
