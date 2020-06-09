@@ -8,8 +8,10 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public static UIManager instance ;
-    public AudioClip sportTheme;
+    public AudioClip combatMusic;
+    public AudioClip bossTheme;
     public AudioClip MenuMusic;
+    public AudioClip confectionMusic;
     public static int chosenLevel;
     public static string difficulty = "Noob";
 
@@ -39,9 +41,28 @@ public class UIManager : MonoBehaviour
 
     public void Play()
     {
-        gameObject.GetComponent<AudioSource>().clip = sportTheme;
+        gameObject.GetComponent<AudioSource>().clip = combatMusic;
         gameObject.GetComponent<AudioSource>().Play();
         SceneManager.LoadScene(1);
+    }
+
+    public void PlayBossMusic()
+    {
+        gameObject.GetComponent<AudioSource>().clip = bossTheme;
+        gameObject.GetComponent<AudioSource>().Play();
+        SceneManager.LoadScene(1);
+    }
+
+    public void SwitchMusicToCombat()
+    {
+        gameObject.GetComponent<AudioSource>().clip = combatMusic;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
+
+    public void SwitchMusicToPreparation()
+    {
+        gameObject.GetComponent<AudioSource>().clip = confectionMusic;
+        gameObject.GetComponent<AudioSource>().Play();
     }
 
     public void Quit()

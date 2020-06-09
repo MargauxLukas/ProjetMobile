@@ -25072,8 +25072,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddde739637df5f4b8444a36a3bcb88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sportTheme: {fileID: 8300000, guid: 3cfd05928d35cf042856ed7d23ba89a3, type: 3}
+  combatMusic: {fileID: 8300000, guid: 89b88d500a620a245b25e791231cd517, type: 3}
+  bossTheme: {fileID: 8300000, guid: 11ed413f883e45546893868d9b021048, type: 3}
   MenuMusic: {fileID: 0}
+  confectionMusic: {fileID: 8300000, guid: 07cefaf7079d35944a20bfa04a223048, type: 3}
 --- !u!82 &650299202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -25084,9 +25086,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: e656606d1de8f6a43aed5072705e7383, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a353a1e706133054cbe56902f1be08cd, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.03
+  m_Volume: 0.176
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -39903,7 +39905,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 650299201}
-        m_MethodName: Play
+        m_MethodName: PlayBossMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51724,7 +51726,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 650299201}
-        m_MethodName: Play
+        m_MethodName: PlayBossMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -65008,7 +65010,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 650299201}
-        m_MethodName: Play
+        m_MethodName: PlayBossMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
