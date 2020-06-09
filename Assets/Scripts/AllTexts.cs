@@ -8,7 +8,6 @@ public class AllTexts : MonoBehaviour
     public static AllTexts instance;
     public List<Text> textList;
 
-
     public void Awake()
     {
         instance = this;    

@@ -314,7 +314,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Brawler Bread
+  m_Text: Bread News Brown
 --- !u!114 &401595696107283069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -327,6 +327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf1d507b5f88449ba13a916a0ce775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultName: Bread News Brown
   bronzeName: Rusty Brown
   argentName: Shiny Brown
   orName: Goldy Brown

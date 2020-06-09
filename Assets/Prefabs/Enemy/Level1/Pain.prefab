@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Rusty Brown
+  m_Text: Bread News Brown
 --- !u!114 &7799664344140956704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf1d507b5f88449ba13a916a0ce775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultName: Bread News Brown
   bronzeName: Rusty Brown
   argentName: Shiny Brown
   orName: Goldy Brown
@@ -580,7 +581,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bdca4df7373316f4bb01da0fe71a6f12, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -435,9 +435,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf1d507b5f88449ba13a916a0ce775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultName: Tikka the Chicken
   bronzeName: Tikka the Rusty
   argentName: Tikka the Shiny
-  orName: Tikka the Goldy
+  orName: Tikka the Golden
 --- !u!1 &8356807622573218293
 GameObject:
   m_ObjectHideFlags: 0

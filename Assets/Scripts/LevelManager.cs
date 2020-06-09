@@ -378,11 +378,7 @@ public class LevelManager : MonoBehaviour
                 break;
         }
 
-
-        if(UIManager.difficulty != "Noob")
-        {
-            SwitchDifficulty();
-        }
+        SwitchDifficulty();
         BeginGame();
     }
 
@@ -394,8 +390,8 @@ public class LevelManager : MonoBehaviour
             endScreen.SetActive(true);                                          
 
             GameObject monster = Instantiate(currentLevel[0], topScreen.transform);
-            monster.transform.GetChild(3).gameObject.transform.position = new Vector3(0f, 0.47f, -2f);
-            monster.transform.GetChild(3).gameObject.transform.SetParent(monsterParent);
+            monster.transform.GetChild(2).gameObject.transform.position = new Vector3(0f, 0.47f, -2f);
+            monster.transform.GetChild(2).gameObject.transform.SetParent(monsterParent);
 
             Time.timeScale = 0f;
             eatItTextGameObject.SetActive(true);
@@ -627,6 +623,7 @@ public class LevelManager : MonoBehaviour
             foreach (GameObject mob in currentLevel)
             {
                 mob.transform.GetChild(2).GetComponent<SpriteRenderer>().material = defaultMat;
+                mob.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = mob.transform.GetChild(0).GetChild(0).GetComponent<EnemyNameUpdate>().defaultName;
             }
         }
         else if (UIManager.difficulty == "Easy")

@@ -422,7 +422,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Strawberiner
+  m_Text: Strawby Riner
 --- !u!114 &7898849243053396972
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -435,6 +435,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf1d507b5f88449ba13a916a0ce775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultName: Strawby Riner
   bronzeName: Rusty Riner
   argentName: Shiny Riner
   orName: Goldy Riner
