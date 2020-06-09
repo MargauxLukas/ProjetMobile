@@ -70,7 +70,14 @@ public class Life : MonoBehaviour
         {
             if (Time.timeScale != 0f)
             {
-                GetComponent<Image>().fillAmount += 0.003f;
+                if (UIManager.difficulty == "Noob" || UIManager.difficulty == "Easy")
+                {
+                    GetComponent<Image>().fillAmount += 0.003f;
+                }
+                else if (UIManager.difficulty == "Medium" || UIManager.difficulty == "Hard")
+                    {
+                        GetComponent<Image>().fillAmount += 0.005f;
+                    }
             }
 
             if (GetComponent<Image>().fillAmount == 1f)

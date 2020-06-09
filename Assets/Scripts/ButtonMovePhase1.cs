@@ -29,7 +29,7 @@ public class ButtonMovePhase1 : MonoBehaviour
     {
         if(needMove && ThumbnailManager.instance.phase1)                                                                                               //Si on est en Phase 1, le bouton reprend sa place initial.
         {
-            transform.position = Vector3.MoveTowards(transform.position, posInit, 30f);
+            transform.position = Vector3.MoveTowards(transform.position, posInit, 70f);
 
             if (Vector3.Distance(transform.position, posInit) < 0.001f)
             {
@@ -44,7 +44,7 @@ public class ButtonMovePhase1 : MonoBehaviour
         }
         else if(needMove && !ThumbnailManager.instance.phase1)                                                                                         //Si on est en Phase 2, le bouton prend la place "target".
         {
-            transform.position = Vector3.MoveTowards(transform.position, posTarget, 30f);
+            transform.position = Vector3.MoveTowards(transform.position, posTarget, 70f);
 
             if (Vector3.Distance(transform.position, posTarget) < 0.001f)
             {
