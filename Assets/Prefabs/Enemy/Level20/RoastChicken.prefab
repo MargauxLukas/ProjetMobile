@@ -200,6 +200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6abf1d507b5f88449ba13a916a0ce775, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  defaultName: 
   bronzeName: Roast Chicken
   argentName: Roast Chicken
   orName: Roast Chicken
@@ -273,7 +274,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -220228237276883412, guid: e6971832d4b92c14694a381cbb75edfb,
+  m_Sprite: {fileID: -2938815166175912198, guid: 7dbd1da2b4a31ad48ac0feb64addef8d,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
