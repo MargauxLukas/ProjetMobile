@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
@@ -608,8 +609,10 @@ public class LevelManager : MonoBehaviour
         scoreScreen.GetComponent<VictoryStars>().SetStars(GameManager.instance.GetPlayerLife());
         bottomScreen.transform.parent.GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
 
-        //Difficulty Manage
-        PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString() + UIManager.difficulty, scoreScreen.GetComponent<VictoryStars>().nbStars);
+        if (PlayerPrefs.GetInt("starLevel" + UIManager.chosenLevel.ToString() + UIManager.difficulty) < scoreScreen.GetComponent<VictoryStars>().nbStars)
+        {
+            PlayerPrefs.SetInt("starLevel" + UIManager.chosenLevel.ToString() + UIManager.difficulty, scoreScreen.GetComponent<VictoryStars>().nbStars);
+        }
         PlayerPrefs.SetInt("level" + UIManager.chosenLevel.ToString() + "Tuto", 1);
         scoreScreen.transform.GetChild(0).gameObject.SetActive(true);
 

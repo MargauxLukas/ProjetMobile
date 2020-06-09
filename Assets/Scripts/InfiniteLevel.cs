@@ -47,39 +47,75 @@ public class InfiniteLevel : MonoBehaviour
     {
         RandomButtons();
 
-        nbThumbnails = Mathf.CeilToInt(nbFloor / 2);
-        if(nbThumbnails%2 == 0)
-        {
-            nbThumbnails = nbThumbnails + 1;
-        }
-
-        Debug.Log(nbThumbnails);
+        nbThumbnails = nbFloor;
+        int securityCheck = 0;
         
         for (int i = 1; i <= nbThumbnails; i++)
         {
             buttonName = buttonStringRemove[Random.Range(0, 3)];
+            Debug.Log(i + " < " + nbThumbnails);
 
-            switch(buttonName)
+            switch (buttonName)
             {
                 case "cut":
-                    if (i == nbFloor){thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count-4)]; }
-                    else             {thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count   )];}
+                    if (i > nbThumbnails-2 ||securityCheck == 2)
+                    {
+                        thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count-4)];
+                        securityCheck = 0;
+                    }
+                    else            
+                    {
+                        thumbnailChoosen = cutThumbnailsList[Random.Range(0, cutThumbnailsList.Count   )];
+                        securityCheck++;
+                    }
                     break;
                 case "whip":
-                    if (i == nbFloor) { thumbnailChoosen = whipThumbnailsList[Random.Range(0, whipThumbnailsList.Count - 2)]; }
-                    else              { thumbnailChoosen = whipThumbnailsList[Random.Range(0, whipThumbnailsList.Count    )]; }
+                    if (i > nbThumbnails-2 || securityCheck == 2)
+                    { 
+                        thumbnailChoosen = whipThumbnailsList[Random.Range(0, whipThumbnailsList.Count - 2)];
+                        securityCheck = 0;
+                    }
+                    else              
+                    { 
+                        thumbnailChoosen = whipThumbnailsList[Random.Range(0, whipThumbnailsList.Count    )];
+                        securityCheck++;
+                    }
                     break;
                 case "knead":
-                    if (i == nbFloor) { thumbnailChoosen = kneadThumbnailsList[Random.Range(0, kneadThumbnailsList.Count - 2)]; }
-                    else              { thumbnailChoosen = kneadThumbnailsList[Random.Range(0, kneadThumbnailsList.Count    )]; }
+                    if (i > nbThumbnails-2 || securityCheck == 2)
+                    { 
+                        thumbnailChoosen = kneadThumbnailsList[Random.Range(0, kneadThumbnailsList.Count - 2)];
+                        securityCheck = 0;
+                    }
+                    else              
+                    { 
+                        thumbnailChoosen = kneadThumbnailsList[Random.Range(0, kneadThumbnailsList.Count    )];
+                        securityCheck++;
+                    }
                     break;
                 case "cook":
-                    if (i == nbFloor) { thumbnailChoosen = cookThumbnailsList[Random.Range(0, cookThumbnailsList.Count - 2)]; }
-                    else              { thumbnailChoosen = cookThumbnailsList[Random.Range(0, cookThumbnailsList.Count    )]; }
+                    if (i > nbThumbnails-2 || securityCheck == 2)
+                    { 
+                        thumbnailChoosen = cookThumbnailsList[Random.Range(0, cookThumbnailsList.Count - 2)];
+                        securityCheck = 0;
+                    }
+                    else              
+                    { 
+                        thumbnailChoosen = cookThumbnailsList[Random.Range(0, cookThumbnailsList.Count    )];
+                        securityCheck++;
+                    }
                     break;
                 case "boil":
-                    if (i == nbFloor) { thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count - 2)]; }
-                    else              { thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count    )]; }
+                    if (i > nbThumbnails-2 || securityCheck == 2)
+                    { 
+                        thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count - 2)];
+                        securityCheck = 0;
+                    }
+                    else              
+                    { 
+                        thumbnailChoosen = boilThumbnailsList[Random.Range(0, boilThumbnailsList.Count    )];
+                        securityCheck++;
+                    }
                     break;
             }
             randomThumbnailsList.Add(thumbnailChoosen);

@@ -22,7 +22,22 @@ public class GameManager : MonoBehaviour
     IEnumerator Life()
     {
         yield return new WaitForSeconds(1f);
-        lifeFill.fillAmount -= 0.02f;
+
+        switch (UIManager.difficulty)
+        {
+            case "Noob":
+                lifeFill.fillAmount -= 0.02f;
+                break;
+            case "Easy":
+                lifeFill.fillAmount -= 0.03f;
+                break;
+            case "Medium":
+                lifeFill.fillAmount -= 0.04f;
+                break;
+            case "Hard":
+                lifeFill.fillAmount -= 0.04f;
+                break;
+        }
 
         if(lifeFill.fillAmount == 0f)
         {
