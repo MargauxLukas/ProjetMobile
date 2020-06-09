@@ -78,7 +78,19 @@ public class FightManager : MonoBehaviour
             //Debug.Log("Degat ! ");
             Player.instance.GetComponent<AudioSource>().clip = damageClip;
             Player.instance.GetComponent<AudioSource>().Play();
-            GameManager.instance.lifeFill.fillAmount -= 0.15f;
+
+            if (UIManager.difficulty == "Noob" || UIManager.difficulty == "Easy")
+            {
+                GameManager.instance.lifeFill.fillAmount -= 0.15f;
+            }
+            else if(UIManager.difficulty == "Medium")
+            {
+                GameManager.instance.lifeFill.fillAmount -= 0.22f;
+            }
+            else
+            {
+                GameManager.instance.lifeFill.fillAmount -= 0.33f;
+            }
         }
         else
         {
