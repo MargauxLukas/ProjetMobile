@@ -426,7 +426,23 @@ public class ThumbnailManager : MonoBehaviour
             int temp = PlayerPrefs.GetInt(token);
             PlayerPrefs.SetInt(token + UIManager.difficulty, temp+1);
             Debug.Log(token + UIManager.difficulty + PlayerPrefs.GetInt(token));
-            FightManager.instance.MonsterDeath();        
+            FightManager.instance.MonsterDeath();
+
+            if(LevelManager.instance.isInfinite)
+            {
+                if (UIManager.difficulty == "Easy")
+                {
+                    gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.05f);
+                }
+                else if(UIManager.difficulty == "Medium")
+                {
+                    gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.10f);
+                }
+                else if (UIManager.difficulty == "Hard")
+                {
+                    gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.15f);
+                }
+            }
         }
         else
         {
@@ -436,7 +452,14 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Heal()
     {
-        gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.03f);
+        if (UIManager.difficulty == "Noob" || UIManager.difficulty == "Easy")
+        {
+            gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.03f);
+        }
+        else
+        {
+            gm.lifeFill.fillAmount = gm.lifeFill.fillAmount + (1f * 0.04f);
+        }
     }
 
     public void HealMax()
