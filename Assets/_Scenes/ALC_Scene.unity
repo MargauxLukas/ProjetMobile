@@ -6767,6 +6767,7 @@ MonoBehaviour:
   isAttacked: 0
   timerAttack: 1.5
   timeBetweenAction: 5
+  shieldVFX: {fileID: 936900405}
 --- !u!114 &305585312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9745,6 +9746,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934413094}
   m_CullTransparentMesh: 0
+--- !u!1 &936900405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5786308209913782628, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 1818375845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &945052407
 GameObject:
   m_ObjectHideFlags: 0
@@ -23282,12 +23289,12 @@ PrefabInstance:
     - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.544
       objectReference: {fileID: 0}
     - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -3
       objectReference: {fileID: 0}
     - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
         type: 3}
@@ -23328,6 +23335,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6711419877683619202, guid: e7575714c6bd2c545bf9b5c8d11ad8ef,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7575714c6bd2c545bf9b5c8d11ad8ef, type: 3}

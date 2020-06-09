@@ -33,6 +33,8 @@ public class FightManager : MonoBehaviour
     public float timeBetweenAction = 4f;
     private int chipLife = 1;
 
+    public GameObject shieldVFX;
+
     public void Awake()
     {
         instance = this;
@@ -48,6 +50,11 @@ public class FightManager : MonoBehaviour
             {
                 timerAttack -= Time.deltaTime;
 
+                if(timerAttack < 0.500f)
+                {
+                    shieldVFX.SetActive(true);
+                }
+
                 if (timerAttack <= 0)
                 {
                     CheckDamage();
@@ -55,7 +62,6 @@ public class FightManager : MonoBehaviour
             }
             else if (ThumbnailManager.instance.monsterLife.currentLife <= lifeGoal || timeCooldown <= 0)
             {
-                //Debug.Log(ThumbnailManager.instance.monsterLife.currentLife + " <= " + lifeGoal);
                 Action();
             }
             else
@@ -72,6 +78,7 @@ public class FightManager : MonoBehaviour
         SetTimeAction();
         SetLifeGoal();
         timerAttack = 1.517f;
+        shieldVFX.SetActive(false);
 
         if (!isPlayerDefending)
         {
