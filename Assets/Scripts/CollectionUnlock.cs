@@ -31,8 +31,8 @@ public class CollectionUnlock : MonoBehaviour
         }
         else
         {
-            transform.GetChild(0).GetComponent<Image>().material = transform.parent.parent.parent.gameObject.GetComponent<MaterialsList>().defaultMat;
-            transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+            transform.GetChild(0).GetComponent<Image>().material = null;
+            transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 255);
         }
     }
 }
