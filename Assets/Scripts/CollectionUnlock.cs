@@ -29,5 +29,10 @@ public class CollectionUnlock : MonoBehaviour
                 transform.GetChild(0).GetComponent<Image>().material = transform.parent.parent.parent.gameObject.GetComponent<MaterialsList>().hardMat;
             }
         }
+        else
+        {
+            transform.GetChild(0).GetComponent<Image>().material = transform.parent.parent.parent.gameObject.GetComponent<MaterialsList>().defaultMat;
+            transform.GetChild(0).GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+        }
     }
 }
