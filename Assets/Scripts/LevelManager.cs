@@ -604,6 +604,8 @@ public class LevelManager : MonoBehaviour
 
     public void PlayerWin()
     {
+        Destroy(topScreen.transform.GetChild(0).gameObject);
+        Destroy(monsterParent.transform.GetChild(1).gameObject);
         particle.transform.GetChild(0).gameObject.SetActive(true);
         scoreScreen.SetActive(true);
         scoreScreen.GetComponent<VictoryStars>().SetStars(GameManager.instance.GetPlayerLife());
