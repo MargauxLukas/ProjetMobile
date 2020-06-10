@@ -5873,6 +5873,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 305585308}
+        m_MethodName: PlayMusic
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e2dbb2f81b20cd34aa27ebb4ccad32e9,
+            type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &250348321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6334,7 +6346,7 @@ MonoBehaviour:
         m_MethodName: PlayMusic
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: c7c05a5fc6f73f740a4d6da7352d0831,
+          m_ObjectArgument: {fileID: 8300000, guid: e2dbb2f81b20cd34aa27ebb4ccad32e9,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -6658,6 +6670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifeFill: {fileID: 462186972}
+  deathSound: {fileID: 8300000, guid: 9cde9a41468aa4041b510c9b5264e416, type: 3}
 --- !u!114 &305585310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6819,7 +6832,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shieldGroup: {fileID: 1974113003}
   targetThumb: {fileID: 0}
-  damageClip: {fileID: 8300000, guid: 56d78dd10600cb644b5db8c1f415530e, type: 3}
+  damageVFX: {fileID: 3584750363607933930, guid: 08f0ea20aa076604b945e23863a30cf8,
+    type: 3}
+  weaponVFX: {fileID: 3584750363607933930, guid: 55dd9faca22491145a3a11ef0ccd891f,
+    type: 3}
+  lockVFX: {fileID: 3584750363607933930, guid: 61ed71b505ec40f4fb81db68c092e5a8, type: 3}
+  SFX: {fileID: 2090143037}
   percentFight: 0.15
   percentLife: 0
   lifeGoal: 0
@@ -16980,11 +16998,11 @@ RectTransform:
   m_Father: {fileID: 1298916983}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -26.670044, y: -1274.221}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -30, y: 0}
   m_SizeDelta: {x: 200, y: 190}
-  m_Pivot: {x: 1, y: 1}
+  m_Pivot: {x: 1, y: 0}
 --- !u!114 &1403535478
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17054,7 +17072,7 @@ MonoBehaviour:
         m_MethodName: PlayMusic
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 8300000, guid: 00b7d601df3fdf04982e78efa9e396ae,
+          m_ObjectArgument: {fileID: 8300000, guid: 39099e7b7ac54ba449fe10d399a5fae7,
             type: 3}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
@@ -25480,6 +25498,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 305585308}
+        m_MethodName: PlayFrappe
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7832064756699043227
 GameObject:
   m_ObjectHideFlags: 0
@@ -25493,6 +25522,7 @@ GameObject:
   - component: {fileID: 7832064756699043230}
   - component: {fileID: 7832064756699043225}
   - component: {fileID: 7832064756699043228}
+  - component: {fileID: 7832064756699043229}
   m_Layer: 5
   m_Name: Attack Button
   m_TagString: Untagged
@@ -25513,6 +25543,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMove: 0
+--- !u!114 &7832064756699043229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7832064756699043227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218be953f563fad4999aa3b5e4a40927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parent: {fileID: 2090143038}
+  listAudio:
+  - {fileID: 6898722849751362362, guid: 7961f4d42f84a1a4d8b39961598dca8d, type: 3}
+  - {fileID: 6898722849751362362, guid: 3b9b0c079a01cf24e98a4046d5a05981, type: 3}
+  - {fileID: 6898722849751362362, guid: 9cc3b7eb8f44e6a4995c366160b8ffbd, type: 3}
+  - {fileID: 6898722849751362362, guid: 999a8b7551c83c1469a6a8619bc02611, type: 3}
+  - {fileID: 6898722849751362362, guid: 4fdf5d052b0e0444688e20705d05612c, type: 3}
 --- !u!114 &7832064756699043230
 MonoBehaviour:
   m_ObjectHideFlags: 0

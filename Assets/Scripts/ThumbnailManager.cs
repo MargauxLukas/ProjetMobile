@@ -343,6 +343,7 @@ public class ThumbnailManager : MonoBehaviour
         {
             go.GetComponent<Thumbnail>().isLocked = false;
             Destroy(go.transform.Find("Lock").gameObject);
+            Instantiate(FightManager.instance.weaponVFX, FightManager.instance.SFX.transform);
         }
         else
         {

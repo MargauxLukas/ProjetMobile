@@ -28,4 +28,10 @@ public class Player : MonoBehaviour
             PlayerPrefs.SetInt("level", 1);
         }
     }
+
+    public void PlaySound(AudioClip ac)
+    {
+        gameObject.GetComponent<AudioSource>().clip = ac;
+        gameObject.GetComponent<AudioSource>().Play();
+    }
 }

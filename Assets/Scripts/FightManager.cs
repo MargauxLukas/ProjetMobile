@@ -10,7 +10,10 @@ public class FightManager : MonoBehaviour
     public GameObject shieldGroup;
     public GameObject targetThumb;
 
-    public AudioClip damageClip;
+    public GameObject damageVFX;
+    public GameObject weaponVFX;
+    public GameObject lockVFX;
+    public GameObject SFX;
 
     public float percentFight = 0.15f;
     public float percentLife;
@@ -82,9 +85,8 @@ public class FightManager : MonoBehaviour
 
         if (!isPlayerDefending)
         {
-            //Debug.Log("Degat ! ");
-            Player.instance.GetComponent<AudioSource>().clip = damageClip;
-            Player.instance.GetComponent<AudioSource>().Play();
+            Instantiate(damageVFX, SFX.transform);
+            Instantiate(weaponVFX, SFX.transform);
 
             if (UIManager.difficulty == "Noob" || UIManager.difficulty == "Easy")
             {

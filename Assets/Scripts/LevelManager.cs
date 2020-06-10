@@ -543,12 +543,14 @@ public class LevelManager : MonoBehaviour
 
     public void ActivatePhase1()
     {
+        UIManager.instance.SwitchMusicToCombat();
         phase1Buttons.transform.GetChild(0).GetComponent<ButtonMovePhase1>().needMove = true;
         phase1Buttons.transform.GetChild(1).GetComponent<ButtonMovePhase1>().needMove = true;
     }
 
     public void ActivatePhase2()
     {
+        UIManager.instance.SwitchMusicToPreparation();
         phase1Buttons.transform.GetChild(0).GetComponent<ButtonMovePhase1>().needMove = true;
         phase1Buttons.transform.GetChild(1).GetComponent<ButtonMovePhase1>().needMove = true;
         ThumbnailManager.instance.isTransit = true;

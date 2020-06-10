@@ -138,6 +138,12 @@ public class ButtonsManager : MonoBehaviour
         Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
     }
 
+    public void PlayFrappe()
+    {
+        int i = Random.Range(0, 5);
+        Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
+    }
+
     public void PlayNomFinal()
     {
         if (lm.topScreen.transform.GetChild(0).GetComponent<FinalLife>().currentLife > 1)

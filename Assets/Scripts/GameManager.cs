@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public Image lifeFill;
+    public AudioClip deathSound;
     private void Awake()
     {
         instance = this;
@@ -42,6 +43,7 @@ public class GameManager : MonoBehaviour
         if(lifeFill.fillAmount == 0f)
         {
             LevelManager.instance.PlayerDeath();
+            Player.instance.PlaySound(deathSound);
         }
 
         StartCoroutine(Life());

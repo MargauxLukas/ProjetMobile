@@ -47,7 +47,6 @@ public class Life : MonoBehaviour
                 fm.isMonsterAttacking = false;
                 fm.timerAttack = 1.5f;
                 ThumbnailManager.instance.phase1 = false;
-                UIManager.instance.SwitchMusicToPreparation();
 
                 currentShield = 0;                                                                                                                      //SECURITÉ : On met le nombre de bouclier actuel à 0 ! 
                 for (int i = 0; i < fm.shieldGroup.transform.childCount; i++)
@@ -91,7 +90,6 @@ public class Life : MonoBehaviour
                 currentShield = 0;
                 fm.SetLifeGoal();
                 ThumbnailManager.instance.phase1 = true;
-                UIManager.instance.SwitchMusicToCombat();
                 TapisManager.instance.TapisOnPhase1();
                 lm.ActivatePhase1();
             }
