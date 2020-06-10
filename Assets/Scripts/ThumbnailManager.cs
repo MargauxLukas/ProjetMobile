@@ -343,12 +343,13 @@ public class ThumbnailManager : MonoBehaviour
         {
             go.GetComponent<Thumbnail>().isLocked = false;
             Destroy(go.transform.Find("Lock").gameObject);
-            Instantiate(FightManager.instance.weaponVFX, FightManager.instance.SFX.transform);
+            Instantiate(FightManager.instance.lockVFX, FightManager.instance.SFX.transform);
         }
         else
         {
             transform.GetChild(0).GetChild(0).gameObject.GetComponent<Thumbnail>().isLocked = false;
             Destroy(transform.GetChild(0).GetChild(0).Find("Lock").gameObject);
+            Instantiate(FightManager.instance.lockVFX, FightManager.instance.SFX.transform);
         }
     }
 
@@ -390,6 +391,11 @@ public class ThumbnailManager : MonoBehaviour
         {
             Damage();
         }
+
+        if(transform.GetChild(vignetteNb).GetChild(0).gameObject.name.Contains("Lock"))
+        {
+            Instantiate(FightManager.instance.lockEchec, FightManager.instance.SFX.transform);
+        }
     }
 
     public void NewWave()
@@ -426,7 +432,7 @@ public class ThumbnailManager : MonoBehaviour
         {
             int temp = PlayerPrefs.GetInt(token + UIManager.difficulty);
             PlayerPrefs.SetInt(token + UIManager.difficulty, temp+1);
-            Debug.Log(token + UIManager.difficulty + PlayerPrefs.GetInt(token));
+            //Debug.Log(token + UIManager.difficulty + PlayerPrefs.GetInt(token));
             FightManager.instance.MonsterDeath();
 
             if(LevelManager.instance.isInfinite)
@@ -470,6 +476,7 @@ public class ThumbnailManager : MonoBehaviour
 
     public void Damage()
     {
+        Instantiate(FightManager.instance.damageVFX, FightManager.instance.SFX.transform);
         gm.lifeFill.fillAmount = gm.lifeFill.fillAmount - (1f * 0.20f);
     }
 

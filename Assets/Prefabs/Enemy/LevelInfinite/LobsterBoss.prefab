@@ -645,34 +645,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: 3
+  pattern: 0
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
-  - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
-  - {fileID: 2717968371175590322, guid: 9c0a7e5404530d64b927c1cfcbbf9b61, type: 3}
-  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
-  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
-  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
-  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
-  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
-  - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
-  - {fileID: 2717968371175590322, guid: 25b13bef5198df8469e69a44ea4345c5, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
-  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
-  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
-  - {fileID: 452751715470780242, guid: bab5b241c0bb4dd40acf1298098f9584, type: 3}
-  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
-  - {fileID: 2717968371175590322, guid: 94982db109c045d48829b7fad74c4782, type: 3}
-  - {fileID: 2717968371175590322, guid: 21e1fc5cc378a404b81a17bfb7c4c17e, type: 3}
-  - {fileID: 452751715470780242, guid: 69c934a5d750a9d4d80cef6e4decbaad, type: 3}
-  - {fileID: 2717968371175590322, guid: 9c0a7e5404530d64b927c1cfcbbf9b61, type: 3}
-  - {fileID: 405921424277012632, guid: 93ef94e0db751a6419f23401de4de947, type: 3}
-  - {fileID: 2717968371175590322, guid: 21e1fc5cc378a404b81a17bfb7c4c17e, type: 3}
-  - {fileID: 405921424277012632, guid: 13c35579af35e0d499cca5743dcbb957, type: 3}
+  - {fileID: 2717968371175590322, guid: ccf9b9b5787948248b8f7d532af37fa1, type: 3}
+  - {fileID: 2717968371175590322, guid: f14c591396393c6408d07749631abc4c, type: 3}
   vignetteNb: 0
   knead: 0
   cook: 0

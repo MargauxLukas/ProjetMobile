@@ -586,9 +586,9 @@ public class LevelManager : MonoBehaviour
     {
         if (isInfinite)
         {
-            if (PlayerPrefs.GetInt("floorReached") < gameObject.GetComponent<InfiniteLevel>().nbFloor)
+            if (PlayerPrefs.GetInt("floorReached" + UIManager.difficulty) < gameObject.GetComponent<InfiniteLevel>().nbFloor)
             {
-                PlayerPrefs.SetInt("floorReached", gameObject.GetComponent<InfiniteLevel>().nbFloor);
+                PlayerPrefs.SetInt("floorReached" + UIManager.difficulty, gameObject.GetComponent<InfiniteLevel>().nbFloor);
             }
 
             gameObject.GetComponent<InfiniteLevel>().bestScore.text = PlayerPrefs.GetInt("floorReached").ToString();

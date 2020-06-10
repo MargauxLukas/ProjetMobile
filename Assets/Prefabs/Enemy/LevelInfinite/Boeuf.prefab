@@ -719,7 +719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: 4
+  pattern: 0
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList:
@@ -770,7 +770,7 @@ GameObject:
   - component: {fileID: 8356807623944433584}
   - component: {fileID: 6453561938606166691}
   m_Layer: 5
-  m_Name: Boeuf 1
+  m_Name: Boeuf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

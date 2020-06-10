@@ -6837,7 +6837,11 @@ MonoBehaviour:
   weaponVFX: {fileID: 3584750363607933930, guid: 55dd9faca22491145a3a11ef0ccd891f,
     type: 3}
   lockVFX: {fileID: 3584750363607933930, guid: 61ed71b505ec40f4fb81db68c092e5a8, type: 3}
+  lockEchec: {fileID: 3584750363607933930, guid: 8f025ff4bb3c1ef44a05fe448132c864,
+    type: 3}
   SFX: {fileID: 2090143037}
+  shieldImpact: {fileID: 6898722849751362362, guid: a59bcea4ed3fc1f4fad48bb9e0b13f0c,
+    type: 3}
   percentFight: 0.15
   percentLife: 0
   lifeGoal: 0
@@ -17008,7 +17012,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -30, y: 0}
+  m_AnchoredPosition: {x: -30, y: 30}
   m_SizeDelta: {x: 200, y: 190}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &1403535478

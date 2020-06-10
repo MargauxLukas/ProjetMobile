@@ -15,11 +15,6 @@ public class UIManager : MonoBehaviour
     public static int chosenLevel;
     public static string difficulty = "Noob";
 
-    public void Update()
-    {
-        Debug.Log(difficulty);
-    }
-
     public void Start()
     {
         if (instance == null)

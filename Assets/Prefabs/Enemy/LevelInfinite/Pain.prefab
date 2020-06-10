@@ -754,7 +754,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e61593e97b7634aa367455afcea301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pattern: 1
+  pattern: 0
   monsterLife: {fileID: 8356807622065479396}
   gm: {fileID: 0}
   thumbnailsList: []

@@ -22,14 +22,29 @@ public class AllTexts : MonoBehaviour
     {
         for (int i = 1; i < textList.Count; i++)
         {
-            textList[i-1].text = PlayerPrefs.GetInt("starLevel" + i + "Easy").ToString();
+            if (i == 20)
+            {
+                textList[i].text = PlayerPrefs.GetInt("floorReachedEasy").ToString();
+            }
+            else
+            {
+                textList[i - 1].text = PlayerPrefs.GetInt("starLevel" + i + "Easy").ToString();
+            }
         }
+
     }
     public void SetStarsMedium()
     {
         for (int i = 1; i < textList.Count; i++)
         {
-            textList[i-1].text = PlayerPrefs.GetInt("starLevel" + i + "Medium").ToString();
+            if (i == 20)
+            {
+                textList[i].text = PlayerPrefs.GetInt("floorReachedMedium").ToString();
+            }
+            else
+            {
+                textList[i - 1].text = PlayerPrefs.GetInt("starLevel" + i + "Medium").ToString();
+            }
         }
     }
 
@@ -37,7 +52,14 @@ public class AllTexts : MonoBehaviour
     {
         for (int i = 1; i < textList.Count; i++)
         {
-            textList[i-1].text = PlayerPrefs.GetInt("starLevel" + i + "Hard").ToString();
+            if (i == 20)
+            {
+                textList[i].text = PlayerPrefs.GetInt("floorReachedHard").ToString();
+            }
+            else
+            {
+                textList[i - 1].text = PlayerPrefs.GetInt("starLevel" + i + "Hard").ToString();
+            }
         }
     }
 
@@ -45,7 +67,14 @@ public class AllTexts : MonoBehaviour
     {
         for (int i = 1; i < textList.Count; i++)
         {
-            textList[i-1].text = PlayerPrefs.GetInt("starLevel" + i + "Noob").ToString();
+            if (i == 20)
+            {
+                textList[i].text = PlayerPrefs.GetInt("floorReachedNoob").ToString();
+            }
+            else
+            {
+                textList[i - 1].text = PlayerPrefs.GetInt("starLevel" + i + "Noob").ToString();
+            }
         }
     }
 }

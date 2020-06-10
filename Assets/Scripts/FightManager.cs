@@ -14,7 +14,9 @@ public class FightManager : MonoBehaviour
     public GameObject damageVFX;
     public GameObject weaponVFX;
     public GameObject lockVFX;
+    public GameObject lockEchec;
     public GameObject SFX;
+    public GameObject shieldImpact;
 
     public float percentFight = 0.15f;
     public float percentLife;
@@ -69,6 +71,7 @@ public class FightManager : MonoBehaviour
             }
             else if (ThumbnailManager.instance.monsterLife.currentLife <= lifeGoal || timeCooldown <= 0)
             {
+                Debug.Log("nb");
                 Action();
             }
             else
@@ -108,6 +111,7 @@ public class FightManager : MonoBehaviour
         else
         {
             LevelManager.instance.defendVFX.SetActive(true);
+            Instantiate(shieldImpact, SFX.transform);
             StartCoroutine("DesactiveDefendVFX");
         }
     }
@@ -187,8 +191,8 @@ public class FightManager : MonoBehaviour
 
     public void Rand(int chance, int surCombien)
     {
-        rand = UnityEngine.Random.Range(1, surCombien+1);
-        //Debug.Log(rand + " = " + chance + " chance sur " + surCombien);
+        rand = Random.Range(1, surCombien+1);
+        Debug.Log(rand + " = " + chance + " chance sur " + surCombien);
         if(rand <= chance || ThumbnailManager.instance.monsterLife.currentShield > 0)
         {
             MonsterAttack();
@@ -201,13 +205,16 @@ public class FightManager : MonoBehaviour
 
     public void MonsterAttack()
     {
-        LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", true);
-        timeCooldown = timerAttack;
-        isMonsterAttacking = true;
-
-        if (LevelManager.instance.level1Tuto)
+        if (LevelManager.instance.currentLevel.Count != 1 || LevelManager.instance.isInfinite)
         {
-            StartCoroutine("Wait2sec");
+            LevelManager.instance.monsterParent.transform.GetChild(1).GetComponent<Animator>().SetBool("isAttack", true);
+            timeCooldown = timerAttack;
+            isMonsterAttacking = true;
+
+            if (LevelManager.instance.level1Tuto)
+            {
+                StartCoroutine("Wait2sec");
+            }
         }
     }
 

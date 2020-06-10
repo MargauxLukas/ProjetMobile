@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6898722849751362365}
   - component: {fileID: -314153046647773854}
   m_Layer: 0
-  m_Name: SonFrappe5
+  m_Name: ShieldImpact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42,9 +42,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 340298ab5f4d68c4496d93d3c983e6bb, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 3e14e926431660b489bd59a9d2b5d6b1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 0
   Mute: 0

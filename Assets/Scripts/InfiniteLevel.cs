@@ -53,7 +53,6 @@ public class InfiniteLevel : MonoBehaviour
         for (int i = 1; i <= nbThumbnails; i++)
         {
             buttonName = buttonStringRemove[Random.Range(0, 3)];
-            Debug.Log(i + " < " + nbThumbnails);
 
             switch (buttonName)
             {
