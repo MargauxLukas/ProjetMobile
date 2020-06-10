@@ -18,6 +18,13 @@ public class LockLevel : MonoBehaviour
         {
             GetComponent<Button>().interactable = true;
         }
+        else
+        {
+            GetComponent<Image>().color = new Color32(145, 145, 145, 145);
+            transform.GetChild(0).GetComponent<Image>().color = new Color32(145, 145, 145, 145);
+            transform.GetChild(1).GetComponent<Image>().color = new Color32(145, 145, 145, 145);
+
+        }
     }
 
     public void UnlockDifficulty()
