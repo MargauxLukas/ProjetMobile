@@ -9,7 +9,7 @@ public class MonsterNbKO : MonoBehaviour
 
     void Start()
     {
-        int currentNb = PlayerPrefs.GetInt("token");
+        int currentNb = PlayerPrefs.GetInt(token);
 
         GetComponent<Text>().text = currentNb.ToString();
     }

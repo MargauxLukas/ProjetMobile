@@ -424,7 +424,7 @@ public class ThumbnailManager : MonoBehaviour
     {
         if (thumbnailsList.Count == 0)
         {
-            int temp = PlayerPrefs.GetInt(token);
+            int temp = PlayerPrefs.GetInt(token + UIManager.difficulty);
             PlayerPrefs.SetInt(token + UIManager.difficulty, temp+1);
             Debug.Log(token + UIManager.difficulty + PlayerPrefs.GetInt(token));
             FightManager.instance.MonsterDeath();
