@@ -6849,6 +6849,14 @@ MonoBehaviour:
   timerAttack: 1.5
   timeBetweenAction: 5
   shieldVFX: {fileID: 936900405}
+  listAudioFrappe:
+  - {fileID: 6898722849751362362, guid: 7961f4d42f84a1a4d8b39961598dca8d, type: 3}
+  - {fileID: 6898722849751362362, guid: 3b9b0c079a01cf24e98a4046d5a05981, type: 3}
+  - {fileID: 6898722849751362362, guid: 9cc3b7eb8f44e6a4995c366160b8ffbd, type: 3}
+  - {fileID: 6898722849751362362, guid: 999a8b7551c83c1469a6a8619bc02611, type: 3}
+  - {fileID: 6898722849751362362, guid: 4fdf5d052b0e0444688e20705d05612c, type: 3}
+  audioEchecAttack: {fileID: 3584750363607933930, guid: 932b39176b13d9d49abc3b61fe948359,
+    type: 3}
 --- !u!114 &305585312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25498,17 +25506,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 305585308}
-        m_MethodName: PlayFrappe
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &7832064756699043227
 GameObject:
   m_ObjectHideFlags: 0
@@ -25522,7 +25519,6 @@ GameObject:
   - component: {fileID: 7832064756699043230}
   - component: {fileID: 7832064756699043225}
   - component: {fileID: 7832064756699043228}
-  - component: {fileID: 7832064756699043229}
   m_Layer: 5
   m_Name: Attack Button
   m_TagString: Untagged
@@ -25543,25 +25539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   needMove: 0
---- !u!114 &7832064756699043229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7832064756699043227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218be953f563fad4999aa3b5e4a40927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  parent: {fileID: 2090143038}
-  listAudio:
-  - {fileID: 6898722849751362362, guid: 7961f4d42f84a1a4d8b39961598dca8d, type: 3}
-  - {fileID: 6898722849751362362, guid: 3b9b0c079a01cf24e98a4046d5a05981, type: 3}
-  - {fileID: 6898722849751362362, guid: 9cc3b7eb8f44e6a4995c366160b8ffbd, type: 3}
-  - {fileID: 6898722849751362362, guid: 999a8b7551c83c1469a6a8619bc02611, type: 3}
-  - {fileID: 6898722849751362362, guid: 4fdf5d052b0e0444688e20705d05612c, type: 3}
 --- !u!114 &7832064756699043230
 MonoBehaviour:
   m_ObjectHideFlags: 0

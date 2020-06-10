@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Resources;
 using UnityEngine;
 using UnityEngine.UI;
@@ -37,6 +38,9 @@ public class FightManager : MonoBehaviour
     private int chipLife = 1;
 
     public GameObject shieldVFX;
+
+    public List<GameObject> listAudioFrappe;
+    public GameObject audioEchecAttack;
 
     public void Awake()
     {
@@ -306,11 +310,17 @@ public class FightManager : MonoBehaviour
         if (ThumbnailManager.instance.monsterLife.currentShield <= 0)
         {
             GameObject attackAnim = Instantiate(LevelManager.instance.attackVFX, LevelManager.instance.particle.transform);
+            int i = Random.Range(0, 5);
+            Instantiate(listAudioFrappe[i].gameObject, SFX.transform.parent);
             attackAnim.GetComponent<Animator>().SetInteger("AttackInt", Random.Range(1, 6));
             attackAnim.transform.localScale = new Vector3(-0.5f, -0.5f, -0.5f);
             Destroy(attackAnim, 2f);
 
             ThumbnailManager.instance.monsterLife.currentLife--;
+        }
+        else
+        {
+            Instantiate(audioEchecAttack.gameObject, SFX.transform.parent);
         }
     }
 

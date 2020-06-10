@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.PlayerLoop;
 using UnityEngine.SceneManagement;
@@ -135,12 +136,6 @@ public class ButtonsManager : MonoBehaviour
     public void PlayNom()
     {
         int i = Random.Range(0, 6);
-        Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
-    }
-
-    public void PlayFrappe()
-    {
-        int i = Random.Range(0, 5);
         Instantiate(EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().listAudio[i].gameObject, EventSystem.current.currentSelectedGameObject.GetComponent<SFXList>().parent);
     }
 
