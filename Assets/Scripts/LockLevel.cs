@@ -56,4 +56,41 @@ public class LockLevel : MonoBehaviour
             Layout.transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
         }
     }
+
+    public void UnlockDifficultyInfinite()
+    {
+        if (PlayerPrefs.GetInt("starLevel" + (levelRequirement-1).ToString() + "Noob") > 0)
+        {
+            Layout.transform.GetChild(0).GetComponent<Toggle>().interactable = true;
+            Layout.transform.GetChild(0).GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            Layout.transform.GetChild(0).GetComponent<Toggle>().interactable = false;
+            Layout.transform.GetChild(0).GetChild(1).gameObject.SetActive(true);
+        }
+
+
+        if (PlayerPrefs.GetInt("starLevel" + (levelRequirement-1).ToString() + "Easy") > 0)
+        {
+            Layout.transform.GetChild(1).GetComponent<Toggle>().interactable = true;
+            Layout.transform.GetChild(1).GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            Layout.transform.GetChild(1).GetComponent<Toggle>().interactable = false;
+            Layout.transform.GetChild(1).GetChild(1).gameObject.SetActive(true);
+        }
+
+        if (PlayerPrefs.GetInt("starLevel" + (levelRequirement-1).ToString() + "Medium") > 0)
+        {
+            Layout.transform.GetChild(2).GetComponent<Toggle>().interactable = true;
+            Layout.transform.GetChild(2).GetChild(1).gameObject.SetActive(false);
+        }
+        else
+        {
+            Layout.transform.GetChild(2).GetComponent<Toggle>().interactable = false;
+            Layout.transform.GetChild(2).GetChild(1).gameObject.SetActive(true);
+        }
+    }
 }

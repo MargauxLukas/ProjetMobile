@@ -488,6 +488,7 @@ public class LevelManager : MonoBehaviour
         {
             gameObject.GetComponent<InfiniteLevel>().nbFloor++;
             currentLevel.Add(gameObject.GetComponent<InfiniteLevel>().AddMonster());
+            SwitchDifficulty();
         }
 
         currentLevel.RemoveAt(0);
